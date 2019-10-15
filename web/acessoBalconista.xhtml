@@ -89,6 +89,23 @@
             </h:form>
         </section>
     </div>
+    <div class="jumbotron" id="cotacao">
+        <section alig="center" class="row">
+            <div class="jumbotron">
+                <h:form id="cotacao1">
+                    <div class="form-group">
+                        <h5 align="center">Controle de Cotações</h5>
+                    </div>
+                    <div class="form-group" id="cotInterna">
+                        <p:outputLabel value="Nova Cotação (R$)"/>
+                        <p:inputMask class="form-control" value="#{cotacaoController.cotacao.valor}" mask="99.99" required="true" placeholder="Valor da cotação" maxlength="5"/><br/>
+                        <h:commandButton value="Salvar Cotação" class="btn btn-block btn-primary"
+                                         action="#{cotacaoController.cadastrarCotacao}"/>
+                    </div>
+                </h:form>
+            </div>
+        </section>
+    </div>
     <div class="jumbotron" id="utilitarios">
         <section alig="center" class="row">
             <h:form>
