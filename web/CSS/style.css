@@ -1,5 +1,114 @@
-#geral {
-    position: fixed;
+.fundoCinza{
+    background-color:  #ffffff;
+}
+
+.botao{
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 14px 16px !important;
+    text-decoration: none !important;
+    transition: 0.4s !important;
+    font-size: 17px !important;
+    border-bottom: 0px solid #323f4c !important;
+}
+
+.menubarBranco{
+    background-color: #000000 !important;
+    padding: 0px;
+}
+.menubarBranco .ui-menu-list {
+    display: inline-block;
+}
+
+.menubarBranco.ui-menubar {
+    text-align: center;
+}
+
+.menubarBranco.ui-menubar a:hover {
+    background-color: #ffffff;
+    color: #000000 !important;
+}
+
+.menubarBranco.ui-widget-content a{
+    color: #ffffff !important;
+}
+
+.menubarBranco.ui-menu, .ui-menu .ui-menu-child {
+    background: #000000 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0))) !important;
+}
+
+.anima:hover:before {
+    background-color: #ffffff;
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.anima:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #0fbfc2;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+.clear1{
+    padding: 1px;
+}
+.clear2{
+    padding: 2px;
+}
+.clear3{
+    padding: 3px;
+}
+.clear5{
+    padding: 5px;
+}
+.clear10{
+    padding: 10px;
+}
+.clear15{
+    padding: 15px;
+}
+.clear100{
+    padding: 100px;
+}
+.clear130{
+    padding: 130px;
+}
+.clear221{
+    padding: 221px;
+}
+.clear255{
+    padding: 255px;
+}
+
+.botao{
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 14px 16px !important;
+    text-decoration: none !important;
+    transition: 0.4s !important;
+    font-size: 17px !important;
+    border-bottom: 0px solid #323f4c !important;
+}
+
+#geralRedefinirSenha {
     top: 70px;
     bottom: 0;
     left: 0;
@@ -9,23 +118,9 @@
     height: 370px;
     padding: 0px;
     border: solid 1pX black;
-    display: block;
 }
 
-.dadosPreenchidos {
-    position: fixed;
-    top: 235px;
-    bottom: 0;
-    left: 0;
-    right: 0px;
-    margin: auto;
-    width: 350px;
-    height: 500px;
-    padding: 0px;
-    display: block;
-}
-
-.popup {
+.popupRedefinirSenha {
     position: fixed;
     top: -100px;
     bottom: 0;
@@ -40,7 +135,7 @@
     display: none;
 }
 
-.fechar {
+.fecharRedefinirSenha {
     position: absolute;
     top: -116px;
     bottom: 0;
@@ -51,6 +146,95 @@
     height: 25px;
     border: black 1px solid;
     border-radius: 3px;
-    background: gray;
+    background: #ffffff;
+    color: blue;
+}
+
+.dadosPreenchidosRedefinirSenha {
+    top: 235px;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    margin: auto;
+    width: 350px;
+    height: 500px;
+    padding: 0px;
+
+}
+
+.buttonAcervo{
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+.padding40{
+    padding: 0px 0px 0px 40px;
+}
+
+.buttonAcervo:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.fundoPretoCol{
+    background: #292633;
+    padding: 23px !important;
+    position: absolute !important;
+}
+
+.letraBranca{
+    color: #ffffff !important;
+}
+
+#geral {
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    margin: auto;
+    width: 400px;
+    height: 410px;
+    padding: 0px;
+    border: solid 1pX black;
+    background-color: #fff;
+}
+
+.dadosPreenchidos {
+    top: 163px;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    margin: auto;
+    width: 350px;
+    height: 500px;
+    padding: 0px;
+}
+
+.popupRedefinirSenhaBalconista {
+    position: fixed;
+    top: -100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 155px;
+    padding: 15px;
+    border: solid 1pX black;
+    background: white;
+    display: none;
+}
+
+.fecharRedefinirSenhaBalconista {
+    position: absolute;
+    top: -116px;
+    bottom: 0;
+    left: 0;
+    right: -460px;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border: black 1px solid;
+    border-radius: 3px;
+    background: #ffffff;
     color: blue;
 }

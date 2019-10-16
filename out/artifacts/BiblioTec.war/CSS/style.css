@@ -162,3 +162,79 @@
 
 }
 
+.buttonAcervo{
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+.padding40{
+    padding: 0px 0px 0px 40px;
+}
+
+.buttonAcervo:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.fundoPretoCol{
+    background: #292633;
+    padding: 23px !important;
+    position: absolute !important;
+}
+
+.letraBranca{
+    color: #ffffff !important;
+}
+
+#geral {
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    margin: auto;
+    width: 400px;
+    height: 410px;
+    padding: 0px;
+    border: solid 1pX black;
+    background-color: #fff;
+}
+
+.dadosPreenchidos {
+    top: 163px;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    margin: auto;
+    width: 350px;
+    height: 500px;
+    padding: 0px;
+}
+
+.popupRedefinirSenhaBalconista {
+    position: fixed;
+    top: -100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 155px;
+    padding: 15px;
+    border: solid 1pX black;
+    background: white;
+    display: none;
+}
+
+.fecharRedefinirSenhaBalconista {
+    position: absolute;
+    top: -116px;
+    bottom: 0;
+    left: 0;
+    right: -460px;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border: black 1px solid;
+    border-radius: 3px;
+    background: #ffffff;
+    color: blue;
+}
