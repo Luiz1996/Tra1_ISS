@@ -115,6 +115,27 @@ ALTER TABLE `bibliotec`.`usuarios` AUTO_INCREMENT = 4;
 ALTER TABLE `bibliotec`.`livro` AUTO_INCREMENT = 11;
 commit;
 
+CREATE TABLE `bibliotec`.`cotacao` (
+    `codcotacao` INT NOT NULL AUTO_INCREMENT,
+    `valor` DOUBLE NULL,
+    `datacad` DATE NULL,
+    `dataalt` DATE NULL,
+    `ativo` INT NULL,
+    PRIMARY KEY (`codcotacao`)
+);
+COMMIT;
+
+ALTER TABLE `bibliotec`.`cotacao` 
+CHANGE COLUMN `valor` `valor` DOUBLE NOT NULL ,
+CHANGE COLUMN `datacad` `datacad` DATE NOT NULL ,
+CHANGE COLUMN `ativo` `ativo` INT(11) NOT NULL ;
+COMMIT;
+
+ALTER TABLE `bibliotec`.`cotacao` 
+CHANGE COLUMN `datacad` `dataini` DATE NOT NULL ,
+CHANGE COLUMN `dataalt` `datafim` DATE NULL DEFAULT NULL ;
+COMMIT;
+
 DROP EVENT IF EXISTS `RESETA_RESERVAS`;
 CREATE EVENT RESETA_RESERVAS
 ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 5 MINUTE
