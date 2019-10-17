@@ -6,6 +6,7 @@ import br.uem.din.bibliotec.config.model.Cotacao;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 @Named
 @SessionScoped
@@ -38,10 +39,19 @@ public class CotacaoController implements Serializable {
             cotacao.setColorMsgRetorno("red");
         }else{
             cotacaoDao.cadastrarCotacao(cotacao);
-            cotacao.setMsgRetorno("SUCESSO: A cotação de R$"+cotacao.getValor()+" foi cadastrada com sucesso.");
+            cotacao.setMsgRetorno("SUCESSO: A cotação de R$"+formataDoubleCasasDecimais(cotacao.getValor())+" foi cadastrada com sucesso.");
             cotacao.setColorMsgRetorno("green");
         }
 
         return "/acessoBalconista?faces-redirect=true";
+    }
+
+    public String formataDoubleCasasDecimais(Double valorDouble){
+        DecimalFormat dF = new DecimalFormat("0.00");
+        return dF.format(valorDouble);
+    }
+
+    public String consultarCotacao(){
+        return formataDoubleCasasDecimais(cotacaoDao.consultarCotacaoEmVigor(cotacao));
     }
 }

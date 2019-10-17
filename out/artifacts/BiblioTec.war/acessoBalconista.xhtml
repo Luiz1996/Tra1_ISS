@@ -29,6 +29,9 @@
             <font color="#{livroController.livro.color_msg_retorno}">
                 #{livroController.livro.msg_retorno}
             </font>
+            <font color="#{cotacaoController.cotacao.colorMsgRetorno}">
+                #{cotacaoController.cotacao.msgRetorno}
+            </font>
         </b>
     </div>
     <i><h1 align="center"> BiblioTec </h1></i>
@@ -105,6 +108,9 @@
                 </h:form>
             </div>
         </section>
+    </div>
+    <div class="msgCotacaoEmVigor">
+        <p:outputLabel value="A cotação em vigor é de R$#{cotacaoController.consultarCotacao()} por dia de atraso."/>
     </div>
     <div class="jumbotron" id="utilitarios">
         <section alig="center" class="row">

@@ -6,4 +6,9 @@ public class CotacaoDao {
     public void cadastrarCotacao(Cotacao cotacao) {
         System.out.println("fazer insert aqui");
     }
+
+    public Double consultarCotacaoEmVigor(Cotacao cotacao) {
+        System.out.println("fazer consulta e retornar dado formatado");
+        return 0.0;
+    }
 }
