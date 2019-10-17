@@ -22,6 +22,7 @@ import java.sql.Statement;
                                                      "/consultarEmprestimo.xhtml",
                                                      "/alterarEmprestimo.xhtml",
                                                      "/deletarEmprestimo.xhtml",
+                                                     "/redefinirSenhaBalconista.xhtml",
                                                      "/consultarAcervoBalconista.xhtml"
          })
 

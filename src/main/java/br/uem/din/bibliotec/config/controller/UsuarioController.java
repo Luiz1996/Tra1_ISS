@@ -238,4 +238,9 @@ public class UsuarioController implements Serializable {
 
         userDao.carregarDadosUsuario(user);
     }
+
+    public String realizaRedefinirSenha() throws NoSuchAlgorithmException {
+        retorno = userDao.redefSenha(user);
+        return userDao.homePage();
+    }
 }

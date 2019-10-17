@@ -472,4 +472,63 @@ public class UsuarioDao {
         }
         return 1;
     }
+
+    public int redefSenha(Usuario user) throws NoSuchAlgorithmException {
+        //removendo caracteres da inputMask
+        user.setCpf(user.getCpf().replace(".", ""));
+        user.setCpf(user.getCpf().replace("-", ""));
+
+        if(user.getSenha().trim().equals("")){
+            //gerando nova senha randomicamente
+            UUID uuid = UUID.randomUUID();
+            String myRandom = uuid.toString();
+            user.setSenha(myRandom.substring(0,20));
+        }
+
+        try {
+            //realiza conexão com banco de dados
+            Conexao con = new Conexao();
+            con.conexao.setAutoCommit(true);
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = null;
+
+            st.execute( "SELECT \n" +
+                    "    COALESCE(u.nome, '') as nome, COALESCE(u.ativo,0) as ativo, COALESCE(u.permissao,0) as permissao\n" +
+                    "FROM\n" +
+                    "    usuarios u\n" +
+                    "WHERE\n" +
+                    "    u.cpf = '" + user.getCpf().trim() + "'      AND\n" +
+                    "\tu.email = '" + user.getEmail().trim() + "' AND\n" +
+                    "    u.datanasc = '" + dtFormat.formatadorDatasMySQL(user.getDatanasc().trim()) + "';");
+
+            rs = st.getResultSet();
+
+            while(rs.next()){
+                user.setNome(rs.getString("nome").trim());
+                user.setAtivo(rs.getInt("ativo"));
+                user.setPermissao(rs.getInt("permissao"));
+            }
+
+            
+
+            st.executeUpdate("update\n" +
+                    "\tusuarios u\n" +
+                    "set\n" +
+                    "\tu.senha = '" + cript.makeEncryptionMd5(user.getSenha().trim()).trim() + "'\n" +
+                    "where\n" +
+                    "    u.cpf = '" + user.getCpf().trim() + "'      AND\n" +
+                    "\tu.email = '" + user.getEmail().trim() + "' AND\n" +
+                    "    u.datanasc = '" + dtFormat.formatadorDatasMySQL(user.getDatanasc().trim()) + "';");
+
+            //Enviando e-mail contendo nova senha
+            email.setAssunto("Redefinição de Senha - Biblioteca X");
+            email.setEmailDestinatario(user.getEmail().trim());
+            email.setMsg("Olá " + user.getNome() + ", <br><br>Sua senha foi redefinida com sucesso!<br><br>Nova Senha: <b>" + user.getSenha().trim() + "</b>");
+            email.enviarGmail();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return 0;
+        }
+        return 1;
+    }
 }
