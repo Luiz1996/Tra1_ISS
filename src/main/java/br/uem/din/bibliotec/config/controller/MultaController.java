@@ -28,4 +28,31 @@ public class MultaController implements Serializable {
     public MultaDao getMultaDao() {
         return multaDao;
     }   
+
+    public void setMultaDao(MultaDao multaDao) {
+        this.multaDao = multaDao;
+    }
+
+    public List<Multa> consultarMultasPorCpf(){
+        multa.setCpfUsuario(multa.getCpfUsuario().replace(".",""));
+        multa.setCpfUsuario(multa.getCpfUsuario().replace("-",""));
+
+        return multaDao.consultarMultasCpf(multa);
+    }
+
+    public String baixarMultas(){
+        multaDao.baixarMultas(multa);
+        multa.setMsgRetorno("SUCESSO: As multas selecionadas foram baixadas com sucesso.");
+        multa.setColorMsgRetorno("green");
+        return usuarioDao.homePage();
+    }
+
+    public double totalEmMultas(int codUsuario){
+        return multaDao.valorTotalMultas(codUsuario);
+    }
+
+    public List<Multa> consultarMinhasMultas(){
+        multa.setCodUsuario(usuarioDao.obterCodUsuario());
+        return multaDao.consultarMinhasMultasCpf(multa);
+    }
 }
