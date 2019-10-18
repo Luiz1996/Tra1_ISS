@@ -485,6 +485,12 @@ public class UsuarioDao {
             user.setSenha(myRandom.substring(0,20));
         }
 
+        //validando se CPF é válido
+        validaCpf = validaDados.validCpf(user.getCpf().trim());
+        if(!validaCpf){
+            return -1;
+        }
+
         try {
             //realiza conexão com banco de dados
             Conexao con = new Conexao();
@@ -509,7 +515,17 @@ public class UsuarioDao {
                 user.setPermissao(rs.getInt("permissao"));
             }
 
-            
+            if(user.getNome().equals("".trim())){
+                return -4;
+            }
+
+            if(user.getAtivo() == 0){
+                return -2;
+            }
+
+            if(user.getPermissao() == 0){
+                return -3;
+            }
 
             st.executeUpdate("update\n" +
                     "\tusuarios u\n" +
