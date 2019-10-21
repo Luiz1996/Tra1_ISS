@@ -241,6 +241,37 @@ public class UsuarioController implements Serializable {
 
     public String realizaRedefinirSenha() throws NoSuchAlgorithmException {
         retorno = userDao.redefSenha(user);
+
+        if(retorno == 1){
+            user.setColor_msg(SUCESSO);
+            user.setMsg_autenticacao("Sucesso - Senha enviada no e-mail.");
+        }else{
+            if(retorno == 0){
+                user.setColor_msg(FALHA);
+                user.setMsg_autenticacao("Falha - Erro ao redefinir senha.");
+            }else{
+                if(retorno == -1){
+                    user.setColor_msg(FALHA);
+                    user.setMsg_autenticacao("Falha - CPF informado é inválido.");
+                }else{
+                    if(retorno == -2){
+                        user.setColor_msg(FALHA);
+                        user.setMsg_autenticacao("Falha - Usuário inativo.");
+                    }else{
+                        if(retorno == -3){
+                            user.setColor_msg(FALHA);
+                            user.setMsg_autenticacao("Falha - Usuário sem permissões.");
+                        }else{
+                            if(retorno == -4){
+                                user.setColor_msg(FALHA);
+                                user.setMsg_autenticacao("Falha - Dados inválidos.");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         return userDao.homePage();
     }
 }
