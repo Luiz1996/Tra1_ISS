@@ -17,6 +17,9 @@
 
 </h:head>
 <h:body>
+    <div class="reset">
+        #{cotacaoController.cotacao.valor = ''}
+    </div>
     <!--RETORNOS-->
     <div align="left" class="retornos" id="retornos">
         <b>
@@ -199,6 +202,7 @@
             #{emprestimoController.emp.nome_user = ''}
             #{usuarioController.user.jaativado = 0}
             #{usuarioController.user.busca = ''}
+            #{cotacaoController.cotacao.msgRetorno = ''}
         </div>
         <div class="form-group" id="perfil">
             <p> Perfil: Balconista</p>

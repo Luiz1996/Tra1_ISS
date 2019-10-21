@@ -48,7 +48,7 @@ public class CotacaoController implements Serializable {
 
     public String formataDoubleCasasDecimais(Double valorDouble){
         DecimalFormat dF = new DecimalFormat("0.00");
-        return dF.format(valorDouble);
+        return dF.format(valorDouble).trim();
     }
 
     public String consultarCotacao(){

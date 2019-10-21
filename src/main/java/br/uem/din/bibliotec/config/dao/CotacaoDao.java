@@ -9,7 +9,22 @@ import java.sql.Statement;
 
 public class CotacaoDao {
     public void cadastrarCotacao(Cotacao cotacao) {
-        System.out.println("fazer insert aqui");
+        try{
+            Conexao con = new Conexao();
+            con.conexao.setAutoCommit(true);
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+            st.executeUpdate("UPDATE cotacao SET ativo = '0', datafim = CURRENT_DATE() WHERE ativo = '1' and codcotacao > 0;");
+
+            st.executeUpdate("INSERT INTO `bibliotec`.`cotacao` (`valor`, `dataini`, `ativo`) VALUES ('"+cotacao.getValor()+"', current_Date(), '1');");
+
+            st.close();
+            con.conexao.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+            cotacao.setMsgRetorno("FALHA: Ocorreu uma falha ao cadastrar nova cotação, contacte o administrador.");
+            cotacao.setColorMsgRetorno("red");
+        }
     }
 
     public double consultarCotacaoEmVigor(Cotacao cotacao) {

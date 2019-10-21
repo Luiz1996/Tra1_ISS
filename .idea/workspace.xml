@@ -8,8 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/acessoBalconista.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/acessoBalconista.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/CotacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/CotacaoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/CotacaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/CotacaoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoBalconista.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -420,7 +426,9 @@
       <workItem from="1571176681659" duration="2575000" />
       <workItem from="1571263281716" duration="960000" />
       <workItem from="1571353403336" duration="1087000" />
-      <workItem from="1571437055244" duration="272000" />
+      <workItem from="1571437055244" duration="592000" />
+      <workItem from="1571490858562" duration="1723000" />
+      <workItem from="1571653735757" duration="1513000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -639,7 +647,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571354244136</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;Método de consulta da cotação atual/em vigor finalizado!&#10;&#10;Criei comando de insert de cotação no bkp_banco.sql&#10;&#10;FALTA FAZER:&#10;Método para inserir cotação no banco de dados;">
+      <created>1571437481987</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1571437481987</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -668,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Quarto commit:&#10;-Adicionado retorno de falha no login do usuário;&#10;-Corrigido posicionamento do div de ajuda do bibliotecário." />
     <MESSAGE value="Quinto commit:&#10;-Inserido placeholder nos campos de input text;&#10;-Realizado novas validações e tratativas de erros quanto ao fornecimento do id do livro por parte do usuário" />
     <MESSAGE value="Sexto commit:&#10;-Correção na classe de conexão com banco de dados." />
     <MESSAGE value="Sétimo commit:&#10;-Subindo projeto completo, todos arquivos." />
@@ -693,7 +707,8 @@
     <MESSAGE value="Iniciado a criação da tela de cadastramento de cotação." />
     <MESSAGE value="Finalizando a view, falta alguns detalhes de formatação de números moeda(reais, decimal).&#10;&#10;Modelei a criação da tabela cotação no banco de dados, dentro do bkp_banco.sql&#10;&#10;Coloquei mensagens de retorno ao realizar o processo(na view)" />
     <MESSAGE value="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;FALTA FAZER:&#10;Método para inserir cotação no banco de dados;&#10;Método de consulta da cotação atual/em vigor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;FALTA FAZER:&#10;Método para inserir cotação no banco de dados;&#10;Método de consulta da cotação atual/em vigor." />
+    <MESSAGE value="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;Método de consulta da cotação atual/em vigor finalizado!&#10;&#10;Criei comando de insert de cotação no bkp_banco.sql&#10;&#10;FALTA FAZER:&#10;Método para inserir cotação no banco de dados;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;Método de consulta da cotação atual/em vigor finalizado!&#10;&#10;Criei comando de insert de cotação no bkp_banco.sql&#10;&#10;FALTA FAZER:&#10;Método para inserir cotação no banco de dados;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
