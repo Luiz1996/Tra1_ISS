@@ -115,6 +115,7 @@ ALTER TABLE `bibliotec`.`usuarios` AUTO_INCREMENT = 4;
 ALTER TABLE `bibliotec`.`livro` AUTO_INCREMENT = 11;
 commit;
 
+DROP TABLE IF EXISTS `cotacao`;
 CREATE TABLE `bibliotec`.`cotacao` (
     `codcotacao` INT NOT NULL AUTO_INCREMENT,
     `valor` DOUBLE NULL,
@@ -134,11 +135,6 @@ COMMIT;
 ALTER TABLE `bibliotec`.`cotacao` 
 CHANGE COLUMN `datacad` `dataini` DATE NOT NULL ,
 CHANGE COLUMN `dataalt` `datafim` DATE NULL DEFAULT NULL ;
-COMMIT;
-
-LOCK TABLES `cotacao` WRITE;
-INSERT INTO `bibliotec`.`cotacao` (`codcotacao`, `valor`, `dataini`, `ativo`) VALUES ('1', '02.50', '2019-10-15', '1');
-UNLOCK TABLES;
 COMMIT;
 
 DROP EVENT IF EXISTS `RESETA_RESERVAS`;
