@@ -139,11 +139,54 @@ COMMIT;
 
 DROP EVENT IF EXISTS `RESETA_RESERVAS`;
 CREATE EVENT RESETA_RESERVAS
-ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 5 MINUTE
+ON SCHEDULE EVERY 15 MINUTE
+STARTS CURRENT_TIMESTAMP
 ON COMPLETION PRESERVE
 DO
-   update `bibliotec`.`livro` l set l.datares = null, l.usuariores = null where (l.datares < current_date());
-commit;   	
+	UPDATE `bibliotec`.`reserva` SET DATAALT = CURRENT_DATE(), ATIVO = '0' WHERE DATARES < CURRENT_DATE();
+COMMIT;
 
-SET GLOBAL event_scheduler  = 1;
-commit
+SET GLOBAL event_scheduler = ON;
+COMMIT;
+
+DROP TABLE IF EXISTS `reserva`;
+CREATE TABLE `bibliotec`.`reserva` (
+    `codreserva` INT NOT NULL,
+    `codlivro` INT NOT NULL,
+    `codusuario` INT NOT NULL,
+    `datacad` DATE NOT NULL,
+    `ativo` INT NOT NULL,
+    PRIMARY KEY (`codreserva`),
+    INDEX `res-livro_idx` (`codlivro` ASC),
+    INDEX `res-usuario_idx` (`codusuario` ASC),
+    CONSTRAINT `res-livro` FOREIGN KEY (`codlivro`)
+        REFERENCES `bibliotec`.`livro` (`codlivro`)
+        ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT `res-usuario` FOREIGN KEY (`codusuario`)
+        REFERENCES `bibliotec`.`usuarios` (`codusuario`)
+        ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+COMMIT;
+
+ALTER TABLE `bibliotec`.`reserva`
+CHANGE COLUMN `codreserva` `codreserva` INT(11) NOT NULL AUTO_INCREMENT ;
+COMMIT;
+
+ALTER TABLE `bibliotec`.`reserva`
+ADD COLUMN `dataalt` DATE NULL AFTER `datacad`;
+COMMIT;
+
+ALTER TABLE `bibliotec`.`reserva`
+CHANGE COLUMN `dataalt` `dataalt` DATE NOT NULL ;
+COMMIT;
+
+ALTER TABLE `bibliotec`.`reserva`
+CHANGE COLUMN `dataalt` `dataalt` DATE NULL ;
+COMMIT;
+
+ALTER TABLE `bibliotec`.`reserva`
+ADD COLUMN `datares` DATE NULL AFTER `dataalt`;
+COMMIT;
+
+USE `bibliotec`;
+COMMIT;

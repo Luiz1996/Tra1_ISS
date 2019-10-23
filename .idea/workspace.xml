@@ -9,8 +9,6 @@
     <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bkp_banco.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bkp_banco.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoBalconista.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -425,7 +423,8 @@
       <workItem from="1571490858562" duration="1723000" />
       <workItem from="1571653735757" duration="1712000" />
       <workItem from="1571787007563" duration="259000" />
-      <workItem from="1571787465016" duration="528000" />
+      <workItem from="1571787465016" duration="621000" />
+      <workItem from="1571845495080" duration="261000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -658,7 +657,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571655303261</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Alterado arquivo bkp_banco.sql e também modelagem da classe Reserva.">
+      <created>1571788051056</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1571788051057</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -687,7 +693,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sexto commit:&#10;-Correção na classe de conexão com banco de dados." />
     <MESSAGE value="Sétimo commit:&#10;-Subindo projeto completo, todos arquivos." />
     <MESSAGE value="Oitavo commit:&#10;-Realizado a criação de variáveis constantes contendo as cores das mensagens de retornos;&#10;-Todo backend foi comentado de modo a facilitar entendimento." />
     <MESSAGE value="Dados do commit:&#10;-Realizado alterações na altenticação&#10;-Usuários estão conseguindo realizar cadastros&#10;-Melhoria nas mensagens de retornos" />
@@ -712,7 +717,8 @@
     <MESSAGE value="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;FALTA FAZER:&#10;Método para inserir cotação no banco de dados;&#10;Método de consulta da cotação atual/em vigor." />
     <MESSAGE value="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;Método de consulta da cotação atual/em vigor finalizado!&#10;&#10;Criei comando de insert de cotação no bkp_banco.sql&#10;&#10;FALTA FAZER:&#10;Método para inserir cotação no banco de dados;" />
     <MESSAGE value="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;Método de consulta da cotação atual/em vigor finalizado!&#10;&#10;Criei comando de insert de cotação no bkp_banco.sql&#10;&#10;Método para inserir cotação no banco de dados finalizado!&#10;&#10;Funcionalidade entregue..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Frontend finalizado!&#10;&#10;CSS finalizado!&#10;&#10;Formatação de números double finalizado!&#10;&#10;Classes Cotacao e CotacaoController Finalizadas!&#10;&#10;Modelagem do banco de dados finalizado!&#10;&#10;Método de consulta da cotação atual/em vigor finalizado!&#10;&#10;Criei comando de insert de cotação no bkp_banco.sql&#10;&#10;Método para inserir cotação no banco de dados finalizado!&#10;&#10;Funcionalidade entregue..." />
+    <MESSAGE value="Alterado arquivo bkp_banco.sql e também modelagem da classe Reserva." />
+    <option name="LAST_COMMIT_MESSAGE" value="Alterado arquivo bkp_banco.sql e também modelagem da classe Reserva." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
