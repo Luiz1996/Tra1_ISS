@@ -238,3 +238,9 @@
     background: #ffffff;
     color: blue;
 }
+
+.dataTableConfig{
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+}

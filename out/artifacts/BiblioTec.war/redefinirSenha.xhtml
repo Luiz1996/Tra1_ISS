@@ -15,7 +15,7 @@
     <script type="text/javascript" src="JS/validacoesUsuario.js"/>
 
 </h:head>
-<h:body styleClass="fundoCinza">
+<h:body>
     #{usuarioController.user.senha = ''}
     <h1 align="center"> BiblioTec </h1>
 
@@ -62,9 +62,9 @@
                                      maxlength="10"/>
                     </div>
                     <div class="clear15"></div>
-                        <h:commandButton value="Redefinir Senha" 
-                                         class="btn btn-block buttonAcervo"
-                                         action="#{usuarioController.realizaRedefinirSenha}"/>
+                    <h:commandButton value="Redefinir Senha"
+                                     class="btn btn-block buttonAcervo"
+                                     action="#{usuarioController.realizaRedefinirSenha}"/>
 
                 </h:form>
             </div>
