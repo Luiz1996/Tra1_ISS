@@ -2,8 +2,8 @@ package br.uem.din.bibliotec.config.dao;
 
 import br.uem.din.bibliotec.config.conexao.Conexao;
 import br.uem.din.bibliotec.config.model.Livro;
-import br.uem.din.bibliotec.config.services.FormataData;
 import br.uem.din.bibliotec.config.services.Email;
+import br.uem.din.bibliotec.config.services.FormataData;
 
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
@@ -502,5 +502,29 @@ public class LivroDao {
             return 0;
         }
         return 1;
+    }
+
+    public int verificaDispLivro(int codLivro) {
+        int dispLivro = 0;
+        try{
+            Conexao con = new Conexao();
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            con.conexao.setAutoCommit(true);
+
+            st.execute("select disponibilidade from livro where codlivro = '"+codLivro+"';");
+
+            ResultSet rs = st.getResultSet();
+
+            while(rs.next()){
+                dispLivro = rs.getInt("disponibilidade") ;
+            }
+
+            st.close();
+            rs.close();
+            con.conexao.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return dispLivro;
     }
 }

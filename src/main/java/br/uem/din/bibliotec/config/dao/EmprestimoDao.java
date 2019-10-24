@@ -3,10 +3,12 @@ package br.uem.din.bibliotec.config.dao;
 import br.uem.din.bibliotec.config.conexao.Conexao;
 import br.uem.din.bibliotec.config.model.Emprestimo;
 import br.uem.din.bibliotec.config.model.Livro;
+import br.uem.din.bibliotec.config.model.Reserva;
 import br.uem.din.bibliotec.config.model.Usuario;
-import br.uem.din.bibliotec.config.services.FormataDocs;
-import br.uem.din.bibliotec.config.services.FormataData;
 import br.uem.din.bibliotec.config.services.Email;
+import br.uem.din.bibliotec.config.services.FormataData;
+import br.uem.din.bibliotec.config.services.FormataDocs;
+
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import java.sql.ResultSet;
@@ -693,5 +695,44 @@ public class EmprestimoDao {
             System.out.println("Erro ao consultar empréstimos atrasados!");
         }
         return qtde_atrasado;
+    }
+
+    public int livroJaEmprestado(Reserva reserva){
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+        String usuarioLogado = (String)session.getAttribute("usuario");
+        int jaEmprestado = 0;
+
+        try{
+            Conexao con = new Conexao();
+            con.conexao.setAutoCommit(true);
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs;
+
+            st.execute( "select\n" +
+                    "\tcoalesce(e.codemprestimo,0) jaEmprestado\n" +
+                    "from\n" +
+                    "\temprestimo e\n" +
+                    "inner join\n" +
+                    "\tusuarios   u on u.codusuario = e.codusuario\n" +
+                    "where\n" +
+                    "\te.codlivro = '"+reserva.getCodLivro()+"' and\n" +
+                    "\te.ativo = '1' and\n" +
+                    "    u.usuario = '"+usuarioLogado+"';");
+
+            rs = st.getResultSet();
+
+            while(rs.next()){
+                jaEmprestado = rs.getInt("jaEmprestado");
+            }
+
+            st.close();
+            rs.close();
+            con.conexao.close();
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            reserva.setMsgRetorno("FALHA: Este livro já está reservado para você.");
+            reserva.setColorMsgRetorno("red");
+        }
+        return jaEmprestado;
     }
 }

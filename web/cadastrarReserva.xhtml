@@ -32,7 +32,7 @@
                 <h:form>
                     <div class="selectItens">
                         <p:outputLabel value="Livros"/><font color="red">*</font>
-                        <p:selectOneMenu filter="true" value="#{livroController.livro.codlivro}" filterMatchMode="contains"
+                        <p:selectOneMenu filter="true" value="#{reservaController.reserva.codLivro}" filterMatchMode="contains"
                                          required="true" style="width:1290px" panelStyle="width:1290px">
                             <f:selectItem noSelectionOption="true" itemLabel="Selecione um livro"/>
                             <f:selectItems value="#{livroController.realizarConsultaLivro()}" var="book"
@@ -41,7 +41,7 @@
                         </p:selectOneMenu>
                         <div class="form-group">
                             <h:commandButton value="Reservar" class="btn btn-block btn-primary"
-                                             action="#{livroController.realizaReservaLivro}"/>
+                                             action="#{reservaController.cadastrarReserva}"/>
                         </div>
                     </div>
                 </h:form>
