@@ -20,6 +20,7 @@ public class Emprestimo {
     private String rg_user = "";
     private String cpf_user = "";
     private int atrasado = 0;
+    private String dataEntrega;
 
     //declaração dos contrutores e gets/sets
     public Emprestimo( int codemprestimo, int codusuario, int codlivro, String dataemp, String datadev, String dataalt, int ativo, String msg_retorno, String color_msg_retorno, String nome_user, String email_user, String titulo_book, String autor_book, String editora_book, String anolancamento_book, String status_emp) {
@@ -72,6 +73,10 @@ public class Emprestimo {
         this.rg_user = rg_user;
         this.cpf_user = cpf_user;
     }
+
+    public String getDataEntrega() { return dataEntrega; }
+
+    public void setDataEntrega(String dataEntrega) { this.dataEntrega = dataEntrega; }
 
     public int getAtrasado() { return atrasado; }
 

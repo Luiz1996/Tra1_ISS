@@ -87,8 +87,8 @@ public class EmprestimoDao {
         return livros_emp;
     }
 
-    public int cadastrarEmprestimo(Emprestimo emp) throws SQLException {
-        String datadev = "", dataemp = "", email_user_emp = "", titulo_book_emp = "", nome_user_emp = "";
+    public void cadastrarEmprestimo(Emprestimo emprestimo) throws SQLException {
+        /*String datadev = "", dataemp = "", email_user_emp = "", titulo_book_emp = "", nome_user_emp = "";
 
         try {
             //realiza conexão com banco de dados
@@ -158,7 +158,59 @@ public class EmprestimoDao {
 
             return 1;
         } catch (SQLException e) {
+            System.out.println(e.getMessage().trim());
             return -1;
+        }*/
+        try{
+            Conexao con = new Conexao();
+            con.conexao.setAutoCommit(true);
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+            st.executeUpdate("INSERT INTO `bibliotec`.`emprestimo` (`codusuario`, `codlivro`, `dataemp`, `datadev`, `ativo`) VALUES ('"+emprestimo.getCodusuario()+"', '"+emprestimo.getCodlivro()+"', current_date(), DATE_ADD(current_date(), INTERVAL 7 DAY) , '1');");
+
+            st.executeUpdate("UPDATE `bibliotec`.`livro` SET `disponibilidade` = '0' WHERE (`codlivro` = '"+emprestimo.getCodlivro()+"');");
+
+            st.execute( "select\n" +
+                    "\tMAX(e.codemprestimo) as ultimoEmprestimo,\n" +
+                    "\tu.nome,\n" +
+                    "    u.email,\n" +
+                    "    l.titulo,\n" +
+                    "    e.dataemp,\n" +
+                    "    e.datadev\n" +
+                    "from\n" +
+                    "\temprestimo e\n" +
+                    "inner join\n" +
+                    "\tusuarios   u on u.codusuario = e.codusuario\n" +
+                    "inner join\n" +
+                    "\tlivro      l on l.codlivro = e.codlivro\n" +
+                    "where\n" +
+                    "\te.ativo = '1' and\n" +
+                    "    e.codusuario = '"+emprestimo.getCodusuario()+"' and\n" +
+                    "    e.codlivro = '"+emprestimo.getCodlivro()+"';");
+
+            ResultSet rs = st.getResultSet();
+
+            while (rs.next()){
+                emprestimo.setCodemprestimo(rs.getInt("ultimoEmprestimo"));
+                emprestimo.setNome_user(rs.getString("nome"));
+                emprestimo.setEmail_user(rs.getString("email"));
+                emprestimo.setTitulo_book(rs.getString("titulo"));
+                emprestimo.setDataemp(dtFormat.formatadorDatasBrasil(rs.getString("dataemp")));
+                emprestimo.setDatadev(dtFormat.formatadorDatasBrasil(rs.getString("datadev")));
+            }
+
+            st.close();
+            rs.close();
+            con.conexao.close();
+
+            email.setAssunto("Empréstimo de Livro - Biblioteca X");
+            email.setEmailDestinatario(emprestimo.getEmail_user());
+            email.setMsg("Olá "+emprestimo.getNome_user()+", <br><br>O empréstimo do livro <b>'"+emprestimo.getTitulo_book()+"'</b> foi realizado com sucesso! <br><br> Data do Empréstimo: <b>"+emprestimo.getDataemp()+"</b>. <br> Data da Devolução...: <b>"+emprestimo.getDatadev()+"</b>. <br><br>Fique atento à data de devolução.");
+            email.enviarGmail();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+            emprestimo.setMsg_retorno("FALHA: Ocorreu uma falha ao cadastrar o empréstimo, contacte o administrador.");
+            emprestimo.setColor_msg_retorno("red");
         }
     }
 
@@ -373,8 +425,8 @@ public class EmprestimoDao {
         return emprestimos;
     }
 
-    public int finalizarEmprestimo(Emprestimo emp){
-        String data_res = "";
+    public void finalizarEmprestimo(Emprestimo emprestimo){
+        /*String data_res = "";
         Livro livroObserver = new Livro();
         Usuario user= new Usuario(livroObserver);
 
@@ -476,7 +528,87 @@ public class EmprestimoDao {
         }catch (SQLException e){
             return 0;
         }
-        return 1;
+        return 1;*/
+
+        Livro livroObserver = new Livro();
+        Usuario usuarioObserver = new Usuario(livroObserver);
+        Reserva reserva = new Reserva();
+        ReservaDao reservaDao = new ReservaDao();
+
+        try{
+            Conexao con = new Conexao();
+            con.conexao.setAutoCommit(true);
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+            //alterando status do empréstimo
+            st.executeUpdate("UPDATE \n" +
+                    "\temprestimo e \n" +
+                    "SET \n" +
+                    "    e.dataentr = CURRENT_DATE(),\n" +
+                    "    e.dataalt = CURRENT_DATE(),\n" +
+                    "    ativo = '0'\n" +
+                    "WHERE\n" +
+                    "    e.codemprestimo = '"+emprestimo.getCodemprestimo()+"' AND \n" +
+                    "    e.ativo = '1';");
+
+            //alterando status do livro
+            st.executeUpdate("UPDATE \n" +
+                    "\tlivro l \n" +
+                    "SET \n" +
+                    "    l.disponibilidade = '1'\n" +
+                    "WHERE\n" +
+                    "    l.codlivro = '"+emprestimo.getCodlivro()+"' and\n" +
+                    "    l.ativo = '1';");
+
+            //obtendo dados do usuário do empréstimo, para comunicá-lo quanto ao sucesso na devolução
+            st.execute("SELECT \n" +
+                    "    u.nome,\n" +
+                    "    u.email,\n" +
+                    "    l.titulo,\n" +
+                    "    e.dataemp,\n" +
+                    "    e.dataentr\n" +
+                    "FROM\n" +
+                    "    emprestimo e\n" +
+                    "INNER JOIN\n" +
+                    "    usuarios u ON u.codusuario = e.codusuario\n" +
+                    "INNER JOIN\n" +
+                    "    livro l ON l.codlivro = e.codlivro\n" +
+                    "WHERE\n" +
+                    "    e.ativo = '0' and \n" +
+                    "    e.codemprestimo = '"+emprestimo.getCodemprestimo()+"';");
+
+            ResultSet rs = st.getResultSet();
+
+            while (rs.next()){
+                emprestimo.setNome_user(rs.getString("nome"));
+                emprestimo.setEmail_user(rs.getString("email"));
+                emprestimo.setTitulo_book(rs.getString("titulo"));
+                emprestimo.setDataemp(dtFormat.formatadorDatasBrasil(rs.getString("dataemp")));
+                emprestimo.setDataEntrega(dtFormat.formatadorDatasBrasil(rs.getString("dataentr")));
+            }
+
+            email.setAssunto("Devolução de Livro - Biblioteca X");
+            email.setEmailDestinatario(emprestimo.getEmail_user());
+            email.setMsg("Olá "+emprestimo.getNome_user()+", <br><br>O livro <b>'"+emprestimo.getTitulo_book()+"'</b> foi devolvido com sucesso! <br><br> Data do Empréstimo: <b>"+emprestimo.getDataemp()+"</b>. <br> Data da Entrega...: <b>"+emprestimo.getDataEntrega()+"</b>.");
+            email.enviarGmail();
+
+            //tratando caso o livro esteja reservado(OBSERVER)
+            reserva.setCodLivro(emprestimo.getCodlivro());
+            if(reservaDao.livroJaReservadoQualquerUsuario(reserva) > 0){
+                reserva.setCodUsuario(reservaDao.obterDadosReserva(reserva));
+                reservaDao.atualizarStatusReserva(reserva);
+                reservaDao.obterDadosAlunoReservaObserver(reserva, livroObserver);
+            }
+
+            st.close();
+            rs.close();
+            con.conexao.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+            emprestimo.setMsg_retorno("FALHA: Ocorreu uma falha ao dar baixa em livro.");
+            emprestimo.setColor_msg_retorno("red");
+        }
+
     }
 
     public int editarEmprestimo(Emprestimo emp) throws ParseException {

@@ -1,8 +1,8 @@
 package br.uem.din.bibliotec.config.controller;
 
+import br.uem.din.bibliotec.config.dao.EmprestimoDao;
 import br.uem.din.bibliotec.config.dao.UsuarioDao;
 import br.uem.din.bibliotec.config.model.Emprestimo;
-import br.uem.din.bibliotec.config.dao.EmprestimoDao;
 import br.uem.din.bibliotec.config.model.Livro;
 import br.uem.din.bibliotec.config.model.Usuario;
 
@@ -82,40 +82,13 @@ public class EmprestimoController implements Serializable {
 
     //metodo que chama cadastrar novo empréstimo
     public String realizaCadastroEmprestimo() throws SQLException {
-        retorno = empDao.cadastrarEmprestimo(emp);
-
-        if(retorno == 0){
-            emp.setColor_msg_retorno(FALHA);
-            emp.setMsg_retorno("Retorno: O livro encontra-se reservado para outra pessoa.");
-        }else{
-            if(retorno == 1){
-                emp.setColor_msg_retorno(SUCESSO);
-                emp.setMsg_retorno("Retorno: O empréstimo do livro foi realizado com sucesso.");
-            }else{
-                if(retorno == -1){
-                    emp.setColor_msg_retorno(FALHA);
-                    emp.setMsg_retorno("Retorno: O empréstimo para falhou, contacte o administrador.");
-                }else{
-                    emp.setColor_msg_retorno(FALHA);
-                    emp.setMsg_retorno("Retorno: O usuário possui empréstimos em atraso. Favor, REGULARIZAR!");
-                }
-            }
-        }
+        empDao.cadastrarEmprestimo(emp);
         return userDao.homePage();
     }
 
     //metodo para finalizar um determinado emprestimo
     public String realizaFinalizarEmprestimo(){
-        retorno =  empDao.finalizarEmprestimo(emp);
-
-        if(retorno == 0){
-            emp.setColor_msg_retorno(FALHA);
-            emp.setMsg_retorno("Retorno: Não foi possível finalizar o empréstimo, contacte o administrador.");
-        }else{
-            //atualizando mensageria de retorno
-            emp.setColor_msg_retorno(SUCESSO);
-            emp.setMsg_retorno("Retorno: O empréstimo foi finalizado com sucesso. O livro encontra-se disponível para outros empréstimos.");
-        }
+        empDao.finalizarEmprestimo(emp);
         return userDao.homePage();
     }
 

@@ -1,6 +1,7 @@
 package br.uem.din.bibliotec.config.model;
 
 import br.uem.din.bibliotec.config.services.Email;
+
 import java.util.Objects;
 import java.util.Observable;
 import java.util.Observer;
@@ -277,13 +278,10 @@ public class Usuario implements Observer {
     //MÉTODO DO OBSERVER
     @Override
     public void update(Observable o, Object arg) {
-        //Enviando e-mail de confirmação de alteração na data de reserva
-        //Se o livro for devolvido antes da data de devolução, então a reserva do
-        //próximo usuário é adiantada também e é disparado e-mail avisando-o
         if (o instanceof Livro) {
-            sendEmail.setAssunto("Adiantamento de Reserva - Biblioteca X");
+            sendEmail.setAssunto("Atualização de Reserva - Biblioteca X");
             sendEmail.setEmailDestinatario(((Livro) o).getEmailUsuarioRes().trim());
-            sendEmail.setMsg("Olá " + ((Livro) o).getNomeUsuarioRes().trim() + ", <br><br> A sua reserva do livro <b>'" + ((Livro) o).getTitulo().trim() + "'</b> foi adiantada!<br>Nova data de retirada: <b>" + ((Livro) o).getDatares().trim() + "</b>.");
+            sendEmail.setMsg("Olá " + ((Livro) o).getNomeUsuarioRes().trim() + ", <br><br> A sua reserva do livro <b>'" + ((Livro) o).getTitulo().trim() + "'</b> está disponível!<br>Data de Retirada: <b>" + ((Livro) o).getDatares().trim() + "</b>.<br><br>Se o livro não for retirado até a data informada, automaticamente sua reserva será <b>cancelada!</b>");
             sendEmail.enviarGmail();
         }
     }
