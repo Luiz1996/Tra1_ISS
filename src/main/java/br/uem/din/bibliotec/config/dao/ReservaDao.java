@@ -34,7 +34,7 @@ public class ReservaDao {
 
             //tratando caso o livro esteja reservado(OBSERVER)
             if(livroJaReservadoQualquerUsuario(reserva) == 1 && livroDao.verificaDispLivro(reserva.getCodLivro()) == 1){
-                reserva.setCodUsuario(obterDadosReserva(reserva));
+                reserva.setCodUsuario(obterDadosReserva(reserva, false));
                 atualizarStatusReserva(reserva);
                 obterDadosAlunoReservaObserver(reserva, livroObserver);
             }
@@ -128,7 +128,7 @@ public class ReservaDao {
 
             //tratando caso o livro esteja reservado(OBSERVER)
             if(livroJaReservadoQualquerUsuario(reserva) > 0 && livroDao.verificaDispLivro(reserva.getCodLivro()) == 1){
-                reserva.setCodUsuario(obterDadosReserva(reserva));
+                reserva.setCodUsuario(obterDadosReserva(reserva, false));
                 atualizarStatusReserva(reserva);
                 obterDadosAlunoReservaObserver(reserva, livroObserver);
             }
@@ -212,23 +212,33 @@ public class ReservaDao {
         return jaReservado;
     }
 
-    public int obterDadosReserva(Reserva reserva) {
-        int usuarioReserva = 0;
-
+    public int obterDadosReserva(Reserva reserva, boolean emprestandoLivro) {
         try {
             Conexao con = new Conexao();
             Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             con.conexao.setAutoCommit(true);
             ResultSet rs;
 
-            st.execute( "SELECT \n" +
-                    "    COALESCE(MIN(r.codreserva), 0) AS codReserva,\n" +
-                    "    r.codusuario                   AS codUsuario\t\n" +
-                    "FROM\n" +
-                    "    reserva r\n" +
-                    "WHERE\n" +
-                    "    r.codlivro = '"+reserva.getCodLivro()+"' AND \n" +
-                    "    r.ativo = '1' and r.datares is null;");
+            if(emprestandoLivro){
+                st.execute( "SELECT \n" +
+                        "    COALESCE(MIN(r.codreserva), 0) AS codReserva,\n" +
+                        "    r.codusuario AS codUsuario\n" +
+                        "FROM\n" +
+                        "    reserva r\n" +
+                        "WHERE\n" +
+                        "    r.codlivro = '"+reserva.getCodLivro()+"'\n" +
+                        "        AND r.ativo = '1'\n" +
+                        "        AND NOT r.datares IS NULL;"); //considera reserva onde o livro ja esteja disponível para retirada, ou seja, datares <> null
+            }else{
+                st.execute( "SELECT \n" +
+                        "    COALESCE(MIN(r.codreserva), 0) AS codReserva,\n" +
+                        "    r.codusuario                   AS codUsuario\t\n" +
+                        "FROM\n" +
+                        "    reserva r\n" +
+                        "WHERE\n" +
+                        "    r.codlivro = '"+reserva.getCodLivro()+"' AND \n" +
+                        "    r.ativo = '1' and r.datares is null;"); //considera reservas onde o livro não está disponivel para retirada, datares == null
+            }
 
             rs = st.getResultSet();
 
@@ -236,8 +246,6 @@ public class ReservaDao {
                 reserva.setCodReserva(rs.getInt("codReserva"));
                 reserva.setCodUsuario(rs.getInt("codUsuario"));
             }
-
-            usuarioReserva = reserva.getCodUsuario();
 
             st.close();
             rs.close();
@@ -247,7 +255,7 @@ public class ReservaDao {
             reserva.setMsgRetorno("FALHA: Ocorreu uma falha ao consultar o usuário da reserva, contacte o administrador.");
             reserva.setColorMsgRetorno(FALHA);
         }
-        return usuarioReserva;
+        return reserva.getCodUsuario();
     }
 
     public void obterDadosAlunoReservaObserver(Reserva reserva, Livro livroObserver) {

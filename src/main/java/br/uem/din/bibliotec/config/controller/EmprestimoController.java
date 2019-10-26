@@ -88,6 +88,7 @@ public class EmprestimoController implements Serializable {
 
     //metodo para finalizar um determinado emprestimo
     public String realizaFinalizarEmprestimo(){
+        empDao.quantidadeDiasAtrasados(emp);
         empDao.finalizarEmprestimo(emp);
         return userDao.homePage();
     }
