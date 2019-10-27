@@ -547,4 +547,27 @@ public class UsuarioDao {
         }
         return 1;
     }
+    public void bloquearUsuario(String usuario) throws NoSuchAlgorithmException {
+        try{
+            Conexao con = new Conexao();
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            con.conexao.setAutoCommit(true);
+
+            st.executeUpdate(   "UPDATE `bibliotec`.`usuarios` \n" +
+                    "SET \n" +
+                    "    `bloq` = '1',\n" +
+                    "    `datahorabloq` = CURRENT_TIMESTAMP()\n" +
+                    "WHERE\n" +
+                    "    (`email` LIKE '"+usuario.trim()+"'   OR \n" +
+                    "     `usuario` LIKE '"+usuario.trim()+"' OR \n" +
+                    "     `cpf` LIKE '"+usuario.trim()+"'\n" +
+                    "    );");
+
+            st.close();
+            con.conexao.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
 }
