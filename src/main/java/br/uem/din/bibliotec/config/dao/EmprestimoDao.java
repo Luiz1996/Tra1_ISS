@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmprestimoDao {
-    private Email email = new Email();
+    private static Email email = new Email();
     private FormataData dtFormat = new FormataData();
     private FormataDocs docsFormat = new FormataDocs();
 
@@ -206,7 +206,7 @@ public class EmprestimoDao {
             email.setAssunto("Empréstimo de Livro - Biblioteca X");
             email.setEmailDestinatario(emprestimo.getEmail_user());
             email.setMsg("Olá "+emprestimo.getNome_user()+", <br><br>O empréstimo do livro <b>'"+emprestimo.getTitulo_book()+"'</b> foi realizado com sucesso! <br><br> Data do Empréstimo: <b>"+emprestimo.getDataemp()+"</b>. <br> Data da Devolução...: <b>"+emprestimo.getDatadev()+"</b>. <br><br>Fique atento à data de devolução.");
-            email.enviarGmail();
+            new Thread(enviarEmail).start();
         }catch (SQLException e){
             System.out.println(e.getMessage());
             emprestimo.setMsg_retorno("FALHA: Ocorreu uma falha ao cadastrar o empréstimo, contacte o administrador.");
@@ -486,7 +486,7 @@ public class EmprestimoDao {
             email.setAssunto("Devolução de Livro - Biblioteca X");
             email.setEmailDestinatario(emprestimo.getEmail_user());
             email.setMsg("Olá "+emprestimo.getNome_user()+", <br><br>O livro <b>'"+emprestimo.getTitulo_book()+"'</b> foi devolvido com sucesso! <br><br> Data do Empréstimo: <b>"+emprestimo.getDataemp()+"</b>. <br> Data da Entrega...: <b>"+emprestimo.getDataEntrega()+"</b>.");
-            email.enviarGmail();
+            new Thread(enviarEmail).start();
 
             //tratando caso o livro esteja reservado(OBSERVER)
             reserva.setCodLivro(emprestimo.getCodlivro());
@@ -815,4 +815,11 @@ public class EmprestimoDao {
         }
         return qtdeDiasAtrasados;
     }
+
+    private static final Runnable enviarEmail = new Runnable() {
+        @Override
+        public void run() {
+            email.enviarGmail();
+        }
+    };
 }

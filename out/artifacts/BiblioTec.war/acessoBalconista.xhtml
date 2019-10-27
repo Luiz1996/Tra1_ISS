@@ -75,13 +75,13 @@
                     <h5 align="center">Controle de Empréstimos</h5>
                 </div>
                 <div class="form-group">
-                    <h:commandButton value="Cadastrar" class="btn btn-block btn-primary"
+                    <h:commandButton value="Emprestar Livro" class="btn btn-block btn-primary"
                                      action="cadastrarEmprestimo?faces-redirect=true"></h:commandButton>
-                    <h:commandButton value="Consultar" class="btn btn-block btn-primary"
+                    <h:commandButton value="Consultar Empréstimo" class="btn btn-block btn-primary"
                                      action="consultarEmprestimo?faces-redirect=true"></h:commandButton>
-                    <h:commandButton value="Alterar" class="btn btn-block btn-primary"
+                    <h:commandButton value="Renovar Empréstimo" class="btn btn-block btn-primary"
                                      action="alterarEmprestimo?faces-redirect=true"></h:commandButton>
-                    <h:commandButton value="Finalizar" class="btn btn-block btn-primary"
+                    <h:commandButton value="Devolver Livro" class="btn btn-block btn-primary"
                                      action="deletarEmprestimo?faces-redirect=true"></h:commandButton>
                 </div>
             </h:form>
@@ -121,7 +121,7 @@
                     <h:commandButton value="Cancelar Reservas" class="btn btn-block btn-primary"
                                      action="cancelarReserva?faces-redirect=true"/>
                     <h:commandButton value="Minhas Reservas" class="btn btn-block btn-primary"
-                                     action="#{usuarioController.chamaMenuInicial}"/>
+                                     action="minhasReservas?faces-redirect=true"/>
                     <h:commandButton value="Meus Empréstimos" class="btn btn-block btn-primary"
                                      action="meusEmprestimos?faces-redirect=true"></h:commandButton>
                     <h:commandButton value="Dados Cadastrais" class="btn btn-block btn-primary"

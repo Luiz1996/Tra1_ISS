@@ -13,10 +13,9 @@ import java.sql.Statement;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class UsuarioDao {
-    private Email email = new Email();
+    private static Email email = new Email();
     private FormataData dtFormat =  new FormataData();
     private FormataDocs docsFormat = new FormataDocs();
     private CriptografiaMd5 cript = new CriptografiaMd5();
@@ -118,7 +117,7 @@ public class UsuarioDao {
             email.setAssunto("Confirmação de Cadastro - Biblioteca X");
             email.setEmailDestinatario(user.getEmail().trim());
             email.setMsg("Olá " + user.getNome().trim() + ", <br><br>Seu cadastro foi realizado com sucesso.<br><br>Username: <i>" + user.getUsuario().trim() + "</i>.<br>Senha: <i>" + user.getSenha().trim() + "</i>.");
-            email.enviarGmail();
+            new Thread(enviarEmail).start();
 
             st.close();
         } catch (SQLException e) {
@@ -383,7 +382,7 @@ public class UsuarioDao {
                 email.setAssunto("Confirmação de Cadastro - Biblioteca X");
                 email.setEmailDestinatario(user.getEmail().trim());
                 email.setMsg("Olá " + user.getNome().trim() + ", <br><br>Seu cadastro foi ativado com sucesso.<br>Agora você tem acesso ao nosso acervo de livros e demais funcionalidades, aproveite!");
-                email.enviarGmail();
+                new Thread(enviarEmail).start();
             }
 
             //fechando as conexões para evitar lock
@@ -472,4 +471,11 @@ public class UsuarioDao {
         }
         return 1;
     }
+
+    private static final Runnable enviarEmail = new Runnable() {
+        @Override
+        public void run() {
+            email.enviarGmail();
+        }
+    };
 }

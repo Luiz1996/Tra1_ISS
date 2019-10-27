@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LivroDao {
-    private Email email = new Email();
+    private static Email email = new Email();
     private FormataData dtFormat =  new FormataData();
 
     //método de cadastramento de livro
@@ -356,7 +356,7 @@ public class LivroDao {
                 email.setAssunto("Reserva de Livro - Biblioteca X");
                 email.setEmailDestinatario(emailres.trim());
                 email.setMsg("Olá " + usuariores + ", <br><br> A sua reserva para o livro <b>'" + titulores + "'</b> foi efetuada com sucesso.<br><br>Data de Retirada: <b>" + datares + "</b>.");
-                email.enviarGmail();
+                new Thread(enviarEmail).start();
             }
 
             st.close();
@@ -467,7 +467,7 @@ public class LivroDao {
             email.setAssunto("Cancelamento de Reserva - Biblioteca X");
             email.setEmailDestinatario(emailres);
             email.setMsg("Olá "+usuariores+", <br><br> A reserva do livro <b>'"+titulores+"'</b> foi cancelada com sucesso.");
-            email.enviarGmail();
+            new Thread(enviarEmail).start();
 
             return 1;
         }catch (Exception e){
@@ -527,4 +527,11 @@ public class LivroDao {
         }
         return dispLivro;
     }
+
+    private static final Runnable enviarEmail = new Runnable() {
+        @Override
+        public void run() {
+            email.enviarGmail();
+        }
+    };
 }
