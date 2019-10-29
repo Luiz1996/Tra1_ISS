@@ -1,5 +1,3 @@
-
-
 package br.uem.din.bibliotec.config.controller;
 
 import br.uem.din.bibliotec.config.dao.LivroDao;
