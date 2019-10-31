@@ -13,106 +13,64 @@
     <title> Cancelar Reserva | BiblioTec</title>
 
     <link href="export/images/icone.png" rel="shortcut icon" type="image/x-png"></link>
-    <link rel="stylesheet" type="text/css" href="CSS/style.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/cancelarReserva.css"/>
     <script type="text/javascript" src="JS/ajudaPopUp.js"/>
     <script type="text/javascript" src="JS/confirmacaoPopUp.js"/>
 
 </h:head>
-<h:body styleClass="fundoCinza">
-    <h1 align="center"> BiblioTec </h1>
+<h:body>
+    <i><h1 align="center"> BiblioTec </h1></i>
+    <h:form>
+        <p:menubar style="align-items: center">
+            <p:menuitem value="MENU INICIAL" action="#{usuarioController.chamaMenuInicial}"></p:menuitem>
+            <p:menuitem value="AJUDA?" url="javascript: abrir();"></p:menuitem>
+        </p:menubar>
+    </h:form>
+    <div class="jumbotron">
+        <section alig="center" class="right">
+            <h:form>
 
-    <div>
-        <h:form>
-            <p:menubar styleClass="menubarBranco">
-                <p:menuitem value="Menu Inicial" action="#{usuarioController.chamaMenuInicial}"></p:menuitem>
-            </p:menubar>
-        </h:form>
-    </div>
-    <div class="clear15"></div>
+                <p:outputLabel value="Reservas"/><font color="red">*</font>
+                <h:form id="Empréstimo">
+                    <p:selectOneMenu filter="true" value="#{livroController.livro.codlivro}" filterMatchMode="contains"
+                                     required="true" style="width:1290px" panelStyle="width:1330px">
 
-    <div class="container">
-        <div class="ui-grid">
-            <div class="ui-grid-col-12">
-                <h:form>
-                    <h5>Escolha o livro que deseja cancelar a reserva. <a href="javascript: abrir();"><img src="export/images/ajuda.png" alt="error"></img></a></h5>
-
-                    <div class="ui-grid-col-8">
-                        <p:selectOneMenu style="width: 701px;" filter="true" value="#{reservaController.reserva.codReserva}" filterMatchMode="contains"
-                                         required="true">
-                            <f:selectItem noSelectionOption="true" itemLabel="Selecione a reserva desejada"/>
-
-                            <f:selectItems value="#{reservaController.consultarReserva()}" var="reserva"
-                                           itemLabel="Título: #{reserva.titulo} | Autor: #{reserva.autor} | Editora: #{reserva.editora} | Solicitação: #{reserva.dataCad}"
-                                           itemValue="#{reserva.codReserva}"/>
-                        </p:selectOneMenu>
-                    </div>
-
-                    <h:form>
-                        <div id="conf" class="conf">
-                            <p align="center">
-                                <h:outputLabel value="Deseja cancelar a reserva selecionada?"/>
-                            </p>
-
+                        <f:selectItem noSelectionOption="true" itemLabel="Selecione a reserva desejada"/>
+                        <f:selectItems value="#{livroController.realizaConsultaReservas()}" var="reserva"
+                                       itemLabel="Título: #{reserva.titulo} | Autor: #{reserva.autor} | Editora: #{reserva.editora} | Ano Lanç.: #{reserva.anolancamento} | Volume: #{reserva.volume} | Dt. Retirada: #{reserva.datares}"
+                                       itemValue="#{reserva.codlivro}"/>
+                    </p:selectOneMenu>
+                    <div id="conf" class="conf">
+                        <p align="center">
+                            <h:outputLabel value="Deseja cancelar a reserva selecionada?"/>
+                        </p>
+                        <h:form>
                             <div class="form-group">
-                                <h:commandButton value="Sim" class="btn btn-block buttonAcervo"
-                                                 action="#{reservaController.deletarReserva()}"/>
+                                <h:commandButton value="Sim" class="btn btn-block btn-primary"
+                                                 action="#{livroController.realizaCancelamentoReserva}"/>
                             </div>
-
                             <div class="form-group">
-                                <h:commandButton value="Não" class="btn btn-block buttonAcervo"
+                                <h:commandButton value="Não" class="btn btn-block btn-primary"
                                                  onclick="fecha()"></h:commandButton>
                             </div>
-                        </div>
-                    </h:form>
-
-                    <div class="ui-grid-col-4">
-                        <h:commandButton value="Cancelar Reserva" class="btn btn-block buttonAcervo"
-                                         onclick="abri()"/>
+                        </h:form>
                     </div>
+                    <h:commandButton value="Cancelar Reserva" class="btn btn-block btn-primary"
+                                     onclick="abri()"/>
                 </h:form>
+            </h:form>
+            <div id="popup" class="popup">
+                <p>Olá,
+                    <button class="fechaAjuda" onclick="fechar()">x</button>
+                    <b></b>
+                    <p>
+                        Para cancelar uma reserva, siga os passos abaixo:<br/>
+                        1º) Selecione a reserva desejada.<br/>
+                        2º) Clique em <b>Cancelar Reserva</b>.<br/>
+                    </p>
+                </p>
             </div>
-        </div>
+        </section>
     </div>
-
-
-    <div id="popup" class="popupCadastrarReserva">
-        <p>Olá,
-            <button class="fechaCancelarReserva" onclick="fechar()">x</button>
-            <b></b>
-            <p>
-                Para cancelar uma reserva, siga os passos abaixo:<br/>
-                1º) Selecione a reserva desejado.<br/>
-                2º) Clique em <b>Cancelar Reserva</b>.<br/>
-            </p>
-        </p>
-    </div>
-
-    <div class="clear100"></div>
-    <div class="clear15"></div>
-    <div class="clear15"></div>
-    <div class="clear15"></div>
-    <div class="clear15"></div>
-    <div class="clear15"></div>
-    <div class="clear1"></div>
-    <!--RODAPÉ-->
-    <div class="ui-grid-col-12 fundoPretoCol">
-
-        <div class="ui-grid-col-6">
-            <h5 class="letraBranca text-center">
-                <p:graphicImage value="export/images/whatsapp.png"></p:graphicImage>
-                Contato: (44) 99827-1098
-            </h5>
-        </div>
-
-        <div class="ui-grid-col-6">
-            <h5 class="letraBranca text-center">
-                Siga-nos nas redes sociais:
-                <a href="http://www.facebook.com"><p:graphicImage value="export/images/facebook.png"></p:graphicImage></a>
-                <a href="http://www.twitter.com"><p:graphicImage value="export/images/twitter.png"></p:graphicImage></a>
-                <a href="http://www.linkedin.com"><p:graphicImage value="export/images/linkedin.png"></p:graphicImage></a>
-            </h5>
-        </div>
-    </div>
-
 </h:body>
 </html>

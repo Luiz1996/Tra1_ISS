@@ -13,8 +13,12 @@ import java.util.List;
 
 public class LivroDao {
     private Email email = new Email();
+<<<<<<< HEAD
     private FormataData dtFormat = new FormataData();
 
+=======
+    private FormataData dtFormat =  new FormataData();
+>>>>>>> parent of 86e4794... Feito a utilização de Threads para envio de e-mails.
 
     //método de cadastramento de livro
     public int cadastrarLivro(Livro livro) throws SQLException {
@@ -139,6 +143,46 @@ public class LivroDao {
     public List<Livro> consultaLivrosDisponiveis(Livro livro) throws SQLException {
         List<Livro> livros = new ArrayList<Livro>();
 
+<<<<<<< HEAD
+=======
+                st.execute( "select\n" +
+                                "\tu.email,\n" +
+                                "    u.nome,\n" +
+                                "    l.titulo,\n" +
+                                "    l.datares\n" +
+                                "from\n" +
+                                "\tusuarios u\n" +
+                                "left join\n" +
+                                "\tlivro    l on l.usuariores = u.codusuario\n" +
+                                "where\n" +
+                                "\tl.codlivro = '" + livro.getCodlivro() + "';\t");
+
+                rs = st.getResultSet();
+
+                while (rs.next()) {
+                    emailres = rs.getString("email");
+                    usuariores = rs.getString("nome");
+                    titulores = rs.getString("titulo");
+                    datares = dtFormat.formatadorDatasBrasil(rs.getString("datares"));
+                }
+
+                //Enviando e-mail confirmando reserva realizada com sucesso
+                email.setAssunto("Reserva de Livro - Biblioteca X");
+                email.setEmailDestinatario(emailres.trim());
+                email.setMsg("Olá " + usuariores + ", <br><br> A sua reserva para o livro <b>'" + titulores + "'</b> foi efetuada com sucesso.<br><br>Data de Retirada: <b>" + datares + "</b>.");
+                email.enviarGmail();
+            }
+
+            st.close();
+            con.conexao.close();
+        } catch (SQLException e) {
+            haReservas = -1;
+        }
+        return haReservas;
+    }
+
+    public int verificaExistenciaReserva(int codusuario, int codlivro){
+>>>>>>> parent of 86e4794... Feito a utilização de Threads para envio de e-mails.
         try {
             //realiza conexão com banco de dados
             Conexao con = new Conexao();
@@ -162,11 +206,26 @@ public class LivroDao {
                 livros.add(livros_temp);
             }
 
+<<<<<<< HEAD
             st.close();
             rs.close();
             con.conexao.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+=======
+            //cancelando a reserva selecionada
+            st.executeUpdate("update `bibliotec`.`livro` l set l.datares = null, l.usuariores = null where l.codlivro = '"+livro.getCodlivro()+"';");
+
+            //Enviando e-mail de confirmação de cancelamento de reserva
+            email.setAssunto("Cancelamento de Reserva - Biblioteca X");
+            email.setEmailDestinatario(emailres);
+            email.setMsg("Olá "+usuariores+", <br><br> A reserva do livro <b>'"+titulores+"'</b> foi cancelada com sucesso.");
+            email.enviarGmail();
+
+            return 1;
+        }catch (Exception e){
+            return 0;
+>>>>>>> parent of 86e4794... Feito a utilização de Threads para envio de e-mails.
         }
 
         return livros;
@@ -201,4 +260,31 @@ public class LivroDao {
         return 1;
     }
 
+<<<<<<< HEAD
 }
+=======
+    public int verificaDispLivro(int codLivro) {
+        int dispLivro = 0;
+        try{
+            Conexao con = new Conexao();
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            con.conexao.setAutoCommit(true);
+
+            st.execute("select disponibilidade from livro where codlivro = '"+codLivro+"';");
+
+            ResultSet rs = st.getResultSet();
+
+            while(rs.next()){
+                dispLivro = rs.getInt("disponibilidade") ;
+            }
+
+            st.close();
+            rs.close();
+            con.conexao.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return dispLivro;
+    }
+}
+>>>>>>> parent of 86e4794... Feito a utilização de Threads para envio de e-mails.
