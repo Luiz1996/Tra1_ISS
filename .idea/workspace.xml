@@ -6,27 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="Realizado todas as alterações necessárias para que o Observer funcionasse perfeitamente ao:&#10;&#10;- Devolver Livro;&#10;- Cadastrar Reserva;&#10;- Cancelamento de Reserva;">
+    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/LivroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/LivroDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoAluno.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoAluno.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBibliotecario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBibliotecario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cancelarReserva.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cancelarReserva.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/editarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/editarUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/EmprestimoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/EmprestimoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/LivroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/LivroDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/LivroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/LivroDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/editarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/editarUsuario.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoBalconista.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/alterarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/alterarEmprestimo.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/cadastrarReserva.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/cadastrarReserva.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +148,6 @@
     <configuration name="JBoss 16.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 16.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8085/BiblioTec/gestaoBibliotecas.xhtml" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="BiblioTec">
           <settings />
@@ -449,7 +432,11 @@
       <workItem from="1572001375385" duration="1295000" />
       <workItem from="1572043502981" duration="26000" />
       <workItem from="1572128299366" duration="3400000" />
-      <workItem from="1572181603118" duration="239000" />
+      <workItem from="1572181603118" duration="518000" />
+      <workItem from="1572184069281" duration="163000" />
+      <workItem from="1572308270265" duration="29000" />
+      <workItem from="1572990780213" duration="73000" />
+      <workItem from="1572990928873" duration="2926000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -717,7 +704,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572130557151</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Feito a utilização de Threads para envio de e-mails.">
+      <created>1572181947978</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1572181947978</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -746,7 +740,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dados commit:&#10;-Fazendo o cadastro de usuário através do acesso do balconista(incompleto)" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section;&#10;-Adicionado as colunas datacad, dataalt, na tabela de livros;&#10;-Adicionado as colunas datacad, dataalt e datanasc na tabela de usuários;&#10;-Feito as alterações nas operações CRUD dos usuários/livros e modo a deixar salvos as datas corretamente..." />
@@ -771,7 +764,8 @@
     <MESSAGE value="Operações de reserva finalizados, agora é possível ter uma fila de reservas." />
     <MESSAGE value="Alterado o método update(responsável pelo envio de e-mail) do Observer.&#10;&#10;Ajustando Observer na classe EmprestimoDao..." />
     <MESSAGE value="Realizado todas as alterações necessárias para que o Observer funcionasse perfeitamente ao:&#10;&#10;- Devolver Livro;&#10;- Cadastrar Reserva;&#10;- Cancelamento de Reserva;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Realizado todas as alterações necessárias para que o Observer funcionasse perfeitamente ao:&#10;&#10;- Devolver Livro;&#10;- Cadastrar Reserva;&#10;- Cancelamento de Reserva;" />
+    <MESSAGE value="Feito a utilização de Threads para envio de e-mails." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feito a utilização de Threads para envio de e-mails." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
