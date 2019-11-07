@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/alterarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/alterarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cadastrarReserva.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/cadastrarReserva.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -437,6 +434,8 @@
       <workItem from="1572308270265" duration="29000" />
       <workItem from="1572990780213" duration="73000" />
       <workItem from="1572990928873" duration="2926000" />
+      <workItem from="1573078086699" duration="219000" />
+      <workItem from="1573162314753" duration="893000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -711,7 +710,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572181947978</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Iniciando as alterações no frontend do Cadastramento de Reservas.">
+      <created>1573078247244</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1573078247244</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -740,7 +746,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section;&#10;-Adicionado as colunas datacad, dataalt, na tabela de livros;&#10;-Adicionado as colunas datacad, dataalt e datanasc na tabela de usuários;&#10;-Feito as alterações nas operações CRUD dos usuários/livros e modo a deixar salvos as datas corretamente..." />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section;&#10;-Adicionado as colunas datacad, dataalt, na tabela de livros;&#10;-Adicionado as colunas datacad, dataalt e datanasc na tabela de usuários;&#10;-Feito as alterações nas operações CRUD dos usuários/livros e modo a deixar salvos as datas corretamente...&#10;-Adicionado tela de consulta de acervo próprio pro balconista." />
@@ -765,7 +770,8 @@
     <MESSAGE value="Alterado o método update(responsável pelo envio de e-mail) do Observer.&#10;&#10;Ajustando Observer na classe EmprestimoDao..." />
     <MESSAGE value="Realizado todas as alterações necessárias para que o Observer funcionasse perfeitamente ao:&#10;&#10;- Devolver Livro;&#10;- Cadastrar Reserva;&#10;- Cancelamento de Reserva;" />
     <MESSAGE value="Feito a utilização de Threads para envio de e-mails." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feito a utilização de Threads para envio de e-mails." />
+    <MESSAGE value="Iniciando as alterações no frontend do Cadastramento de Reservas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Iniciando as alterações no frontend do Cadastramento de Reservas." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
