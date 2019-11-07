@@ -276,3 +276,57 @@
     background: #ffffff;
     color: blue;
 }
+/* CADASTRAR USUARIO BALCONISTA */
+
+.popupCadastrarUsuario {
+    position: fixed;
+    top: -200px;
+    bottom: 0;
+    left: 0;
+    right: 0px;
+    margin: auto;
+    width: 650px;
+    height: 150px;
+    padding: 15px;
+    border: solid 1pX black;
+    background: white;
+    display: none;
+}
+
+.fechaCadastrarUsuario {
+    position: absolute;
+    top: -105px;
+    bottom: 0;
+    left: 0;
+    right: -605px;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border: black 1px solid;
+    border-radius: 3px;
+    background: #ffffff;
+    color: blue;
+}
+
+.permissaoCadastrarUsuario{
+    display: none;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border: 1px solid #000000;
+    background: #85b2cb linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,0.4));
+    background: #000000 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,0.4)));
+    background: #85b2cb -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,0.4));
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+
+}
+
+
+.ui-button .ui-button-text:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+
