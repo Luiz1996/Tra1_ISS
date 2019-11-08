@@ -52,12 +52,11 @@
                     <p:menuitem value="Reservar Livros" action="cadastrarReserva?faces-redirect=true"></p:menuitem>
                     <p:menuitem value="Cancelar Reservas" action="cancelarReserva?faces-redirect=true"></p:menuitem>
                     <p:menuitem value="Minhas Reservas" action="minhasReservas?faces-redirect=true"></p:menuitem>
-                    <p:menuitem value="Meus Empréstimos" action="meusemps?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Meus Empréstimos" action="meusEmprestimos?faces-redirect=true"></p:menuitem>
                     <p:menuitem value="Dados Cadastrais" action="meusDados?faces-redirect=true"></p:menuitem>
                 </p:submenu>
 
-                <p:menuitem value="Baixar Multas" action="baixarMultas?faces-redirect=true"></p:menuitem>
-                <p:menuitem style="color: #18dcff !important;" rendered="#{empController.consultaQtdeEmpAtrasados() != 0}" value="Pendências" action="meusemps?faces-redirect=true"></p:menuitem>
+                <p:menuitem style="color: #18dcff !important;" rendered="#{emprestimoController.consultaQtdeEmpAtrasados() != 0}" value="Pendências" action="meusEmprestimos?faces-redirect=true"></p:menuitem>
             </p:menubar>
         </h:form>
     </div>
@@ -104,7 +103,7 @@
                             <h1></h1>
                         </div>
                         <div class="ui-grid-col-4">
-                            <h:commandButton value="Salvar Cotação" class="btn btn-block buttonAcervo"
+                            <h:commandButton value=" Salvar Cotação" class="btn btn-block buttonAcervo"
                                              action="#{cotacaoController.cadastrarCotacao()}"/>
                         </div>
                     </div>
