@@ -8,11 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/consultaUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/editarUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/consultaUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/consultaUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/editarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/editarUsuario.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/CSS/deletarUsuario.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/deletarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/deletarUsuario.xhtml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,21 +41,21 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/CSS/style.css">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/deletarUsuario.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="411" column="1" selection-start-line="411" selection-start-column="1" selection-end-line="411" selection-end-column="1" />
+            <state relative-caret-position="22">
+              <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/editarUsuario.xhtml">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/CSS/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="326" lean-forward="true" selection-start-line="326" selection-end-line="326" />
+            <state relative-caret-position="178">
+              <caret line="168" column="10" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -139,6 +136,7 @@
         <option value="$PROJECT_DIR$/web/consultaUsuario.xhtml" />
         <option value="$PROJECT_DIR$/web/editarUsuario.xhtml" />
         <option value="$PROJECT_DIR$/web/CSS/style.css" />
+        <option value="$PROJECT_DIR$/web/deletarUsuario.xhtml" />
       </list>
     </option>
   </component>
@@ -149,7 +147,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="80" />
     <option name="y" value="108" />
     <option name="width" value="960" />
@@ -164,6 +162,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,8 +186,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -517,7 +515,8 @@
       <workItem from="1572179204671" duration="3191000" />
       <workItem from="1573076777663" duration="1481000" />
       <workItem from="1573127118126" duration="786000" />
-      <workItem from="1573250926830" duration="901000" />
+      <workItem from="1573250926830" duration="1238000" />
+      <workItem from="1573420648272" duration="219000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -719,7 +718,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19664000" />
+    <option name="totallyTimeSpent" value="20263000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -734,7 +733,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2322239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23600605" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -1031,10 +1030,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/deletarUsuario.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/CSS/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="411" column="1" selection-start-line="411" selection-start-column="1" selection-end-line="411" selection-end-column="1" />
+        <state relative-caret-position="178">
+          <caret line="168" column="10" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="10" />
         </state>
       </provider>
     </entry>
