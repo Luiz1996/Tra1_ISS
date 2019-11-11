@@ -6,11 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/deletarUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/deletarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/deletarUsuario.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/CSS/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="168" column="10" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="10" />
+            <state relative-caret-position="234">
+              <caret line="436" column="17" lean-forward="true" selection-start-line="436" selection-start-column="17" selection-end-line="436" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -135,8 +131,8 @@
         <option value="$PROJECT_DIR$/web/cadastrarUsuarioBalconista.xhtml" />
         <option value="$PROJECT_DIR$/web/consultaUsuario.xhtml" />
         <option value="$PROJECT_DIR$/web/editarUsuario.xhtml" />
-        <option value="$PROJECT_DIR$/web/CSS/style.css" />
         <option value="$PROJECT_DIR$/web/deletarUsuario.xhtml" />
+        <option value="$PROJECT_DIR$/web/CSS/style.css" />
       </list>
     </option>
   </component>
@@ -147,7 +143,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="80" />
     <option name="y" value="108" />
     <option name="width" value="960" />
@@ -516,7 +512,7 @@
       <workItem from="1573076777663" duration="1481000" />
       <workItem from="1573127118126" duration="786000" />
       <workItem from="1573250926830" duration="1238000" />
-      <workItem from="1573420648272" duration="219000" />
+      <workItem from="1573420648272" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -718,7 +714,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20263000" />
+    <option name="totallyTimeSpent" value="20603000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1039,8 +1035,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/CSS/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="168" column="10" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="10" />
+        <state relative-caret-position="234">
+          <caret line="436" column="17" lean-forward="true" selection-start-line="436" selection-start-column="17" selection-end-line="436" selection-end-column="17" />
         </state>
       </provider>
     </entry>
