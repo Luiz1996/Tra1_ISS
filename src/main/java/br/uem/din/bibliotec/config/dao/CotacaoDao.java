@@ -15,7 +15,6 @@ public class CotacaoDao {
             Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
             st.executeUpdate("UPDATE cotacao SET ativo = '0', datafim = CURRENT_DATE() WHERE ativo = '1' and codcotacao > 0;");
-
             st.executeUpdate("INSERT INTO `bibliotec`.`cotacao` (`valor`, `dataini`, `ativo`) VALUES ('"+cotacao.getValor()+"', current_Date(), '1');");
 
             st.close();

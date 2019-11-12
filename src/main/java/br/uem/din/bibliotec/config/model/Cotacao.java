@@ -10,7 +10,6 @@ public class Cotacao {
     private String datafim;
     private int ativo;
 
-    //atributo auxiliares
     private String msgRetorno;
     private String colorMsgRetorno;
 
