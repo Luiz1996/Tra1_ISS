@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/itext-2.1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/commons-collections4-4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/primefaces-5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/bcmail-jdk14-138.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/jsf-api-2.2.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/bctsp-jdk14-1.38.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/poi-3.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/bcmail-jdk14-1.38.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/commons-codec-1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/mysql-connector-java-5.1.46.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/itextpdf-5.5.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/bcprov-jdk14-1.38.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/bcprov-jdk14-138.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/annotations-17.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
