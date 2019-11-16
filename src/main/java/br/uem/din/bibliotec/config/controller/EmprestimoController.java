@@ -1,10 +1,12 @@
 package br.uem.din.bibliotec.config.controller;
 
 import br.uem.din.bibliotec.config.dao.EmprestimoDao;
+import br.uem.din.bibliotec.config.dao.MultaDao;
+import br.uem.din.bibliotec.config.dao.ReservaDao;
 import br.uem.din.bibliotec.config.dao.UsuarioDao;
 import br.uem.din.bibliotec.config.model.Emprestimo;
-import br.uem.din.bibliotec.config.model.Livro;
-import br.uem.din.bibliotec.config.model.Usuario;
+import br.uem.din.bibliotec.config.model.Reserva;
+import br.uem.din.bibliotec.config.services.FormataData;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -16,125 +18,121 @@ import java.util.List;
 @Named
 @SessionScoped
 public class EmprestimoController implements Serializable {
-    private Emprestimo emp = new Emprestimo(0,0,0,"","","",0, "", "","","","","","","","");
-    private EmprestimoDao empDao = new EmprestimoDao();
-    private UsuarioDao userDao = new UsuarioDao();
-    private int retorno = 0;
+    private Emprestimo emprestimo = new Emprestimo();
+    private Reserva reserva = new Reserva();
+    private FormataData dtFormat = new FormataData();
+    private EmprestimoDao emprestimoDao = new EmprestimoDao();
+    private UsuarioDao usuarioDao = new UsuarioDao();
+    private ReservaDao reservaDao = new ReservaDao();
+    private MultaDao multaDao = new MultaDao();
     private final String FALHA = "red";
     private final String SUCESSO = "green";
-    private String login;
 
-    //contrutores e gets/sets
-    public EmprestimoController(){}
-
-    public EmprestimoController(String login){
-        login = new String();
+    public EmprestimoController() {
     }
 
-    public Emprestimo getEmp() { return emp; }
+    public Emprestimo getEmprestimo() {
+        return emprestimo;
+    }
 
-    public void setEmp(Emprestimo emp) { this.emp = emp; }
+    public void setEmprestimo(Emprestimo emprestimo) {
+        this.emprestimo = emprestimo;
+    }
 
-    public EmprestimoDao getEmpDAO() { return empDao; }
+    public EmprestimoDao getEmprestimoDao() {
+        return emprestimoDao;
+    }
 
-    public void setEmpDAO(EmprestimoDao empDAO) { this.empDao = empDAO; }
+    public void setEmprestimoDao(EmprestimoDao emprestimoDao) {
+        this.emprestimoDao = emprestimoDao;
+    }
 
-    public String getLogin() { return login; }
+    public UsuarioDao getUsuarioDao() {
+        return usuarioDao;
+    }
 
-    public void setLogin(String login) { this.login = login; }
+    public void setUsuarioDao(UsuarioDao usuarioDao) {
+        this.usuarioDao = usuarioDao;
+    }
 
-    public String getFALHA() { return FALHA; }
+    public String getFALHA() {
+        return FALHA;
+    }
 
-    public String getSUCESSO() { return SUCESSO; }
+    public String getSUCESSO() {
+        return SUCESSO;
+    }
 
-    public EmprestimoDao getEmpDao() { return empDao; }
+    public int consultaQtdeEmpAtrasados() {
+        return emprestimoDao.consultarMeusEmpAtrasados(emprestimo);
+    }
 
-    public void setEmpDao(EmprestimoDao empDao) { this.empDao = empDao; }
-
-    public UsuarioDao getUserDao() { return userDao; }
-
-    public void setUserDao(UsuarioDao userDao) { this.userDao = userDao; }
-
-    public int getRetorno() { return retorno; }
-
-    public void setRetorno(int retorno) { this.retorno = retorno; }
-
-    //chama métodos de consultas referente aos empréstimos
     public List<Emprestimo> consultarMeusEmprestimos() throws SQLException {
-        return empDao.meusEmprestimos();
+        return emprestimoDao.meusEmprestimos(emprestimo);
     }
 
-    public List<Usuario> consultaUsuariosEmprestimo() throws SQLException {
-        return empDao.consultaUsuariosEmp();
+    public List<Emprestimo> consultaEmprestimos() {
+        return emprestimoDao.consultarEmprestimos(emprestimo);
     }
 
-    public List<Livro> consultaLivrosEmprestimo() throws SQLException {
-        return empDao.consultaLivrosEmp();
+    public List<Emprestimo> consultaEmprestimosEmVigor() {
+        return emprestimoDao.consultarEmprestimosAtivos(emprestimo);
     }
 
-    public List<Emprestimo> consultaEmprestimos(){
-        return empDao.consultarEmprestimos(emp);
-    }
+    public String cadastrarEmprestimo() throws SQLException {
+        reserva.setCodLivro(emprestimo.getCodLivro());
 
-    public List<Emprestimo> consultaEmprestimosEmVigor(){
-        return empDao.consultarEmprestimosEmVigor(emp);
-    }
-
-    //metodo que chama cadastrar novo empréstimo
-    public String realizaCadastroEmprestimo() throws SQLException {
-        empDao.cadastrarEmprestimo(emp);
-        return userDao.homePage();
-    }
-
-    //metodo para finalizar um determinado emprestimo
-    public String realizaFinalizarEmprestimo(){
-        empDao.quantidadeDiasAtrasados(emp);
-        empDao.finalizarEmprestimo(emp);
-        return userDao.homePage();
-    }
-
-    //metodo para realizar edição em um determinado emprestimo
-    public String realizaEdicaoEmprestimo() throws ParseException {
-        retorno =  empDao.editarEmprestimo(emp);
-
-        if(retorno == 1){
-            emp.setColor_msg_retorno(SUCESSO);
-            emp.setMsg_retorno("Retorno: O empréstimo foi alterado com sucesso.");
+        if(multaDao.valorTotalMultas(emprestimo.getCodUsuario()) > 0.0){
+            emprestimo.setMsgRetorno("FALHA: Este usuário possui multas a serem quitadas.");
+            emprestimo.setColorMsgRetorno(FALHA);
         }else{
-            if(retorno == 0){
-                emp.setColor_msg_retorno(FALHA);
-                emp.setMsg_retorno("Retorno: O livro já possui reserva, não foi possível alterar data de devolução.");
-            }else{
-                if(retorno == -1){
-                    emp.setColor_msg_retorno(FALHA);
-                    emp.setMsg_retorno("Retorno: As alterações falharam, contacte o administrador.");
-                }else{
-                    if(retorno == -2){
-                        emp.setColor_msg_retorno(FALHA);
-                        emp.setMsg_retorno("Retorno: O livro já possui reserva, não foi possível alterar data de devolução.");
-                    }else{
-                        if(retorno == -3){
-                            emp.setColor_msg_retorno(FALHA);
-                            emp.setMsg_retorno("Retorno: O livro já está reservado em nome de outra pessoa.");
-                        }else{
-                            if(retorno == -4){
-                                emp.setColor_msg_retorno(FALHA);
-                                emp.setMsg_retorno("Retorno: O novo usuário possui restrições, favor REGULARIZAR!");
-                            }else{
-                                if(retorno == -5){
-                                    emp.setColor_msg_retorno(FALHA);
-                                    emp.setMsg_retorno("Retorno: A nova data de devolução é MENOR que a data atual!");
-                                }
-                            }
-                        }
+            if (emprestimoDao.consultarEmpAtrasados(emprestimo.getCodUsuario()) > 0) {
+                emprestimo.setMsgRetorno("FALHA: Este usuário possui empréstimos em atraso.");
+                emprestimo.setColorMsgRetorno(FALHA);
+            } else {
+                if (reservaDao.livroJaReservadoQualquerUsuario(reserva) > 0) {
+                    if (emprestimo.getCodUsuario() == reservaDao.obterDadosReserva(reserva)) {
+                        reservaDao.cancelarReserva(reserva);
+                        emprestimoDao.cadastrarEmprestimo(emprestimo);
+                        emprestimo.setMsgRetorno("SUCESSO: O empréstimo foi efetuado com sucesso.");
+                        emprestimo.setColorMsgRetorno(SUCESSO);
+                    } else {
+                        emprestimo.setMsgRetorno("FALHA: O livro encontra-se reservado para outro usuário.");
+                        emprestimo.setColorMsgRetorno(FALHA);
                     }
+                } else {
+                    emprestimoDao.cadastrarEmprestimo(emprestimo);
+                    emprestimo.setMsgRetorno("SUCESSO: O empréstimo foi efetuado com sucesso.");
+                    emprestimo.setColorMsgRetorno(SUCESSO);
                 }
             }
         }
-        return userDao.homePage();
+        return usuarioDao.homePage();
     }
 
-    public int consultaQtdeEmpAtrasados(){
-        return empDao.consultarMeusEmpAtrasados();
+    public String renovarEmprestimo() throws ParseException {
+        reserva.setCodLivro(emprestimo.getCodLivro());
+
+        if(reservaDao.livroJaReservadoQualquerUsuario(reserva) > 0){
+            emprestimo.setMsgRetorno("FALHA: O livro encontra-se reservado para outro usuário, não é possível renovar o empréstimo.");
+            emprestimo.setColorMsgRetorno(FALHA);
+        }else{
+            if(dtFormat.validaDatas(dtFormat.formatadorDatasMySQL(emprestimo.getDataDev())) < 0){
+                emprestimo.setMsgRetorno("FALHA: A data de devolução informada é inválida.");
+                emprestimo.setColorMsgRetorno(FALHA);
+            }else{
+                emprestimoDao.renovarEmprestimo(emprestimo);
+                emprestimo.setMsgRetorno("SUCESSO: O empréstimo foi renovado com sucesso, a nova data de entrega pode sem vista clicando em 'Meus Empréstimos'.");
+                emprestimo.setColorMsgRetorno(SUCESSO);
+            }
+        }
+        return usuarioDao.homePage();
+    }
+
+    public String devolverLivro(){
+
+
+
+        return usuarioDao.homePage();
     }
 }
