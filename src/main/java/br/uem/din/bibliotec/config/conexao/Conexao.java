@@ -10,10 +10,17 @@ public class Conexao {
     String servername = "localhost";
     String mydb = "bibliotec";
     String usuario = "root";
-    String senha = "";
+    String senha = "sa";
+    String url = "jdbc:mysql://localhost:3306/bibliotec";
 
     public Connection conexao;
-    public Conexao() throws SQLException{
-        conexao = DriverManager.getConnection("jdbc:mysql://".concat(servername).concat("/").concat(mydb), usuario, senha);
+
+    public Conexao() {
+        try {
+
+            conexao = DriverManager.getConnection(url, usuario, senha);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
