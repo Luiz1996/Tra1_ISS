@@ -8,13 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Cotacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Cotacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Cotacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Cotacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoBalconista.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -453,7 +447,12 @@
       <workItem from="1573420001956" duration="45000" />
       <workItem from="1573512223015" duration="416000" />
       <workItem from="1573598527799" duration="376000" />
-      <workItem from="1573727580899" duration="266000" />
+      <workItem from="1573727580899" duration="327000" />
+      <workItem from="1573728108878" duration="217000" />
+      <workItem from="1573840618622" duration="1458000" />
+      <workItem from="1573846102962" duration="647000" />
+      <workItem from="1573847988740" duration="2618000" />
+      <workItem from="1573916698274" duration="232000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -763,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573598795105</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Finalizado a criação de mensagens de retorno no processo de cadastramento de cotações.">
+      <created>1573727893396</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1573727893396</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -792,7 +798,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section;&#10;-Adicionado as colunas datacad, dataalt, na tabela de livros;&#10;-Adicionado as colunas datacad, dataalt e datanasc na tabela de usuários;&#10;-Feito as alterações nas operações CRUD dos usuários/livros e modo a deixar salvos as datas corretamente...&#10;-Adicionado tela de consulta de acervo próprio pro balconista.&#10;-Refeito a tela de início." />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section;&#10;-Adicionado as colunas datacad, dataalt, na tabela de livros;&#10;-Adicionado as colunas datacad, dataalt e datanasc na tabela de usuários;&#10;-Feito as alterações nas operações CRUD dos usuários/livros e modo a deixar salvos as datas corretamente...&#10;-Adicionado tela de consulta de acervo próprio pro balconista.&#10;-Refeito a tela de início, melhorei posicionamento da imagem de início." />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section;&#10;-Adicionado as colunas datacad, dataalt, na tabela de livros;&#10;-Adicionado as colunas datacad, dataalt e datanasc na tabela de usuários;&#10;-Feito as alterações nas operações CRUD dos usuários/livros e modo a deixar salvos as datas corretamente...&#10;-Adicionado tela de consulta de acervo próprio pro balconista.&#10;-Refeito a tela de início, melhorei posicionamento da imagem de início;&#10;-Adicionado a consulta de acervo do acessoAluno.xhtml." />
     <MESSAGE value="CRUDS:&#10;-Livros      100%&#10;-Usuários    100%&#10;-Empréstimos 100%&#10;-Reservas    100%&#10;&#10;VALIDAÇÕES:&#10;-Acesso à páginas sem estar logado no sistema   100%&#10;-Acesso à páginas/funcionalidades sem permissão 100%&#10;&#10;SUPORTE:&#10;-Botões de Ajuda nas páginas                 100%&#10;-Pedir confirmação do usuário Delete/Updates 100%&#10;&#10;FRONT:&#10;-Criação de tabelas com paginação      100%&#10;-Exportar(PDF/Excel) dados das tableas 100%&#10;&#10;BACK:&#10;-Permissão para usuário Editar os próprios dados cadastrais                   100%&#10;-Separação consistente das operações pertinentes a cada tipo de permissão     100%&#10;-validações gerais, principalmente, no que diz respeito à Reserva/Empréstimos 100%&#10;&#10;Trab PSS/PSW BiblioTec v1.0" />
@@ -817,7 +822,8 @@
     <MESSAGE value="Finalizado as alterações no frontend das páginas que envolvem a Reservas." />
     <MESSAGE value="Iniciando as alterações no frontend da página de cadastro de cotações." />
     <MESSAGE value="Reposicionando a tela de cadastro de cotações." />
-    <option name="LAST_COMMIT_MESSAGE" value="Reposicionando a tela de cadastro de cotações." />
+    <MESSAGE value="Finalizado a criação de mensagens de retorno no processo de cadastramento de cotações." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizado a criação de mensagens de retorno no processo de cadastramento de cotações." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
