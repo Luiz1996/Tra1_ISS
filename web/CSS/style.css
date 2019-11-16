@@ -547,3 +547,33 @@
     background: #ffffff;
     color: blue;
 }
+
+/* DELETAR LIVRO */
+.popupDeletarLivro {
+    position: fixed;
+    top: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 160px;
+    padding: 15px;
+    border: solid 1pX black;
+    background: white;
+    display: none;
+}
+.fecharDeletarLivro {
+    position: absolute;
+    top: -120px;
+    bottom: 0;
+    left: 0;
+    right: -460px;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border: black 1px solid;
+    border-radius: 3px;
+    background: #ffffff;
+    color: blue;
+}
