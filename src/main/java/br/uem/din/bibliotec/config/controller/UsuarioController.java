@@ -1,5 +1,3 @@
-
-
 package br.uem.din.bibliotec.config.controller;
 
 import br.uem.din.bibliotec.config.dao.UsuarioDao;
@@ -202,77 +200,6 @@ public class UsuarioController implements Serializable {
 
     //chama métodos para manipulação dos dados cadastrais do próprio usuário
     public String chamaMenuInicial(){ return userDao.homePage(); }
-
-    public String realizaAtualizacaoMeusDados() throws ParseException {
-        retorno =  userDao.atualizaMeusDados(user);
-
-        if(retorno == 1){
-            user.setMsg_autenticacao("Dados atualizados com sucesso!");
-            user.setColor_msg(SUCESSO);
-        }else{
-            if(retorno == 0){
-                user.setMsg_autenticacao("Nenhuma alteração identificada!");
-                user.setColor_msg(FALHA);
-            }else{
-                if(retorno == -1){
-                    user.setMsg_autenticacao("Falha ao atualizar dados!");
-                    user.setColor_msg(FALHA);
-                }else{
-                    if(retorno == -2){
-                        user.setMsg_autenticacao("CPF inválido!");
-                        user.setColor_msg(FALHA);
-                    }else{
-                        if(retorno == -3){
-                            user.setMsg_autenticacao("Data de nascimento inválida!");
-                            user.setColor_msg(FALHA);
-                        }
-                    }
-                }
-            }
-        }
-
-        return "/gestaoBibliotecas?faces-redirect=true";
-    }
-
-    public String realizaRedefinirSenha() throws NoSuchAlgorithmException {
-        retorno = userDao.redefSenha(user);
-
-        if(retorno == 1){
-            user.setColor_msg(SUCESSO);
-            user.setMsg_autenticacao("Sucesso - Senha enviada no e-mail.");
-        }else{
-            if(retorno == 0){
-                user.setColor_msg(FALHA);
-                user.setMsg_autenticacao("Falha - Erro ao redefinir senha.");
-            }else{
-                if(retorno == -1){
-                    user.setColor_msg(FALHA);
-                    user.setMsg_autenticacao("Falha - CPF informado é inválido.");
-                }else{
-                    if(retorno == -2){
-                        user.setColor_msg(FALHA);
-                        user.setMsg_autenticacao("Falha - Usuário inativo.");
-                    }else{
-                        if(retorno == -3){
-                            user.setColor_msg(FALHA);
-                            user.setMsg_autenticacao("Falha - Usuário sem permissões.");
-                        }else{
-                            if(retorno == -4){
-                                user.setColor_msg(FALHA);
-                                user.setMsg_autenticacao("Falha - Dados inválidos.");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        return userDao.homePage();
-    }
-
-    public List<Usuario> usuariosAtivos() throws SQLException {
-        return userDao.consultaUsuariosAtivos(user);
-    }
 
     @PostConstruct
     public void init() {
