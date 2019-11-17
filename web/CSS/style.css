@@ -732,3 +732,82 @@
     width: 250px;
     height: 30px;
 }
+
+.anima:hover:before {
+    background-color: #ffffff;
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.anima:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #0fbfc2;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.fundoVerde{
+    background: #4CAF50;
+    text-align: center;
+    padding: 10px;
+}
+.loginInicial{
+    padding: 30px;
+}
+.loginInicial input[type="text"],.loginInicial input[type="password"]{
+    height: 50px;
+    background: #ffffff;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 3px solid #4CAF50;
+}
+
+.letraVermelha{
+    color: #c0392b !important;
+}
+
+.fundoCinza{
+    background-color:  #ffffff;
+}
+
+.botaoLoguin{
+    color: #fff;
+    background-color: #34313f;
+    border-color: #4CAF50;
+}
+
+.botaoLoguin:hover{
+    color: #4CAF50;
+    border-color: #ffffff;
+}
+
+.fundoPretoCol{
+    background: #292633;
+    padding: 23px !important;
+    position: absolute !important;
+}
+
+.fundoPreto{
+    background: #292633;
+    text-align: center;
+}
