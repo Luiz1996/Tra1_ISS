@@ -12,102 +12,106 @@
     <title>Menu Aluno | BiblioTec</title>
 
     <link href="export/images/icone.png" rel="shortcut icon" type="image/x-png"></link>
-    <link rel="stylesheet" type="text/css" href="CSS/acessoAluno.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css"/>
     <script type="text/javascript" src="JS/ajudaPopUp.js"/>
 
 </h:head>
-<h:body>
-    <div align="left" class="retornos" id="retornos">
-        <b>
-            <font color="#{livroController.livro.color_msg_retorno}">
-                #{livroController.livro.msg_retorno}
+<h:body styleClass="fundoCinza">
+    <h1 align="center"> BiblioTec </h1>
+    <div>
+        <h:form>
+            <p:menubar styleClass="menubarBranco">
+                <p:menuitem value="Sair" action="#{loginController.logoutSession}"/>
+
+                <p:submenu label="Menu do Aluno">
+                    <p:menuitem value="Consultar Livros" action="consultarAcervoAluno?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Reservar Livros" action="cadastrarReserva?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Cancelar Reservas" action="cancelarReserva?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Minhas Reservas" action="minhasReservas?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Meus Empréstimos" action="meusEmprestimos?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Dados Cadastrais" action="meusDados?faces-redirect=true"></p:menuitem>
+                </p:submenu>
+
+                <p:menuitem style="color: #18dcff !important;" rendered="#{emprestimoController.consultaQtdeEmpAtrasados() != 0}" value="Pendências" action="meusEmprestimos?faces-redirect=true"></p:menuitem>
+                <p:menuitem style="color: #18dcff !important;" rendered="#{multaController.totalEmMultas(usuarioController.obterCodUsuario()) > 0}" value="Multas" action="minhasMultas?faces-redirect=true"></p:menuitem>
+            </p:menubar>
+        </h:form>
+    </div>
+    <!-- menu principal -->
+    <div class="clear5"></div>
+    <div align="center" class="ui-grid-col-12 mensagensRetorno">
+
+           <font color ="#{livroController.livro.color_msg_retorno}">
+               <b>#{livroController.livro.msg_retorno}</b>
+           </font>
+            <font color ="#{usuarioController.user.color_msg}">
+                <b>#{usuarioController.user.msg_autenticacao}</b>
             </font>
-            <font color="#{usuarioController.user.color_msg}">
-                #{usuarioController.user.msg_autenticacao}
+
+            <font color ="#{reservaController.reserva.colorMsgRetorno}">
+                <b>#{reservaController.reserva.msgRetorno}</b>
             </font>
-        </b>
     </div>
 
-    <i><h1 align="center"> BiblioTec </h1></i>
-    <h:form>
-        <p:menubar>
-            <p:menuitem value="SAIR" action="#{loginController.logoutSession}"/>
-            <p:menuitem value="AJUDA?" url="javascript: abrir();"></p:menuitem>
-            <p:menuitem rendered="#{emprestimoController.consultaQtdeEmpAtrasados() != 0}" style="color: red;" value="PENDÊNCIAS" action="meusEmprestimos?faces-redirect=true"></p:menuitem>
-        </p:menubar>
-    </h:form>
-    <section alig="center" class="right">
-        <div class="jumbotron">
-            <h:form id="telaAluno">
-                <h5 align="center">Menu do Aluno</h5>
-                <div class="menu">
-                    <div class="form-group">
-                        <h:commandButton value="Consultar Livros" class="btn btn-block btn-primary"
-                                         action="consultarAcervoAluno?faces-redirect=true"/>
-                    </div>
-                    <div class="form-group">
-                        <h:commandButton value="Reservar Livros" class="btn btn-block btn-primary"
-                                         action="cadastrarReserva?faces-redirect=true"/>
-                    </div>
-                    <div class="form-group">
-                        <h:commandButton value="Cancelar Reservas" class="btn btn-block btn-primary"
-                                         action="cancelarReserva?faces-redirect=true"/>
-                    </div>
-                    <div class="form-group">
-                        <h:commandButton value="Minhas Reservas" class="btn btn-block btn-primary"
-                                         action="minhasReservas?faces-redirect=true"/>
-                    </div>
-                    <div class="form-group">
-                        <h:commandButton value="Meus Empréstimos" class="btn btn-block btn-primary"
-                                         action="meusEmprestimos?faces-redirect=true"/>
-                    </div>
-                    <div class="form-group">
+    <div id="popup" class="popupAcessoAluno">
+        <p>
+            <button class="fecharAcessoAluno" onclick="fechar()">x</button>
+            <b></b>
+            <p>
+                Olá, notamos que você é um <b>Aluno(a)</b>, então temos a sessão:
+            </p>
+            <b></b>
+            <p>
+                <b>
+                    - Menu do Aluno :
+                </b>
+                Esta sessão possui as funcionalidades particulares de um aluno, onde você pode consultar os livros do acervo da biblioteca e também a disponibildiade para empréstimos, pode reservar e cancelar reservas de livros, ter acesso aos empréstimos em seu nome e também pode editar suas informações cadastrais.
+            </p>
+            <b></b>
+        </p>
+    </div>
 
-                        <h:commandButton value="Dados Cadastrais" class="btn btn-block btn-primary"
-                                         action="#{usuarioController.chamaMenuInicial}"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-group">
-                        <p> Perfil: Aluno</p>
-                    </div>
-                </div>
-                <div id="popup" class="popup">
-                    <p>
-                        <button class="fechar" onclick="fechar()">x</button>
-                        <b></b>
-                        <p>
-                            Olá, notamos que você é um <b>Aluno(a)</b>, então temos a sessão:
-                        </p>
-                        <b></b>
-                        <p>
-                            <b>
-                                - Menu do Aluno :
-                            </b>
-                            Esta sessão possui as funcionalidades particulares de um aluno, onde você pode consultar os livros do acervo da biblioteca e também a disponibildiade para empréstimos, pode reservar e cancelar reservas de livros, ter acesso aos empréstimos em seu nome e também pode editar suas informações cadastrais.
-                        </p>
-                        <b></b>
-                    </p>
-                </div>
-            </h:form>
+    <div class="resetValueAcessoAluno">
+        #{usuarioController.user.msg_autenticacao = ''}
+        #{usuarioController.user.nome = ''}
+        #{usuarioController.user.usuario = ''}
+        #{usuarioController.user.senha = ''}
+        #{usuarioController.user.rg = ''}
+        #{usuarioController.user.cpf = ''}
+        #{usuarioController.user.email = ''}
+        #{usuarioController.user.endereco = ''}
+        #{usuarioController.user.cep = ''}
+        #{usuarioController.user.cidade = ''}
+        #{usuarioController.user.estado = ''}
+        #{usuarioController.user.datanasc = ''}
+        #{livroController.livro.msg_retorno = ''}
+        #{livroController.livro.codlivro = 0}
+        #{livroController.livro.titulo = ''}
+        #{livroController.livro.editora = ''}
+        #{livroController.livro.autor = ''}
+        #{reservaController.reserva.msgRetorno = ''}
+        #{reservaController.reserva.codLivro = 0}
+    </div>
+    <div class="clear221"></div>
+    <div class="clear10"></div>
+    <!--RODAPÉ-->
+    <div class="ui-grid-col-12 fundoPretoCol">
+
+        <div class="ui-grid-col-6">
+            <h5 class="letraBranca text-center">
+                <p:graphicImage value="export/images/whatsapp.png"></p:graphicImage>
+                Contato: (44) 99999-9999
+            </h5>
         </div>
-        <div class="resetValue">
-            #{usuarioController.user.msg_autenticacao = ''}
-            #{usuarioController.user.nome = ''}
-            #{usuarioController.user.usuario = ''}
-            #{usuarioController.user.senha = ''}
-            #{usuarioController.user.rg = ''}
-            #{usuarioController.user.cpf = ''}
-            #{usuarioController.user.email = ''}
-            #{usuarioController.user.endereco = ''}
-            #{usuarioController.user.cep = ''}
-            #{usuarioController.user.cidade = ''}
-            #{usuarioController.user.estado = ''}
-            #{usuarioController.user.datanasc = ''}
-            #{livroController.livro.msg_retorno = ''}
-            #{livroController.livro.codlivro = -1}
-            #{livroController.livro.titulo = ''}
+
+        <div class="ui-grid-col-6">
+            <h5 class="letraBranca text-center">
+                Siga-nos nas redes sociais:
+                <a href="http://www.facebook.com"><p:graphicImage value="export/images/facebook.png"></p:graphicImage></a>
+                <a href="http://www.twitter.com"><p:graphicImage value="export/images/twitter.png"></p:graphicImage></a>
+                <a href="http://www.linkedin.com"><p:graphicImage value="export/images/linkedin.png"></p:graphicImage></a>
+            </h5>
         </div>
-    </section>
+    </div>
 </h:body>
 </html>

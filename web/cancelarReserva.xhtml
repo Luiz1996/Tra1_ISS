@@ -34,42 +34,42 @@
         <div class="ui-grid">
             <div class="ui-grid-col-12">
                 <h:form>
-                    <h5>Escolha o livro que deseja cancelar a reserva. <a href="javascript: abrir();"><img src="export/images/ajuda.png" alt="error"></img></a></h5>
+                    <h5>Escolha uma Reserva. <a href="javascript: abrir();"><img src="export/images/ajuda.png" alt="error"></img></a></h5>
 
-                    <div class="ui-grid-col-8">
-                        <p:selectOneMenu style="width: 701px;" filter="true" value="#{reservaController.reserva.codReserva}" filterMatchMode="contains"
-                                         required="true">
-                            <f:selectItem noSelectionOption="true" itemLabel="Selecione a reserva desejada"/>
+                        <div class="ui-grid-col-8">
+                            <p:selectOneMenu style="width: 701px;" filter="true" value="#{reservaController.reserva.codReserva}" filterMatchMode="contains"
+                                             required="true">
+                                <f:selectItem noSelectionOption="true" itemLabel="Selecione a reserva desejada"/>
 
-                            <f:selectItems value="#{reservaController.consultarReserva()}" var="reserva"
-                                           itemLabel="Título: #{reserva.titulo} | Autor: #{reserva.autor} | Editora: #{reserva.editora} | Solicitação: #{reserva.dataCad}"
-                                           itemValue="#{reserva.codReserva}"/>
-                        </p:selectOneMenu>
-                    </div>
+                                <f:selectItems value="#{reservaController.consultarReserva()}" var="reserva"
+                                               itemLabel="Título: #{reserva.titulo} | Autor: #{reserva.autor} | Editora: #{reserva.editora} | Solicitação: #{reserva.dataCad}"
+                                               itemValue="#{reserva.codReserva}"/>
+                            </p:selectOneMenu>
+                        </div>
 
-                    <h:form>
-                        <div id="conf" class="conf">
-                            <p align="center">
-                                <h:outputLabel value="Deseja cancelar a reserva selecionada?"/>
-                            </p>
+                        <h:form>
+                            <div id="conf" class="conf">
+                                <p align="center">
+                                    <h:outputLabel value="Deseja cancelar a reserva selecionada?"/>
+                                </p>
 
-                            <div class="form-group">
-                                <h:commandButton value="Sim" class="btn btn-block buttonAcervo"
-                                                 action="#{reservaController.deletarReserva()}"/>
+                                <div class="form-group">
+                                    <h:commandButton value="Sim" class="btn btn-block buttonAcervo"
+                                                     action="#{reservaController.deletarReserva()}"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <h:commandButton value="Não" class="btn btn-block buttonAcervo"
+                                                     onclick="fecha()"></h:commandButton>
+                                </div>
                             </div>
+                        </h:form>
 
-                            <div class="form-group">
-                                <h:commandButton value="Não" class="btn btn-block buttonAcervo"
-                                                 onclick="fecha()"></h:commandButton>
-                            </div>
+                        <div class="ui-grid-col-4">
+                            <h:commandButton value="Cancelar Reserva" class="btn btn-block buttonAcervo"
+                                             onclick="abri()"/>
                         </div>
                     </h:form>
-
-                    <div class="ui-grid-col-4">
-                        <h:commandButton value="Cancelar Reserva" class="btn btn-block buttonAcervo"
-                                         onclick="abri()"/>
-                    </div>
-                </h:form>
             </div>
         </div>
     </div>
@@ -100,9 +100,10 @@
         <div class="ui-grid-col-6">
             <h5 class="letraBranca text-center">
                 <p:graphicImage value="export/images/whatsapp.png"></p:graphicImage>
-                Contato: (44) 99827-1098
+                Contato: (44) 99999-9999
             </h5>
         </div>
+
         <div class="ui-grid-col-6">
             <h5 class="letraBranca text-center">
                 Siga-nos nas redes sociais:

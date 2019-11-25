@@ -37,19 +37,23 @@ public class CotacaoController implements Serializable {
             cotacao.setMsgRetorno("FALHA: Valor de cotação inválido(inserir valores maiores que R$0,00).");
             cotacao.setColorMsgRetorno("red");
         }else{
-            cotacaoDao.cadastrarCotacao(cotacao);
+            cotacaoDao.cadastrarNovaCotacao(cotacao);
             cotacao.setMsgRetorno("SUCESSO: A cotação de R$"+formataDoubleCasasDecimais(cotacao.getValor())+" foi cadastrada com sucesso.");
             cotacao.setColorMsgRetorno("green");
         }
+        //resetando valor da cotação
+        cotacao.setValor(00.00);
+
         return "/acessoBalconista?faces-redirect=true";
+    }
+
+    public String consultarCotacao(){
+
+        return formataDoubleCasasDecimais(cotacaoDao.consultarCotacaoEmVigor(cotacao));
     }
 
     public String formataDoubleCasasDecimais(Double valorDouble){
         DecimalFormat dF = new DecimalFormat("0.00");
-        return dF.format(valorDouble).trim();
-    }
-
-    public String consultarCotacao(){
-        return formataDoubleCasasDecimais(cotacaoDao.consultarCotacaoEmVigor(cotacao));
+        return dF.format(valorDouble);
     }
 }

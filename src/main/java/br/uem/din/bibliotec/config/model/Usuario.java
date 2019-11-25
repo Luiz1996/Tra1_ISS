@@ -7,7 +7,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class Usuario implements Observer {
-    public static final long serialVersionUID = 1L;
     //atributos dos usuarios
     private static Email sendEmail = new Email();
     private String email = "";
@@ -32,6 +31,8 @@ public class Usuario implements Observer {
     private String datanasc = "";
     private int    jaativado = 0;
     private String busca = "";
+    private int bloq;
+    private int minutos;
 
     //contrutores e gets/sets
     public Usuario(String email, String usuario, String senha, String nome, String rg, String cpf, String endereco, String cep, String cidade, String estado, int permissao, int ativo, String msg_autenticacao, String color_msg) {
@@ -242,6 +243,22 @@ public class Usuario implements Observer {
 
     public void setColor_msg(String color_msg) { this.color_msg = color_msg; }
 
+    public Email getSendEmail() { return sendEmail; }
+
+    public void setSendEmail(Email sendEmail) { this.sendEmail = sendEmail; }
+
+    public int getBloq() { return bloq; }
+
+    public void setBloq(int bloq) { this.bloq = bloq; }
+
+    public Observable getBook() { return book; }
+
+    public void setBook(Observable book) { this.book = book; }
+
+    public int getMinutos() { return minutos; }
+
+    public void setMinutos(int minutos) { this.minutos = minutos; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -275,13 +292,12 @@ public class Usuario implements Observer {
         return Objects.hash(email, usuario, senha, nome, rg, cpf, endereco, cep, cidade, estado, msg_autenticacao, color_msg, permissao, ativo, status, perfil, codusuario, datacad, dataalt, datanasc, jaativado);
     }
 
-    //MÉTODO DO OBSERVER
     @Override
     public void update(Observable o, Object arg) {
         if (o instanceof Livro) {
             sendEmail.setAssunto("Atualização de Reserva - Biblioteca X");
             sendEmail.setEmailDestinatario(((Livro) o).getEmailUsuarioRes().trim());
-            sendEmail.setMsg("Olá " + ((Livro) o).getNomeUsuarioRes().trim() + ", <br><br> A sua reserva do livro <b>'" + ((Livro) o).getTitulo().trim() + "'</b> está disponível!<br>Data de Retirada: <b>" + ((Livro) o).getDatares().trim() + "</b>.<br><br>Se o livro não for retirado até a data informada, automaticamente sua reserva será <b>cancelada!</b>");
+            sendEmail.setMsg("Olá " + ((Livro) o).getNomeUsuarioRes().trim() + ", <br><br> A sua reserva do livro <b>'" + ((Livro) o).getTitulo().trim() + "'</b> está disponível!<br>Retirar livro até <b>" + ((Livro) o).getDatares().trim() + "</b>.<br><br>Se o livro não for retirado até a data informada, automaticamente sua reserva será <b>cancelada!</b>");
 
             new Thread(enviarEmail).start();
         }

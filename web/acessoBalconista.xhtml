@@ -56,7 +56,9 @@
                     <p:menuitem value="Dados Cadastrais" action="meusDados?faces-redirect=true"></p:menuitem>
                 </p:submenu>
 
+                <p:menuitem value="Baixar Multas" action="baixarMultas?faces-redirect=true"></p:menuitem>
                 <p:menuitem style="color: #18dcff !important;" rendered="#{emprestimoController.consultaQtdeEmpAtrasados() != 0}" value="Pendências" action="meusEmprestimos?faces-redirect=true"></p:menuitem>
+                <p:menuitem style="color: #18dcff !important;" rendered="#{multaController.totalEmMultas(usuarioController.obterCodUsuario()) > 0}" value="Multas" action="minhasMultas?faces-redirect=true"></p:menuitem>
             </p:menubar>
         </h:form>
     </div>
@@ -66,26 +68,30 @@
     <marquee class="letraVermelha"><p:outputLabel value="A cotação em vigor é de R$#{cotacaoController.consultarCotacao()} por dia de atraso."/></marquee>
     <div class="clear1"></div>
     <div  align="center" class="ui-grid-col-12 mensagensRetorno">
-        <b>
-            <font color ="#{livroController.livro.color_msg_retorno}">
-                #{livroController.livro.msg_retorno}
-            </font>
-            <font color ="#{usuarioController.user.color_msg}">
-                #{usuarioController.user.msg_autenticacao}
-            </font>
+            <b>
+                <font color ="#{livroController.livro.color_msg_retorno}">
+                    #{livroController.livro.msg_retorno}
+                </font>
+                <font color ="#{usuarioController.user.color_msg}">
+                    #{usuarioController.user.msg_autenticacao}
+                </font>
 
-            <font color ="#{reservaController.reserva.colorMsgRetorno}">
-                #{reservaController.reserva.msgRetorno}
-            </font>
+                <font color ="#{reservaController.reserva.colorMsgRetorno}">
+                    #{reservaController.reserva.msgRetorno}
+                </font>
 
-            <font color ="#{empController.emp.color_msg_retorno}">
-                #{empController.emp.msg_retorno}
-            </font>
+                <font color ="#{emprestimoController.emprestimo.colorMsgRetorno}">
+                    #{emprestimoController.emprestimo.msgRetorno}
+                </font>
 
-            <font color ="#{cotacaoController.cotacao.colorMsgRetorno}">
-                #{cotacaoController.cotacao.msgRetorno}
-            </font>
-        </b>
+                <font color ="#{cotacaoController.cotacao.colorMsgRetorno}">
+                    #{cotacaoController.cotacao.msgRetorno}
+                </font>
+
+                <font color ="#{multaController.multa.colorMsgRetorno}">
+                    #{multaController.multa.msgRetorno}
+                </font>
+            </b>
     </div>
     <div class="container">
         <div class="ui-grid">
@@ -102,7 +108,6 @@
                         <div class="ui-grid-col-2">
                             <h1></h1>
                         </div>
-
                         <div class="ui-grid-col-4">
                             <h:commandButton value="Salvar Cotação" class="btn btn-block buttonAcervo"
                                              action="#{cotacaoController.cadastrarCotacao()}"/>
@@ -148,52 +153,57 @@
         </p>
     </div>
 
-    <div class="resetValueAcessoBalconista">
-        #{usuarioController.user.msg_autenticacao = ''}
-        #{usuarioController.user.color_msg = ''}
-        #{emprestimoController.emp.msg_retorno = ''}
-        #{emprestimoController.emp.color_msg_retorno = ''}
-        #{emprestimoController.emp.codusuario = ''}
-        #{emprestimoController.emp.codemprestimo = -1}
-        #{usuarioController.user.nome = ''}
-        #{usuarioController.user.usuario = ''}
-        #{usuarioController.user.senha = ''}
-        #{usuarioController.user.rg = ''}
-        #{usuarioController.user.cpf = ''}
-        #{usuarioController.user.email = ''}
-        #{usuarioController.user.endereco = ''}
-        #{usuarioController.user.cep = ''}
-        #{usuarioController.user.cidade = ''}
-        #{usuarioController.user.estado = ''}
-        #{usuarioController.user.datanasc = ''}
-        #{usuarioController.user.permissao = ''}
-        #{usuarioController.user.ativo = -1}
-        #{usuarioController.user.codusuario = ''}
-        #{livroController.livro.msg_retorno = ''}
-        #{livroController.livro.codlivro = -1}
-        #{livroController.livro.titulo = ''}
-        #{emprestimoController.emp.codlivro = -1}
-        #{emprestimoController.emp.datadev = ''}
-        #{emprestimoController.emp.nome_user = ''}
-        #{usuarioController.user.jaativado = 0}
-        #{usuarioController.user.busca = ''}
-        #{reservaController.reserva.msgRetorno = ''}
-        #{reservaController.reserva.codLivro = 0}
-        #{reservaController.reserva.codReserva = 0}
-        #{reservaController.reserva.autor = ''}
-        #{reservaController.reserva.editora = ''}
-        #{reservaController.reserva.titulo = ''}
-        #{reservaController.reserva.dataCad = ''}
-        #{reservaController.reserva.dataRes = ''}
-        #{cotacaoController.cotacao.msgRetorno = ''}
-        #{cotacaoController.cotacao.valor = ''}
-        #{livroController.livro.codlivro = 0}
-        #{livroController.livro.titulo = ''}
-        #{livroController.livro.editora = ''}
-        #{livroController.livro.autor = ''}
-        #{reservaController.reserva.msgRetorno = ''}
-        #{reservaController.reserva.codLivro = 0}
-    </div>
+        <div class="resetValueAcessoBalconista">
+            #{usuarioController.user.msg_autenticacao = ''}
+            #{usuarioController.user.color_msg = ''}
+            #{emprestimoController.emprestimo.msgRetorno = ''}
+            #{emprestimoController.emprestimo.colorMsgRetorno = ''}
+            #{emprestimoController.emprestimo.codUsuario = ''}
+            #{emprestimoController.emprestimo.codEmprestimo = -1}
+            #{usuarioController.user.nome = ''}
+            #{usuarioController.user.usuario = ''}
+            #{usuarioController.user.senha = ''}
+            #{usuarioController.user.rg = ''}
+            #{usuarioController.user.cpf = ''}
+            #{usuarioController.user.email = ''}
+            #{usuarioController.user.endereco = ''}
+            #{usuarioController.user.cep = ''}
+            #{usuarioController.user.cidade = ''}
+            #{usuarioController.user.estado = ''}
+            #{usuarioController.user.datanasc = ''}
+            #{usuarioController.user.permissao = ''}
+            #{usuarioController.user.ativo = -1}
+            #{usuarioController.user.codusuario = ''}
+            #{livroController.livro.msg_retorno = ''}
+            #{livroController.livro.codlivro = -1}
+            #{livroController.livro.titulo = ''}
+            #{emprestimoController.emprestimo.codLivro = -1}
+            #{emprestimoController.emprestimo.dataDev = ''}
+            #{emprestimoController.emprestimo.nomeUsuario = ''}
+            #{usuarioController.user.jaativado = 0}
+            #{usuarioController.user.busca = ''}
+            #{reservaController.reserva.msgRetorno = ''}
+            #{reservaController.reserva.codLivro = 0}
+            #{reservaController.reserva.codReserva = 0}
+            #{reservaController.reserva.autor = ''}
+            #{reservaController.reserva.editora = ''}
+            #{reservaController.reserva.titulo = ''}
+            #{reservaController.reserva.dataCad = ''}
+            #{reservaController.reserva.dataRes = ''}
+            #{cotacaoController.cotacao.msgRetorno = ''}
+            #{cotacaoController.cotacao.valor = ''}
+            #{multaController.multa.idMultasSeparadosVirgula = ''}
+            #{multaController.multa.cpfUsuario = ''}
+            #{multaController.multa.colorMsgRetorno = ''}
+            #{multaController.multa.msgRetorno = ''}
+            #{multaController.multa.totMulta = ''}
+            #{livroController.livro.codlivro = 0}
+            #{livroController.livro.titulo = ''}
+            #{livroController.livro.editora = ''}
+            #{livroController.livro.autor = ''}
+            #{reservaController.reserva.msgRetorno = ''}
+            #{reservaController.reserva.codLivro = 0}
+        </div>
     <div class="clear100"></div>
     <div class="clear15"></div>
     <div class="clear15"></div>
@@ -206,7 +216,7 @@
         <div class="ui-grid-col-6">
             <h5 class="letraBranca text-center">
                 <p:graphicImage value="export/images/whatsapp.png"></p:graphicImage>
-                Contato: (44) 99827-1098
+                Contato: (44) 99999-9999
             </h5>
         </div>
 

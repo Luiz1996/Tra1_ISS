@@ -4,16 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//classe responsável por fazer a conexão com banco
 public class Conexao {
-    //Declaração das strings que vão compor a url da conexão
     String servername = "localhost";
-    String mydb = "bibliotec";
-    String usuario = "root";
-    String senha = "";
+    String schema = "bibliotec";
+    String user = "root";
+    String password = "";
 
     public Connection conexao;
     public Conexao() throws SQLException{
-        conexao = DriverManager.getConnection("jdbc:mysql://".concat(servername).concat("/").concat(mydb), usuario, senha);
+        conexao = DriverManager.getConnection("jdbc:mysql://".concat(servername).concat("/").concat(schema), user, password);
     }
 }

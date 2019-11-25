@@ -5,8 +5,6 @@ import br.uem.din.bibliotec.config.model.Livro;
 import br.uem.din.bibliotec.config.services.Email;
 import br.uem.din.bibliotec.config.services.FormataData;
 
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LivroDao {
-    private static Email email = new Email();
+    private Email email = new Email();
     private FormataData dtFormat =  new FormataData();
 
     //método de cadastramento de livro
@@ -152,20 +150,18 @@ public class LivroDao {
 
             //validando se o livro possui alguma reserva ou empréstimos em vigor
             st.execute( "SELECT \n" +
-                            "    COALESCE(l.usuariores, 0) AS ha_reserva,\n" +
-                            "    COALESCE(MAX(e.ativo),0) AS ha_emp\n" +
-                            "FROM\n" +
-                            "    livro l\n" +
-                            "LEFT JOIN\n" +
-                            "    emprestimo e ON e.codlivro = l.codlivro\n" +
-                            "WHERE\n" +
-                            "    l.codlivro = '" + livro.getCodlivro() + "';");
+                    "    COALESCE(MAX(e.ativo),0) AS ha_emp\n" +
+                    "FROM\n" +
+                    "    livro l\n" +
+                    "LEFT JOIN\n" +
+                    "    emprestimo e ON e.codlivro = l.codlivro\n" +
+                    "WHERE\n" +
+                    "    l.codlivro = '" + livro.getCodlivro() + "';");
 
             ResultSet rs = st.getResultSet();
 
             int ha_reserva = 0, ha_emp = 0;
             while(rs.next()){
-                ha_reserva = rs.getInt("ha_reserva");
                 ha_emp = rs.getInt("ha_emp");
             }
 
@@ -187,6 +183,7 @@ public class LivroDao {
 
             return 1;
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return 0;
         }
     }
@@ -244,235 +241,41 @@ public class LivroDao {
         }
     }
 
-    public int cadastrarReserva(Livro livro){
-        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-        String login = (String)session.getAttribute("usuario");
-        int haReservas = 0;
 
-        try {
+    public List<Livro> consultaLivrosDisponiveis(Livro livro) throws SQLException {
+        List<Livro> livros = new ArrayList<Livro>();
+
+        try{
             //realiza conexão com banco de dados
-            int codUsuarioLocal = 0;
-            String emailres = "", usuariores = "", titulores = "", datares = "";
             Conexao con = new Conexao();
-            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             con.conexao.setAutoCommit(true);
-            ResultSet rs = null;
+            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-            st.execute("select\n" +
-                            "\tcount(e.codemprestimo) as qtde_atrasado\n" +
-                            "from\n" +
-                            "\temprestimo e\n" +
-                            "inner join\n" +
-                            "\tusuarios   u on u.codusuario = e.codusuario\t\n" +
-                            "where\n" +
-                            "\te.ativo = '1' and\n" +
-                            "\te.datadev < current_date() and\n" +
-                            "    u.usuario = '" + login + "';");
-            rs = st.getResultSet();
+            //busca todas as informações de acordo com os dados fornecidos
+            st.execute("SELECT * FROM `bibliotec`.`livro` l WHERE l.ativo = '1' and l.disponibilidade = '1';");
+            ResultSet rs = st.getResultSet();
 
-            //varificando se o usuário possui empréstimos em atraso
-            while(rs.next()){
-                if(rs.getInt("qtde_atrasado") > 0){
-                    return -2;
-                }
-            }
-
-            //obtendo codusuario que está efetuando a reserva
-            st.execute( "SELECT \n" +
-                            "    codusuario\n" +
-                            "FROM\n" +
-                            "    `bibliotec`.`usuarios`\n" +
-                            "WHERE\n" +
-                            "    usuario = '" + login + "';");
-            rs = st.getResultSet();
-
-            while(rs.next()){
-                codUsuarioLocal = rs.getInt("codusuario");
-            }
-
-            haReservas = verificaExistenciaReserva(codUsuarioLocal, livro.getCodlivro());
-
-            if(haReservas == 0) {
-
-                //criando nova reserva
-                st.execute( "select\n" +
-                                "    l.disponibilidade\n" +
-                                "from\n" +
-                                "\tlivro l\n" +
-                                "where\n" +
-                                "\tl.codlivro = '" + livro.getCodlivro() + "';");
-                rs = st.getResultSet();
-                while (rs.next()) {
-                    livro.setDisponibilidade(rs.getString("disponibilidade").trim());
-                }
-
-                if (livro.getDisponibilidade().equals("1".trim())) {
-                    st.executeUpdate("update livro l set l.datares = current_date(), l.usuariores = '" + codUsuarioLocal + "' where l.codlivro = '" + livro.getCodlivro() + "';");
-                } else {
-                    //se o livro já estiver emprestado mas sem reserva, precisamos obter a data de devolção do emprestimo atual para poder criar nova reserva
-                    //trazendo data de devolução do emprestimo atual e somando D+1
-                    //se o empréstimo estiver atrasado, então soma-se 30 dias da data de devolução
-                    st.execute( "SELECT \n" +
-                                    "    MAX(e.codemprestimo) AS codemprestimo, \n" +
-                                    "    case\n" +
-                                    "\t\t    when e.datadev < current_date() then DATE_ADD(e.datadev ,INTERVAL 30 DAY)\n" +
-                                    "        else DATE_ADD(e.datadev ,INTERVAL 1 DAY)\n" +
-                                    "    end as datares    \n" +
-                                    "FROM\n" +
-                                    "    emprestimo e\n" +
-                                    "WHERE\n" +
-                                    "    e.ativo = '1' AND e.codlivro = '" + livro.getCodlivro() + "';");
-
-                    rs = st.getResultSet();
-                    while (rs.next()) {
-                        livro.setDatares(rs.getString("datares").trim());
-                    }
-
-                    st.executeUpdate("update livro l set l.datares = '" + livro.getDatares() + "', l.usuariores = '" + codUsuarioLocal + "' where l.codlivro = '" + livro.getCodlivro() + "';");
-                }
-
-                st.execute( "select\n" +
-                                "\tu.email,\n" +
-                                "    u.nome,\n" +
-                                "    l.titulo,\n" +
-                                "    l.datares\n" +
-                                "from\n" +
-                                "\tusuarios u\n" +
-                                "left join\n" +
-                                "\tlivro    l on l.usuariores = u.codusuario\n" +
-                                "where\n" +
-                                "\tl.codlivro = '" + livro.getCodlivro() + "';\t");
-
-                rs = st.getResultSet();
-
-                while (rs.next()) {
-                    emailres = rs.getString("email");
-                    usuariores = rs.getString("nome");
-                    titulores = rs.getString("titulo");
-                    datares = dtFormat.formatadorDatasBrasil(rs.getString("datares"));
-                }
-
-                //Enviando e-mail confirmando reserva realizada com sucesso
-                email.setAssunto("Reserva de Livro - Biblioteca X");
-                email.setEmailDestinatario(emailres.trim());
-                email.setMsg("Olá " + usuariores + ", <br><br> A sua reserva para o livro <b>'" + titulores + "'</b> foi efetuada com sucesso.<br><br>Data de Retirada: <b>" + datares + "</b>.");
-                new Thread(enviarEmail).start();
+            //obtendo os valores carregados no result set e carregado no arrayList
+            while (rs.next()) {
+                Livro livros_temp = new Livro(
+                        rs.getInt("codlivro"),
+                        rs.getString("titulo"),
+                        rs.getString("autor"),
+                        rs.getString("editora"),
+                        rs.getString("anolancamento"),
+                        rs.getString("codcatalogacao")
+                );
+                livros.add(livros_temp);
             }
 
             st.close();
+            rs.close();
             con.conexao.close();
-        } catch (SQLException e) {
-            haReservas = -1;
-        }
-        return haReservas;
-    }
-
-    public int verificaExistenciaReserva(int codusuario, int codlivro){
-        try {
-            //realiza conexão com banco de dados
-            Conexao con = new Conexao();
-            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            con.conexao.setAutoCommit(true);
-
-            //se tentar cadastrar reserva e o livro já estiver emprestado pelo mesmo usuário, então o sistema barra!
-            st.execute( "SELECT \n" +
-                            "    COALESCE(u.codusuario,0) as codusuario\n" +
-                            "FROM\n" +
-                            "    emprestimo e\n" +
-                            "        INNER JOIN\n" +
-                            "    usuarios u ON u.codusuario = e.codusuario\n" +
-                            "WHERE\n" +
-                            "    e.codusuario = '" + codusuario + "' AND e.codlivro = '" + codlivro + "'\n" +
-                            "        AND e.ativo = '1';");
-            ResultSet rs = st.getResultSet();
-
-            int codUsuarioEmp = 0;
-            while(rs.next()){
-                codUsuarioEmp = rs.getInt("codusuario");
-            }
-
-            //usuário já está com livro emprestado
-            if(codUsuarioEmp != 0){
-                return 3;
-            }
-
-            //consultar se livro já possui reserva para ele mesmo ou outra pessoa
-            st.execute( "SELECT \n" +
-                            "    COALESCE(l.usuariores,0) AS usuariores,\n" +
-                            "    CASE\n" +
-                            "        WHEN current_date() <= l.datares \n" +
-                            "\t\t\t      THEN 'Reservado'\n" +
-                            "\t\t\t      ELSE 'Não Reservado'\n" +
-                            "    END AS status\n" +
-                            "FROM\n" +
-                            "    `bibliotec`.`livro` l\n" +
-                            "WHERE\n" +
-                            "    l.codlivro = '" + codlivro + "';");
-
-            rs = st.getResultSet();
-
-            int usuario_reserva = 0;
-            String status = "".trim();
-            while(rs.next()){
-                usuario_reserva = (rs.getInt("usuariores"));
-                status = (rs.getString("status").trim());
-            }
-
-            //usuario que está reservando já está com reserva para este livro
-            if(usuario_reserva == codusuario){
-                return 1;
-            }
-
-            //livro encontra-se reservado para outro usuario
-            if(status.equals("Reservado".trim())){
-                return 2;
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Falha ao consultar existencia de reserva!");
-        }
-        return 0;
-    }
-
-    public int cancelarReserva(Livro livro){
-        String emailres = "", usuariores = "", titulores = "";
-
-        try {
-            //realiza conexão com banco de dados
-            Conexao con = new Conexao();
-            Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            con.conexao.setAutoCommit(true);
-
-            st.execute("SELECT \n" +
-                            "    u.email, u.nome, l.titulo\n" +
-                            "FROM\n" +
-                            "    usuarios u\n" +
-                            "        LEFT JOIN\n" +
-                            "    livro l ON l.usuariores = u.codusuario\n" +
-                            "WHERE\n" +
-                            "    l.codlivro = '"+livro.getCodlivro()+"';");
-
-            ResultSet rs = st.getResultSet();
-
-            while(rs.next()){
-                emailres = rs.getString("email");
-                usuariores = rs.getString("nome");
-                titulores = rs.getString("titulo");
-            }
-
-            //cancelando a reserva selecionada
-            st.executeUpdate("update `bibliotec`.`livro` l set l.datares = null, l.usuariores = null where l.codlivro = '"+livro.getCodlivro()+"';");
-
-            //Enviando e-mail de confirmação de cancelamento de reserva
-            email.setAssunto("Cancelamento de Reserva - Biblioteca X");
-            email.setEmailDestinatario(emailres);
-            email.setMsg("Olá "+usuariores+", <br><br> A reserva do livro <b>'"+titulores+"'</b> foi cancelada com sucesso.");
-            new Thread(enviarEmail).start();
-
-            return 1;
         }catch (Exception e){
-            return 0;
+            System.out.println(e.getMessage());
         }
+
+        return livros;
     }
 
     public int carregarDadosLivro(Livro livro){
@@ -527,11 +330,4 @@ public class LivroDao {
         }
         return dispLivro;
     }
-
-    private static final Runnable enviarEmail = new Runnable() {
-        @Override
-        public void run() {
-            email.enviarGmail();
-        }
-    };
 }

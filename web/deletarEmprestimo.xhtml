@@ -13,15 +13,91 @@
     <title> Finalizar Empréstimo | BiblioTec</title>
 
     <link href="export/images/icone.png" rel="shortcut icon" type="image/x-png"></link>
-    <link rel="stylesheet" type="text/css" href="CSS/deletarEmprestimo.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css"/>
     <script type="text/javascript" src="JS/ajudaPopUp.js"/>
     <script type="text/javascript" src="JS/confirmacaoPopUp.js"/>
 
 </h:head>
-<h:body>
-    <div id="popup" class="popup">
+<h:body styleClass="fundoCinza">
+
+    <h1 align="center"> BiblioTec </h1>
+    <div>
+        <h:form>
+            <p:menubar styleClass="menubarBranco">
+                <p:menuitem value="Menu Inicial" action="#{usuarioController.chamaMenuInicial()}"/>
+                <p:submenu label="Controle de Usuarios">
+                    <p:menuitem value="Cadastrar" action="cadastrarUsuarioBalconista?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Consultar" action="consultaUsuario?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Alterar" action="editarUsuario?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Deletar" action="deletarUsuario?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Redefinir Senha" action="redefinirSenhaBalconista?faces-redirect=true"></p:menuitem>
+                </p:submenu>
+
+                <p:submenu label="Controle de Empréstimos">
+                    <p:menuitem value="Cadastrar" action="cadastrarEmprestimo?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Consultar" action="consultarEmprestimo?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Renovar" action="alterarEmprestimo?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Devolver" action="deletarEmprestimo?faces-redirect=true"></p:menuitem>
+                </p:submenu>
+
+                <p:submenu label="Utilitários">
+                    <p:menuitem value="Consultar Livros" action="consultarAcervoBalconista?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Reservar Livros" action="cadastrarReserva?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Cancelar Reservas" action="cancelarReserva?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Minhas Reservas" action="minhasReservas?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Meus Empréstimos" action="meusEmprestimos?faces-redirect=true"></p:menuitem>
+                    <p:menuitem value="Dados Cadastrais" action="meusDados?faces-redirect=true"></p:menuitem>
+                </p:submenu>
+                <p:menuitem value="Baixar Multas" action="baixarMultas?faces-redirect=true"></p:menuitem>
+                <p:menuitem style="color: #18dcff !important;" rendered="#{emprestimoController.consultaQtdeEmpAtrasados() != 0}" value="Pendências" action="meusEmprestimos?faces-redirect=true"></p:menuitem>
+                <p:menuitem style="color: #18dcff !important;" rendered="#{multaController.totalEmMultas(usuarioController.obterCodUsuario()) > 0}" value="Multas" action="minhasMultas?faces-redirect=true"></p:menuitem>
+            </p:menubar>
+        </h:form>
+    </div>
+    <div class="clear15"></div>
+
+    <div class="container">
+        <div class="ui-grid">
+            <div class="ui-grid-col-12">
+                <h5>Escolha um Empréstimo. <a href="javascript: abrir();"><img src="export/images/ajuda.png" alt="error"></img></a></h5>
+                <h:form>
+                    <div class="ui-grid-col-8">
+                        <p:selectOneMenu filter="true" value="#{emprestimoController.emprestimo.codEmprestimo}" filterMatchMode="contains"
+                                         required="true" style="width:701px">
+
+                            <f:selectItem noSelectionOption="true" itemLabel="Selecione um empréstimo"/>
+                            <f:selectItems value="#{emprestimoController.consultaEmprestimosEmVigor()}" var="emp"
+                                           itemLabel="Nome: #{emp.nomeUsuario} | E-mail: #{emp.emailUsuario} | Título: #{emp.tituloLivro} | Autor: #{emp.autorLivro} | Editora: #{emp.editoraLivro}"
+                                           itemValue="#{emp.codEmprestimo}"/>
+                        </p:selectOneMenu>
+                        <div id="conf" class="conf">
+                            <p align="center">
+                                <h:outputLabel value="Deseja finalizar o empréstimo selecionado?"/>
+                            </p>
+                            <h:form>
+                                <div class="form-group">
+                                    <h:commandButton value="Sim" class="btn btn-block buttonAcervo"
+                                                     action="#{emprestimoController.devolverLivro}"/>
+                                </div>
+                                <div class="form-group">
+                                    <h:commandButton value="Não" class="btn btn-block buttonAcervo"
+                                                     onclick="fecha()"></h:commandButton>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                    <div class="ui-grid-col-4">
+                        <h:commandButton value="Finalizar" class="btn btn-block buttonAcervo"
+                                         onclick="abri()"/>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popupDeletarEmprestimo">
         <p>Olá,
-            <button class="fechaAjuda" onclick="fechar()">x</button>
+            <button class="fechaDeletarEmprestimo" onclick="fechar()">x</button>
             <b></b>
             <p>
                 Para finalizar um empréstimo, siga os passos abaixo:<br/>
@@ -30,65 +106,29 @@
             </p>
         </p>
     </div>
+    <div class="clear130"></div>
+    <div class="clear15"></div>
+    <div class="clear15"></div>
+    <div class="clear15"></div>
 
-    <i><h1 align="center"> BiblioTec </h1></i>
-    <p:menubar style="align-items: center">
-        <p:menuitem value="MENU INICIAL" url="acessoBalconista.xhtml"></p:menuitem>
-        <p:menuitem value="AJUDA?" url="javascript: abrir();"></p:menuitem>
-    </p:menubar>
-    <div class="jumbotron">
-        <section alig="center" class="right">
-            <h:form id="telaFinalEmp">
-                <div class="menu">
-                    <h5 align="center">Controle de Empréstimos</h5><br/>
-                    <div class="form-group">
-                        <h:commandButton value="Cadastrar Empréstimo" class="btn btn-block btn-primary"
-                                         action="cadastrarEmprestimo?faces-redirect=true"/>
-                    </div>
-                    <div class="form-group">
-                        <h:commandButton value="Consultar Empréstimo" class="btn btn-block btn-primary"
-                                         action="consultarEmprestimo?faces-redirect=true"/>
-                    </div>
-                    <div class="form-group">
+    <!--RODAPÉ-->
+    <div class="ui-grid-col-12 fundoPretoCol">
 
-                        <h:commandButton value="Alterar Empréstimo" class="btn btn-block btn-primary"
-                                         action="alterarEmprestimo?faces-redirect=true"/>
-                    </div>
-                </div>
-            </h:form>
+        <div class="ui-grid-col-6">
+            <h5 class="letraBranca text-center">
+                <p:graphicImage value="export/images/whatsapp.png"></p:graphicImage>
+                Contato: (44) 99999-9999
+            </h5>
+        </div>
 
-            <h:form>
-
-                <p:outputLabel value="Empréstimos"/><font color="red">*</font>
-                <h:form id="Empréstimo">
-                    <p:selectOneMenu filter="true" value="#{emprestimoController.emp.codemprestimo}" filterMatchMode="contains"
-                                     required="true" style="width:1290px" panelStyle="width:1330px">
-
-                        <f:selectItem noSelectionOption="true" itemLabel="Selecione um empréstimo"/>
-                        <f:selectItems value="#{emprestimoController.consultaEmprestimosEmVigor()}" var="emp"
-                                       itemLabel="Nome: #{emp.nome_user} | E-mail: #{emp.email_user} | Título: #{emp.titulo_book} | Autor: #{emp.autor_book} | Editora: #{emp.editora_book} | Ano Lanç.: #{emp.anolancamento_book}"
-                                       itemValue="#{emp.codemprestimo}"/>
-                    </p:selectOneMenu>
-                    <div id="conf" class="conf">
-                        <p align="center">
-                            <h:outputLabel value="Deseja finalizar o empréstimo selecionado?"/>
-                        </p>
-                        <h:form>
-                            <div class="form-group">
-                                <h:commandButton value="Sim" class="btn btn-block btn-primary"
-                                                 action="#{emprestimoController.realizaFinalizarEmprestimo}"/>
-                            </div>
-                            <div class="form-group">
-                                <h:commandButton value="Não" class="btn btn-block btn-primary"
-                                                 onclick="fecha()"></h:commandButton>
-                            </div>
-                        </h:form>
-                    </div>
-                    <h:commandButton value="Finalizar" class="btn btn-block btn-primary"
-                                     onclick="abri()"/>
-                </h:form>
-            </h:form>
-        </section>
+        <div class="ui-grid-col-6">
+            <h5 class="letraBranca text-center">
+                Siga-nos nas redes sociais:
+                <a href="http://www.facebook.com"><p:graphicImage value="export/images/facebook.png"></p:graphicImage></a>
+                <a href="http://www.twitter.com"><p:graphicImage value="export/images/twitter.png"></p:graphicImage></a>
+                <a href="http://www.linkedin.com"><p:graphicImage value="export/images/linkedin.png"></p:graphicImage></a>
+            </h5>
+        </div>
     </div>
 </h:body>
 </html>

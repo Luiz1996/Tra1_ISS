@@ -1,25 +1,28 @@
 package br.uem.din.bibliotec.config.controller;
 
-import br.uem.din.bibliotec.config.model.Usuario;
 import br.uem.din.bibliotec.config.dao.UsuarioDao;
+import br.uem.din.bibliotec.config.model.Usuario;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 @Named
 @SessionScoped
 public class LoginController implements Serializable {
+    private final long tempoMilisegundos = 60000;  //1min
+    private final int numeroTentativas = 4;        //5 tentativas -> 0,1,2,3,4
     private UsuarioDao userDao = new UsuarioDao();
-    private Usuario login =  new Usuario();
-    private int retorno = 0;
+    private Usuario login;
     private String usuario;
     private String senha;
+
+    private HttpServletRequest request;
 
     //contrutores e gets/sets
     public LoginController(){ login = new Usuario(); }
@@ -56,24 +59,35 @@ public class LoginController implements Serializable {
 
     public void setUserDao(UsuarioDao userDao) { this.userDao = userDao; }
 
-    public int getRetorno() { return retorno; }
+    //realizando autenticação
+    public String loginController() throws SQLException, NoSuchAlgorithmException {
+        ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
+        request = (HttpServletRequest) externalContext.getRequest();
 
-    public void setRetorno(int retorno){ this.retorno = retorno; }
+        ForcaBrutaController control;
 
-    //realizando a chamado do método de autenticação na Model UsuarioDao
-    public String realizarAcesso() throws SQLException {
-        retorno =  userDao.buscaPermissao(login, usuario, senha);
-
-        if(retorno == -1){
-            login.setMsg_autenticacao("Usuário inativo.");
-        }else{
-            if(retorno == 0){
-                login.setMsg_autenticacao("Usuário sem permissão.");
-            }else{
-                login.setMsg_autenticacao("Usuário/Senha inválido(s).");
-            }
+        if (externalContext.getSessionMap().get("ForcaBrutaController") == null) {
+            control = new ForcaBrutaController(tempoMilisegundos, numeroTentativas);
+            externalContext.getSessionMap().put("ForcaBrutaController", control);
+        } else {
+            control = (ForcaBrutaController) externalContext.getSessionMap().get("ForcaBrutaController");
         }
-        return userDao.homePage();
+
+        if (!control.podeLoggar(request)) {
+            userDao.bloquearUsuario(usuario);
+            login.setMsg_autenticacao("IP BLOQUEADO! Aguarde 5min.");
+            return "/gestaoBibliotecas.xhtml";
+        }
+
+        //Simula uma busca do usuário no banco de dados
+        int colaborador = userDao.buscaPermissao(login, usuario, senha);
+
+        if(colaborador == 1){
+            return userDao.homePage();
+        }else{
+            control.registraFalha(request);
+            return userDao.homePage();
+        }
     }
 
     //encerrando sessão do usuário

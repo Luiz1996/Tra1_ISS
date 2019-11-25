@@ -1,9 +1,8 @@
 package br.uem.din.bibliotec.config.controller;
 
+import br.uem.din.bibliotec.config.dao.LivroDao;
 import br.uem.din.bibliotec.config.dao.UsuarioDao;
 import br.uem.din.bibliotec.config.model.Livro;
-import br.uem.din.bibliotec.config.dao.LivroDao;
-import org.primefaces.context.PrimeFacesContext;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -70,6 +69,10 @@ public class LivroController implements Serializable {
         return userDao.homePage();
     }
 
+    public List<Livro> livrosDisponiveis() throws SQLException {
+        return livroDao.consultaLivrosDisponiveis(livro);
+    }
+
     //chama método para consultar livro(s)
     public List<Livro> realizarConsultaLivro() throws SQLException {
         return livroDao.consultarLivro(livro, 0);
@@ -128,60 +131,7 @@ public class LivroController implements Serializable {
         return userDao.homePage();
     }
 
-    //chama métodos para manipulação da reserva
-    public String realizaReservaLivro(){
-        retorno =  livroDao.cadastrarReserva(livro);
-
-        if(retorno == -2){
-            livro.setMsg_retorno("Retorno: Você possui empréstimos em atraso, favor regularizar sua situação.");
-            livro.setColor_msg_retorno(FALHA);
-        }else{
-            if(retorno == -1){
-                livro.setMsg_retorno("Retorno: O cadastramento de reserva falhou, contacte o administrador!");
-                livro.setColor_msg_retorno(FALHA);
-            }else{
-                if(retorno == 0){
-                    livro.setMsg_retorno("Retorno: Reserva efetuada com sucesso, consulte a data de retirada clicando em 'Minhas Reservas'.");
-                    livro.setColor_msg_retorno(SUCESSO);
-                }else{
-                    if(retorno == 1){
-                        livro.setMsg_retorno("Retorno: O livro selecionado já possui reserva em seu nome, consulte suas reservas clicando em 'Minhas Reservas'.");
-                        livro.setColor_msg_retorno(FALHA);
-                    }else{
-                        if(retorno == 2){
-                            livro.setMsg_retorno("Retorno: O livro selecionado já possui reserva em nome de outra pessoa.");
-                            livro.setColor_msg_retorno(FALHA);
-                        }else{
-                            if(retorno == 3){
-                                livro.setMsg_retorno("Retorno: O livro já encontra-se com empréstimo em seu nome!");
-                                livro.setColor_msg_retorno(FALHA);
-                            }else{
-                                livro.setMsg_retorno("Retorno: A operação de cadastramento de reserva falhou.");
-                                livro.setColor_msg_retorno(FALHA);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        return userDao.homePage();
-    }
-
-    public String realizaCancelamentoReserva(){
-        retorno =  livroDao.cancelarReserva(livro);
-
-        if(retorno == 0){
-            livro.setMsg_retorno("Retorno: A operação de cancelamento de reserva falhou.");
-            livro.setColor_msg_retorno(FALHA);
-        }else{
-            livro.setMsg_retorno("Retorno: Reserva cancelada com sucesso.");
-            livro.setColor_msg_retorno(SUCESSO);
-        }
-        return userDao.homePage();
-    }
-
-    public void carregarDadosLivro() {
+    public void carregarDadosLivros(){
         livroDao.carregarDadosLivro(livro);
     }
 }

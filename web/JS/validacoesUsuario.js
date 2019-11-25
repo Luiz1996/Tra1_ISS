@@ -63,12 +63,13 @@ function validaCpf(cpf) {
 
 function validaEstado(estado){
     if(estado == 'UF'){
-        alert("Por favor, selecione um Estado/UF válido.")
+        alert("Por favor, selecione um Estado/UF.")
     }
 }
 
 function validaCodUsuario(cod){
     if(cod <= 0 || cod == ""){
+        /*alert("Por favor, informar um Id válido!");*/
         document.getElementById("IdUsuario-codUsuario").value = "";
         document.getElementById("IdUsuario-codUsuario").focus();
     }

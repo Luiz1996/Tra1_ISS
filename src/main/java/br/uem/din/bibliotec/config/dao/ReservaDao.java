@@ -32,7 +32,7 @@ public class ReservaDao {
 
             st.executeUpdate("INSERT INTO `bibliotec`.`reserva` (`codlivro`, `codusuario`, `datacad`, `dataalt`,`ativo`) VALUES ('" + reserva.getCodLivro() + "', '" + reserva.getCodUsuario() + "', current_Date, NULL,'1');");
 
-            //tratando caso o livro esteja reservado(OBSERVER)
+			//tratando caso o livro esteja reservado(OBSERVER)
             if(livroJaReservadoQualquerUsuario(reserva) == 1 && livroDao.verificaDispLivro(reserva.getCodLivro()) == 1){
                 reserva.setCodUsuario(obterDadosReserva(reserva, false));
                 atualizarStatusReserva(reserva);
@@ -57,36 +57,36 @@ public class ReservaDao {
             Conexao con = new Conexao();
             Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             con.conexao.setAutoCommit(true);
-            ResultSet rs = null;
+            ResultSet rs;
 
             st.execute( "select\n" +
-                    "\tr.codreserva,\n" +
-                    "    r.datacad,\n" +
-                    "    r.datares,\n" +
-                    "    l.titulo,\n" +
-                    "    l.autor,\n" +
-                    "    l.editora\n" +
-                    "from\n" +
-                    "\treserva  r\n" +
-                    "inner join\n" +
-                    "\tusuarios u on u.codusuario = r.codusuario\n" +
-                    "inner join\n" +
-                    "\tlivro    l on l.codlivro = r.codlivro\t\n" +
-                    "where\n" +
-                    "\tr.ativo = '1' and\n" +
-                    "    u.usuario = '"+usuarioLogado+"'\n" +
-                    "order by\n" +
-                    "\tl.titulo;");
+                            "\tr.codreserva,\n" +
+                            "    r.datacad,\n" +
+                            "    r.datares,\n" +
+                            "    l.titulo,\n" +
+                            "    l.autor,\n" +
+                            "    l.editora\n" +
+                            "from\n" +
+                            "\treserva  r\n" +
+                            "inner join\n" +
+                            "\tusuarios u on u.codusuario = r.codusuario\n" +
+                            "inner join\n" +
+                            "\tlivro    l on l.codlivro = r.codlivro\t\n" +
+                            "where\n" +
+                            "\tr.ativo = '1' and\n" +
+                            "    u.usuario = '"+usuarioLogado+"'\n" +
+                            "order by\n" +
+                            "\tl.titulo;");
 
             rs = st.getResultSet();
 
             while(rs.next()){
                 Reserva reservaTemp = new Reserva(rs.getInt("codreserva"),
-                        dtFormat.formatadorDatasBrasil(rs.getString("datacad")),
-                        dtFormat.formatadorDatasBrasil(rs.getString("datares")),
-                        rs.getString("titulo"),
-                        rs.getString("autor"),
-                        rs.getString("editora"));
+                                                  dtFormat.formatadorDatasBrasil(rs.getString("datacad")),
+                                                  dtFormat.formatadorDatasBrasil(rs.getString("datares")),
+                                                  rs.getString("titulo"),
+                                                  rs.getString("autor"),
+                                                  rs.getString("editora"));
 
                 minhasReservas.add(reservaTemp);
             }
@@ -114,11 +114,11 @@ public class ReservaDao {
 
             //tratando caso o livro tenha outra reserva, usuário deve ser informado
             st.execute( "select\n" +
-                    "\tr.codlivro\n" +
-                    "from\n" +
-                    "\treserva r\n" +
-                    "where\n" +
-                    "\tr.codreserva = '" + reserva.getCodReserva() + "';");
+                            "\tr.codlivro\n" +
+                            "from\n" +
+                            "\treserva r\n" +
+                            "where\n" +
+                            "\tr.codreserva = '" + reserva.getCodReserva() + "';");
 
             ResultSet rs = st.getResultSet();
 
@@ -153,13 +153,13 @@ public class ReservaDao {
             ResultSet rs;
 
             st.execute(   "select\n" +
-                    "\tcoalesce(count(r.codreserva),0) as ja_reservado\n" +
-                    "from\n" +
-                    "\treserva r \n" +
-                    "where\n" +
-                    "\tr.codlivro = '"+reserva.getCodLivro()+"' and\n" +
-                    "    r.codusuario = '"+reserva.getCodUsuario()+"' and\n" +
-                    "    r.ativo = '1';");
+                              "\tcoalesce(count(r.codreserva),0) as ja_reservado\n" +
+                              "from\n" +
+                              "\treserva r \n" +
+                              "where\n" +
+                              "\tr.codlivro = '"+reserva.getCodLivro()+"' and\n" +
+                              "    r.codusuario = '"+reserva.getCodUsuario()+"' and\n" +
+                              "    r.ativo = '1';");
 
             rs = st.getResultSet();
 
@@ -188,12 +188,12 @@ public class ReservaDao {
             ResultSet rs = null;
 
             st.execute(     "select\n" +
-                    "\tcoalesce(count(r.codreserva),0) as ja_reservado\n" +
-                    "from\n" +
-                    "\treserva r \n" +
-                    "where\n" +
-                    "\tr.codlivro = '"+reserva.getCodLivro()+"' and\n" +
-                    "    r.ativo = '1';");
+                                "\tcoalesce(count(r.codreserva),0) as ja_reservado\n" +
+                                "from\n" +
+                                "\treserva r \n" +
+                                "where\n" +
+                                "\tr.codlivro = '"+reserva.getCodLivro()+"' and\n" +
+                                "    r.ativo = '1';");
 
             rs = st.getResultSet();
 
@@ -221,23 +221,23 @@ public class ReservaDao {
 
             if(emprestandoLivro){
                 st.execute( "SELECT \n" +
-                        "    COALESCE(MIN(r.codreserva), 0) AS codReserva,\n" +
-                        "    r.codusuario AS codUsuario\n" +
-                        "FROM\n" +
-                        "    reserva r\n" +
-                        "WHERE\n" +
-                        "    r.codlivro = '"+reserva.getCodLivro()+"'\n" +
-                        "        AND r.ativo = '1'\n" +
-                        "        AND NOT r.datares IS NULL;"); //considera reserva onde o livro ja esteja disponível para retirada, ou seja, datares <> null
+                                "    COALESCE(MIN(r.codreserva), 0) AS codReserva,\n" +
+                                "    r.codusuario AS codUsuario\n" +
+                                "FROM\n" +
+                                "    reserva r\n" +
+                                "WHERE\n" +
+                                "    r.codlivro = '"+reserva.getCodLivro()+"'\n" +
+                                "        AND r.ativo = '1'\n" +
+                                "        AND NOT r.datares IS NULL;"); //considera reserva onde o livro ja esteja disponível para retirada, ou seja, datares <> null
             }else{
                 st.execute( "SELECT \n" +
-                        "    COALESCE(MIN(r.codreserva), 0) AS codReserva,\n" +
-                        "    r.codusuario                   AS codUsuario\t\n" +
-                        "FROM\n" +
-                        "    reserva r\n" +
-                        "WHERE\n" +
-                        "    r.codlivro = '"+reserva.getCodLivro()+"' AND \n" +
-                        "    r.ativo = '1' and r.datares is null;"); //considera reservas onde o livro não está disponivel para retirada, datares == null
+                                "    COALESCE(MIN(r.codreserva), 0) AS codReserva,\n" +
+                                "    r.codusuario                   AS codUsuario\t\n" +
+                                "FROM\n" +
+                                "    reserva r\n" +
+                                "WHERE\n" +
+                                "    r.codlivro = '"+reserva.getCodLivro()+"' AND \n" +
+                                "    r.ativo = '1' and r.datares is null;"); //considera reservas onde o livro não está disponivel para retirada, datares == null
             }
 
             rs = st.getResultSet();
@@ -266,20 +266,20 @@ public class ReservaDao {
             ResultSet rs;
 
             st.execute("SELECT \n" +
-                    "    u.nome, \n" +
-                    "    u.email, \n" +
-                    "    l.titulo, \n" +
-                    "    r.datares," +
-                    "    l.disponibilidade\n" +
-                    "FROM\n" +
-                    "    reserva  r\n" +
-                    "INNER JOIN\n" +
-                    "    livro    l ON l.codlivro = r.codlivro\n" +
-                    "INNER JOIN\n" +
-                    "    usuarios u ON u.codusuario = r.codusuario\n" +
-                    "WHERE\n" +
-                    "    r.codreserva = '"+reserva.getCodReserva()+"' AND \n" +
-                    "    r.ativo = '1';");
+                            "    u.nome, \n" +
+                            "    u.email, \n" +
+                            "    l.titulo, \n" +
+                            "    r.datares," +
+                            "    l.disponibilidade\n" +
+                            "FROM\n" +
+                            "    reserva  r\n" +
+                            "INNER JOIN\n" +
+                            "    livro    l ON l.codlivro = r.codlivro\n" +
+                            "INNER JOIN\n" +
+                            "    usuarios u ON u.codusuario = r.codusuario\n" +
+                            "WHERE\n" +
+                            "    r.codreserva = '"+reserva.getCodReserva()+"' AND \n" +
+                            "    r.ativo = '1';");
 
             rs = st.getResultSet();
 
@@ -308,12 +308,12 @@ public class ReservaDao {
             con.conexao.setAutoCommit(true);
 
             st.executeUpdate("UPDATE \n" +
-                    "\t`bibliotec`.`reserva` \n" +
-                    "SET \n" +
-                    "    `datares` = DATE_ADD(CURRENT_DATE(), INTERVAL 1 DAY)\n" +
-                    "WHERE\n" +
-                    "    codreserva = '"+reserva.getCodReserva()+"' AND \n" +
-                    "    ativo = '1';");
+                                "\t`bibliotec`.`reserva` \n" +
+                                "SET \n" +
+                                "    `datares` = DATE_ADD(CURRENT_DATE(), INTERVAL 1 DAY)\n" +
+                                "WHERE\n" +
+                                "    codreserva = '"+reserva.getCodReserva()+"' AND \n" +
+                                "    ativo = '1';");
 
             st.close();
             con.conexao.close();
