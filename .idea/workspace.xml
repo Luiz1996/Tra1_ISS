@@ -6,206 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BiblioTec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BiblioTec.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_faces_jsf_api_2_2_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_6_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_17_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BiblioTec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BiblioTec.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bkp_banco.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/acessoAluno.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/acessoBalconista.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/acessoBibliotecario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/acessoRestrito.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/alterarEmprestimo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/alterarLivro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/cadastrarEmprestimo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/cadastrarLivro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/cadastrarReserva.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/cadastrarUsuarioBalconista.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/cadastroUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/cancelarReserva.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/consultaAcervo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/consultaUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/consultarAcervoAluno.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/consultarAcervoBalconista.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/consultarEmprestimo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/consultarLivro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/deletarEmprestimo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/deletarLivro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/deletarUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/editarUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/gestaoBibliotecas.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/meusDados.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/redefinirSenha.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/CSS/redefinirSenhaBalconista.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/JS/validacoesUsuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/JS/validacoesUsuario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/conexao/Conexao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/conexao/Conexao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/EmprestimoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/EmprestimoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LivroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LivroController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/LivroDao$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/LivroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/LivroDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/filter/BalconistaFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/filter/BalconistaFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/filter/LoginAuthFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/filter/MeusEmpFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Cotacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Cotacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Emprestimo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Emprestimo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Usuario$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Usuario$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/services/CriptografiaMd5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/services/CriptografiaMd5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/services/Email$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/services/Email$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/services/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/services/Email.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/services/FormataData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/services/FormataData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/annotations-17.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/lib/jsf-api-2.2.13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoAluno.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoAluno.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBibliotecario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoBibliotecario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoRestrito.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/acessoRestrito.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/alterarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/alterarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/alterarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/alterarLivro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastrarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastrarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastrarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastrarLivro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastrarReserva.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastrarReserva.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastrarUsuarioBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastrarUsuarioBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cadastroUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cancelarReserva.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/cancelarReserva.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultaUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultaUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarAcervo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarAcervo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarAcervoAluno.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarAcervoAluno.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarAcervoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarAcervoBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarLivro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/deletarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/deletarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/deletarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/deletarLivro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/deletarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/deletarUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/editarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/editarUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/export/images/manchete.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/export/images/teste.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/gestaoBibliotecas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/gestaoBibliotecas.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/meusEmprestimos.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/meusEmprestimos.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/minhasReservas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/minhasReservas.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/conexao/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/conexao/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/CotacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/CotacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/EmprestimoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/EmprestimoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/ReservaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/ReservaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/CotacaoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/CotacaoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/EmprestimoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/EmprestimoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/LivroDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/LivroDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/ReservaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/ReservaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/UsuarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/filter/BalconistaFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/filter/BalconistaFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/filter/LoginAuthFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/filter/MeusEmpFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Cotacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Cotacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Emprestimo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Emprestimo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/services/CriptografiaMd5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/services/CriptografiaMd5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/services/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/services/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/services/FormataData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/services/FormataData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BiblioTec.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/conexao/Conexao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/conexao/Conexao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/CotacaoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/EmprestimoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/EmprestimoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/LivroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/LivroController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/CotacaoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/EmprestimoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/LivroDao$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/LivroDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/LivroDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/filter/BalconistaFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/filter/BalconistaFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/filter/LoginAuthFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/filter/MeusEmpFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Cotacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Cotacao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Emprestimo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Emprestimo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Usuario$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Usuario$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/services/CriptografiaMd5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/services/CriptografiaMd5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/services/Email$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/services/Email$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/services/Email.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/services/Email.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/services/FormataData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/services/FormataData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/acessoAluno.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/acessoBalconista.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/acessoBibliotecario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/acessoRestrito.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/alterarEmprestimo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/alterarLivro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/cadastrarEmprestimo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/cadastrarLivro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/cadastrarReserva.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/cadastrarUsuarioBalconista.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/cadastroUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/cancelarReserva.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/consultaAcervo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/consultaUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/consultarAcervoAluno.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/consultarAcervoBalconista.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/consultarEmprestimo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/consultarLivro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/deletarEmprestimo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/deletarLivro.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/deletarUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/editarUsuario.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/gestaoBibliotecas.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/meusDados.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/redefinirSenha.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/CSS/redefinirSenhaBalconista.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/JS/validacoesUsuario.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/JS/validacoesUsuario.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acessoAluno.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoAluno.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acessoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acessoBibliotecario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoBibliotecario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/acessoRestrito.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/acessoRestrito.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/alterarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/alterarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/alterarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/alterarLivro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cadastrarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/cadastrarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cadastrarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/cadastrarLivro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cadastrarReserva.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/cadastrarReserva.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cadastrarUsuarioBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/cadastrarUsuarioBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cadastroUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/cadastroUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/cancelarReserva.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/cancelarReserva.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/consultaUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/consultaUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/consultarAcervo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/consultarAcervo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/consultarAcervoAluno.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/consultarAcervoAluno.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/consultarAcervoBalconista.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/consultarAcervoBalconista.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/consultarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/consultarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/consultarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/consultarLivro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/deletarEmprestimo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/deletarEmprestimo.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/deletarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/deletarLivro.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/deletarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/deletarUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/editarUsuario.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/editarUsuario.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/export/images/manchete.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/export/images/teste.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/gestaoBibliotecas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/gestaoBibliotecas.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/meusEmprestimos.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/meusEmprestimos.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/minhasReservas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/minhasReservas.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -686,7 +487,7 @@
       <workItem from="1574603409258" duration="3829000" />
       <workItem from="1574613557672" duration="79000" />
       <workItem from="1574719455438" duration="1126000" />
-      <workItem from="1574720974126" duration="2399000" />
+      <workItem from="1574720974126" duration="2639000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -947,7 +748,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569279732057</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Iniciando os trabalhos de testes com JUnit.">
+      <created>1574723514507</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1574723514508</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -990,7 +798,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dados do commit:&#10;-Iniciando desenvolvimento das telas e funcionalidades do Balconista" />
     <MESSAGE value="Dados commit:&#10;-Fazendo o cadastro de usuário através do acesso do balconista(incompleto)" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section" />
@@ -1015,7 +822,8 @@
     <MESSAGE value="Realizado correções no script da base de dados e também na formatação de valores numéricos (Double, Reais (multas))." />
     <MESSAGE value="Realizado alguns ajustes/correções no frontend e css." />
     <MESSAGE value="Adicionado emptyMessages em DataTable's." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado emptyMessages em DataTable's." />
+    <MESSAGE value="Iniciando os trabalhos de testes com JUnit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Iniciando os trabalhos de testes com JUnit." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
