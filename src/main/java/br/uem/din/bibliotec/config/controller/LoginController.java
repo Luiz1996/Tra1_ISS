@@ -58,7 +58,7 @@ public class LoginController implements Serializable {
 
     public void setUserDao(UsuarioDao userDao) { this.userDao = userDao; }
 
-    //realizando a chamado do método de autenticação na Model UsuarioDao
+    //realizando autenticação
     public String loginController() throws SQLException, NoSuchAlgorithmException {
         ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
         request = (HttpServletRequest) externalContext.getRequest();

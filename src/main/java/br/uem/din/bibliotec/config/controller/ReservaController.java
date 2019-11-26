@@ -1,12 +1,11 @@
 package br.uem.din.bibliotec.config.controller;
 
 import br.uem.din.bibliotec.config.dao.EmprestimoDao;
+import br.uem.din.bibliotec.config.dao.MultaDao;
 import br.uem.din.bibliotec.config.dao.ReservaDao;
 import br.uem.din.bibliotec.config.dao.UsuarioDao;
 import br.uem.din.bibliotec.config.model.Reserva;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.sql.SQLException;
@@ -19,6 +18,7 @@ public class ReservaController implements Serializable {
     private ReservaDao reservaDao = new ReservaDao();
     private UsuarioDao usuarioDao = new UsuarioDao();
     private EmprestimoDao emprestimoDao = new EmprestimoDao();
+    private MultaDao multaDao = new MultaDao();
     private final String SUCESSO = "green";
     private final String FALHA = "red";
 
@@ -56,8 +56,43 @@ public class ReservaController implements Serializable {
         this.emprestimoDao = emprestimoDao;
     }
 
+    public String cadastrarReserva() throws SQLException {
+        reserva.setCodUsuario(usuarioDao.obterCodUsuario());
+
+        if(multaDao.valorTotalMultas(usuarioDao.obterCodUsuario()) > 0.0){
+            reserva.setMsgRetorno("FALHA: Usuários com multas não podem efetuar reservas de livros.");
+            reserva.setColorMsgRetorno(FALHA);
+        }else{
+            if(reservaDao.livroJaReservadoUsuarioLogado(reserva) > 0){
+                reserva.setMsgRetorno("FALHA: Este livro já está reservado para você.");
+                reserva.setColorMsgRetorno(FALHA);
+            }else{
+                if(emprestimoDao.consultarEmpAtrasados(reserva.getCodUsuario()) > 0){
+                    reserva.setMsgRetorno("FALHA: Você possui empréstimo(s) em atraso(s), reserva cancelada.");
+                    reserva.setColorMsgRetorno(FALHA);
+                }else {
+                    if(emprestimoDao.livroJaEmprestado(reserva) > 0){
+                        reserva.setMsgRetorno("FALHA: Este livro já está emprestado para você, tente ir até a biblioteca e renove seu empréstimo.");
+                        reserva.setColorMsgRetorno(FALHA);
+                    }else{
+                        reservaDao.cadastrarReserva(reserva);
+                        reserva.setMsgRetorno("SUCESSO: A reserva foi efetuada com sucesso, você receberá um e-mail quando o livro estiver disponível.");
+                        reserva.setColorMsgRetorno(SUCESSO);
+                    }
+                }
+            }
+        }
+        return usuarioDao.homePage();
+    }
+
     public List<Reserva> consultarReserva(){
         return reservaDao.consultarReserva(reserva);
     }
 
+    public String deletarReserva(){
+        reservaDao.cancelarReserva(reserva);
+        reserva.setMsgRetorno("SUCESSO: A reserva escolhida foi cancelada com sucesso.");
+        reserva.setColorMsgRetorno(SUCESSO);
+        return usuarioDao.homePage();
+    }
 }

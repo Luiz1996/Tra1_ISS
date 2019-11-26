@@ -1,7 +1,8 @@
 package br.uem.din.bibliotec.config.services;
 
-import java.security.*;
-import java.math.*;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class CriptografiaMd5 {
 

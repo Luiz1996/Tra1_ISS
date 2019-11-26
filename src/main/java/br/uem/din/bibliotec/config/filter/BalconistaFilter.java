@@ -17,12 +17,13 @@ import java.sql.Statement;
                                                      "/cadastrarEmprestimo.xhtml",
                                                      "/cadastrarUsuarioBalconista.xhtml",
                                                      "/consultaUsuario.xhtml",
+                                                     "/baixarMultas.xhtml",
                                                      "/editarUsuario.xhtml",
                                                      "/deletarUsuario.xhtml",
                                                      "/consultarEmprestimo.xhtml",
                                                      "/alterarEmprestimo.xhtml",
-                                                     "/deletarEmprestimo.xhtml",
                                                      "/redefinirSenhaBalconista.xhtml",
+                                                     "/deletarEmprestimo.xhtml",
                                                      "/consultarAcervoBalconista.xhtml"
          })
 

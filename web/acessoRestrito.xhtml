@@ -11,12 +11,12 @@
     <title>Acesso Restrito | BiblioTec</title>
 
     <link href="export/images/icone.png" rel="shortcut icon" type="image/x-png"></link>
-    <link rel="stylesheet" type="text/css" href="CSS/acessoRestrito.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css"/>
 
 </h:head>
 <h:body>
     <section class="right">
-        <div class="geral" id="geral">
+        <div class="geralAcessoRestrito">
             <div class="div-principal" id="div-principal">
                 <div align="center" class="first" id="first">
                     <i><h1>Acesso Restrito</h1></i>
@@ -26,8 +26,8 @@
                 </div>
                 <br/>
                 <h:form>
-                    <div class="btn" id="btn">
-                        <h:commandButton value="Voltar" class="btn btn-block btn-primary"
+                    <div class="btnAcessoRestrito">
+                        <h:commandButton value="Voltar" class="btn btn-block buttonAcervo"
                                          action="#{loginController.logoutSession}"/>
                     </div>
                 </h:form>

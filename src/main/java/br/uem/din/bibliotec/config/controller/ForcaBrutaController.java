@@ -57,6 +57,7 @@ public class ForcaBrutaController {
      * @return
      */
     private boolean possuiIP(ServletRequest request) {
+
         return tentativaPorIP.containsKey(request.getRemoteHost());
     }
 
@@ -67,6 +68,7 @@ public class ForcaBrutaController {
      * @return
      */
     private boolean atingiuMaximoTentativas(ServletRequest request) {
+
         return tentativaPorIP.get(request.getRemoteHost()).getTentativa() > numeroTentativas;
     }
 
@@ -77,6 +79,7 @@ public class ForcaBrutaController {
      * @return
      */
     private boolean isTempoExpirado(ServletRequest request) {
+
         return tentativaPorIP.get(request.getRemoteHost()).getTempo() >= tempoMilisegundos;
     }
 

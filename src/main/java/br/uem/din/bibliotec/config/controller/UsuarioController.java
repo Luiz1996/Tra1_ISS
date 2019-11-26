@@ -201,42 +201,35 @@ public class UsuarioController implements Serializable {
     //chama métodos para manipulação dos dados cadastrais do próprio usuário
     public String chamaMenuInicial(){ return userDao.homePage(); }
 
-    @PostConstruct
-    public void init() {
-        //Estados
-        estados = new ArrayList<>();
-        estados.add("AC");
-        estados.add("AL");
-        estados.add("AP");
-        estados.add("AM");
-        estados.add("BA");
-        estados.add("CE");
-        estados.add("DF");
-        estados.add("ES");
-        estados.add("GO");
-        estados.add("MA");
-        estados.add("MT");
-        estados.add("MS");
-        estados.add("MG");
-        estados.add("PA");
-        estados.add("PB");
-        estados.add("PR");
-        estados.add("PE");
-        estados.add("PI");
-        estados.add("RJ");
-        estados.add("RN");
-        estados.add("RS");
-        estados.add("RO");
-        estados.add("RR");
-        estados.add("SC");
-        estados.add("SP");
-        estados.add("SE");
-        estados.add("TO");
-    }
+    public String realizaAtualizacaoMeusDados() throws ParseException {
+        retorno =  userDao.atualizaMeusDados(user);
 
-    public void carregarDadosUsuario(){
+        if(retorno == 1){
+            user.setMsg_autenticacao("Dados atualizados com sucesso!");
+            user.setColor_msg(SUCESSO);
+        }else{
+            if(retorno == 0){
+                user.setMsg_autenticacao("Nenhuma alteração identificada!");
+                user.setColor_msg(FALHA);
+            }else{
+                if(retorno == -1){
+                    user.setMsg_autenticacao("Falha ao atualizar dados!");
+                    user.setColor_msg(FALHA);
+                }else{
+                    if(retorno == -2){
+                        user.setMsg_autenticacao("CPF inválido!");
+                        user.setColor_msg(FALHA);
+                    }else{
+                        if(retorno == -3){
+                            user.setMsg_autenticacao("Data de nascimento inválida!");
+                            user.setColor_msg(FALHA);
+                        }
+                    }
+                }
+            }
+        }
 
-        userDao.carregarDadosUsuario(user);
+        return "/gestaoBibliotecas?faces-redirect=true";
     }
 
     public String realizaRedefinirSenha() throws NoSuchAlgorithmException {
@@ -273,5 +266,50 @@ public class UsuarioController implements Serializable {
         }
 
         return userDao.homePage();
+    }
+
+    public List<Usuario> usuariosAtivos() throws SQLException {
+        return userDao.consultaUsuariosAtivos(user);
+    }
+
+    public int obterCodUsuario(){
+        return userDao.obterCodUsuario();
+    }
+
+    @PostConstruct
+    public void init() {
+        //Estados
+        estados = new ArrayList<>();
+        estados.add("AC");
+        estados.add("AL");
+        estados.add("AP");
+        estados.add("AM");
+        estados.add("BA");
+        estados.add("CE");
+        estados.add("DF");
+        estados.add("ES");
+        estados.add("GO");
+        estados.add("MA");
+        estados.add("MT");
+        estados.add("MS");
+        estados.add("MG");
+        estados.add("PA");
+        estados.add("PB");
+        estados.add("PR");
+        estados.add("PE");
+        estados.add("PI");
+        estados.add("RJ");
+        estados.add("RN");
+        estados.add("RS");
+        estados.add("RO");
+        estados.add("RR");
+        estados.add("SC");
+        estados.add("SP");
+        estados.add("SE");
+        estados.add("TO");
+    }
+
+    public void carregarDadosUsuario(){
+        userDao.carregarDadosUsuario(user);
     }
 }

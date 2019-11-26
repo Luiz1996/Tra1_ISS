@@ -22,8 +22,8 @@ public class FormataData {
 
     //como o dado é informado como AAAA-MM-DD precisamos convertê-la para o formato do brasileiro ao imprimir no front-end ao usuário
     public String formatadorDatasBrasil(String data) {
-        if (data == null) {
-            return " ";
+        if (data == null || data.trim().length() == 0) {
+            return "";
         } else {
             String[] dataSeparada = data.split("-");
             String dataPadraoBrasil = dataSeparada[2] + "/" + dataSeparada[1] + "/" + dataSeparada[0];
