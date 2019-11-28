@@ -11,6 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MultaTeste {
+    public static int tamanho = 11;
 
     @Test
     void valorTotalMultasVerdadeiro() {
@@ -30,7 +31,7 @@ class MultaTeste {
     }
 
     @Test
-    void cadastrarMulta(){
+    void cadastrarMultaVerdadeiro(){
 
         Multa multa = new Multa();
         MultaDao multaDao = new MultaDao();
@@ -43,15 +44,118 @@ class MultaTeste {
         multa.setDiasAtraso(10);
         multa.setValor(20);
         multa.setAtivo(1);
-
+        multa.setCpfUsuario("11111111111");
 
         multaDao.cadastrarMulta(multa);
 
-        multa.setCodMulta(1);
+        tamanho++;
         List<Multa> listaMulta = new ArrayList<>();
 
         listaMulta = multaDao.consultarMultasCpf(multa);
 
+        assertEquals(10,listaMulta.size());
     }
 
+    @Test
+    void cadastrarMultaFalso(){
+
+        Multa multa = new Multa();
+        MultaDao multaDao = new MultaDao();
+
+        multa.setCodLivro(1);
+        multa.setCodUsuario(1);
+        multa.setCodEmprestimo(1);
+        multa.setCodCotacao(1);
+        multa.setDataCad("2019-11-27");
+        multa.setDiasAtraso(10);
+        multa.setValor(20);
+        multa.setAtivo(1);
+        multa.setCpfUsuario("11111111111");
+
+
+        multaDao.cadastrarMulta(multa);
+        tamanho++;
+        List<Multa> listaMulta = new ArrayList<>();
+
+        listaMulta = multaDao.consultarMultasCpf(multa);
+
+        assertEquals(1,listaMulta.size());
+    }
+
+    @Test
+    void consultaVerdadeira(){
+        Multa multa = new Multa();
+        MultaDao multaDao = new MultaDao();
+
+        multa.setCpfUsuario("11111111111");
+        List<Multa> listaMulta = new ArrayList<>();
+
+        listaMulta = multaDao.consultarMultasCpf(multa);
+
+        assertEquals(tamanho, listaMulta.size());
+
+    }
+
+    @Test
+    void consultaFalsa(){
+        Multa multa = new Multa();
+        MultaDao multaDao = new MultaDao();
+
+        multa.setCpfUsuario("11111111111");
+        List<Multa> listaMulta = new ArrayList<>();
+
+        listaMulta = multaDao.consultarMultasCpf(multa);
+
+        assertEquals(1, listaMulta.size());
+    }
+
+    @Test
+    void consultaMinhasMultasVerdadeira(){
+        Multa multa = new Multa();
+        MultaDao multaDao = new MultaDao();
+
+        multa.setCodUsuario(1);
+        List<Multa> listaMulta = new ArrayList<>();
+
+        listaMulta = multaDao.consultarMinhasMultasCpf(multa);
+
+        assertEquals(tamanho, listaMulta.size());
+    }
+
+    @Test
+    void consultaMinhasMultasFalsa(){
+        Multa multa = new Multa();
+        MultaDao multaDao = new MultaDao();
+
+        multa.setCodUsuario(1);
+        List<Multa> listaMulta = new ArrayList<>();
+
+        listaMulta = multaDao.consultarMinhasMultasCpf(multa);
+
+        assertEquals(1, listaMulta.size());
+    }
+
+    @Test
+    void baixarMultasFalso(){
+        Multa multa = new Multa();
+        MultaDao multaDao = new MultaDao();
+
+        multa.setIdMultasSeparadosVirgula("*");
+
+        multaDao.baixarMultas(multa);
+
+        assertEquals("red", multa.getColorMsgRetorno());
+    }
+
+    @Test
+    void baixarMultasVerdadeiro(){
+        Multa multa = new Multa();
+        MultaDao multaDao = new MultaDao();
+
+        multa.setIdMultasSeparadosVirgula("12");
+        multa.setAtivo(1);
+
+        multaDao.baixarMultas(multa);
+
+    }
 }
