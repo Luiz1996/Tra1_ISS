@@ -1,7 +1,7 @@
 package br.uem.din.bibliotec.config.controller;
 
-import br.uem.din.bibliotec.config.dao.MultaDao;
-import br.uem.din.bibliotec.config.dao.UsuarioDao;
+import br.uem.din.bibliotec.config.multaTeste.MultaDao;
+import br.uem.din.bibliotec.config.multaTeste.UsuarioDao;
 import br.uem.din.bibliotec.config.model.Multa;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
@@ -48,7 +48,6 @@ public class MultaController implements Serializable {
     }
 
     public double totalEmMultas(int codUsuario){
-
         return multaDao.valorTotalMultas(codUsuario);
     }
 

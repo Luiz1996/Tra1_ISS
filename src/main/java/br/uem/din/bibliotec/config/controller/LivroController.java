@@ -1,7 +1,7 @@
 package br.uem.din.bibliotec.config.controller;
 
-import br.uem.din.bibliotec.config.dao.LivroDao;
-import br.uem.din.bibliotec.config.dao.UsuarioDao;
+import br.uem.din.bibliotec.config.multaTeste.LivroDao;
+import br.uem.din.bibliotec.config.multaTeste.UsuarioDao;
 import br.uem.din.bibliotec.config.model.Livro;
 
 import javax.enterprise.context.SessionScoped;

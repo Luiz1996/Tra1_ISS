@@ -1,6 +1,6 @@
 package br.uem.din.bibliotec.config.controller;
 
-import br.uem.din.bibliotec.config.dao.*;
+import br.uem.din.bibliotec.config.multaTeste.*;
 import br.uem.din.bibliotec.config.model.Cotacao;
 import br.uem.din.bibliotec.config.model.Emprestimo;
 import br.uem.din.bibliotec.config.model.Multa;

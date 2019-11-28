@@ -1,4 +1,4 @@
-package br.uem.din.bibliotec.config.dao;
+package br.uem.din.bibliotec.config.multaTeste;
 
 import br.uem.din.bibliotec.config.conexao.Conexao;
 import br.uem.din.bibliotec.config.model.Emprestimo;
@@ -522,10 +522,10 @@ public class EmprestimoDao {
 
             while (rs.next()){
                 qtdeDiasAtrasados = rs.getInt("qtdeDiasAtrasados");
-                emprestimo.setCodLivro(rs.getInt("codlivro"));
                 emprestimo.setCodUsuario(rs.getInt("codusuario"));
             }
 
+            emprestimo.setCodLivro(rs.getInt("codlivro"));
             st.close();
             rs.close();
             con.conexao.close();
