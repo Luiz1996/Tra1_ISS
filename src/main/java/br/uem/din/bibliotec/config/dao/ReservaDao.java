@@ -74,7 +74,7 @@ public class ReservaDao {
                             "\tlivro    l on l.codlivro = r.codlivro\t\n" +
                             "where\n" +
                             "\tr.ativo = '1' and\n" +
-                            "    u.usuario = '"+usuarioLogado+"'\n" +
+                            "    u.usuario = '%%'\n" +
                             "order by\n" +
                             "\tl.titulo;");
 
@@ -146,7 +146,7 @@ public class ReservaDao {
     public int livroJaReservadoUsuarioLogado(Reserva reserva) {
         int jaReservado = 0;
 
-        try {
+        /*try {
             Conexao con = new Conexao();
             Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             con.conexao.setAutoCommit(true);
@@ -174,7 +174,7 @@ public class ReservaDao {
             System.out.println(e.getMessage());
             reserva.setMsgRetorno("FALHA: Ocorreu uma falha ao consultar se livro já está reservado para você, contacte o administrador.");
             reserva.setColorMsgRetorno(FALHA);
-        }
+        }*/
         return jaReservado;
     }
 

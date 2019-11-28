@@ -318,7 +318,7 @@ public class UsuarioDao {
 
 
     public int obterCodUsuario(){
-        int codUser = 0;
+        int codUser = 1;
 
         try {
             //abre conexão com banco de dados
@@ -528,7 +528,7 @@ public class UsuarioDao {
     }
 
     public String homePage() {
-        try {
+        /*try {
             HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
             String login = (String) session.getAttribute("usuario");
 
@@ -566,7 +566,7 @@ public class UsuarioDao {
         } catch (SQLException e) {
             e.printStackTrace();
             return "/gestaoBibliotecas?faces-redirect=true";
-        }
+        }*/
         return "/gestaoBibliotecas?faces-redirect=true";
     }
 

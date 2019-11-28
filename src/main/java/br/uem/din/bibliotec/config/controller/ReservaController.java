@@ -57,10 +57,18 @@ public class ReservaController implements Serializable {
         this.emprestimoDao = emprestimoDao;
     }
 
-    public String cadastrarReserva() throws SQLException {
-        reserva.setCodUsuario(usuarioDao.obterCodUsuario());
+    public MultaDao getMultaDao() {
+        return multaDao;
+    }
 
-        if(multaDao.valorTotalMultas(usuarioDao.obterCodUsuario()) > 0.0){
+    public void setMultaDao(MultaDao multaDao) {
+        this.multaDao = multaDao;
+    }
+
+    public String cadastrarReserva(int codUsuario) throws SQLException {
+        reserva.setCodUsuario(codUsuario);
+
+        if(multaDao.valorTotalMultas(codUsuario) > 0.0){
             reserva.setMsgRetorno("FALHA: Usuários com multas não podem efetuar reservas de livros.");
             reserva.setColorMsgRetorno(FALHA);
         }else{
@@ -72,14 +80,9 @@ public class ReservaController implements Serializable {
                     reserva.setMsgRetorno("FALHA: Você possui empréstimo(s) em atraso(s), reserva cancelada.");
                     reserva.setColorMsgRetorno(FALHA);
                 }else {
-                    if(emprestimoDao.livroJaEmprestado(reserva) > 0){
-                        reserva.setMsgRetorno("FALHA: Este livro já está emprestado para você, tente ir até a biblioteca e renove seu empréstimo.");
-                        reserva.setColorMsgRetorno(FALHA);
-                    }else{
                         reservaDao.cadastrarReserva(reserva);
                         reserva.setMsgRetorno("SUCESSO: A reserva foi efetuada com sucesso, você receberá um e-mail quando o livro estiver disponível.");
                         reserva.setColorMsgRetorno(SUCESSO);
-                    }
                 }
             }
         }

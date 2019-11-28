@@ -6,7 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="" />
+    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit/br/uem/din/bibliotec/config/dao/ReservaDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/ReservaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/ReservaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/ReservaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/ReservaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/UsuarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/uem/din/bibliotec/config/dao/ReservaDaoTest.class" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +53,8 @@
         <option value="Interface" />
         <option value="HTTP Request" />
         <option value="jsf" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,10 +145,16 @@
       <recent name="br.uem.din.bibliotec.config.model" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="br.uem.din.bibliotec.config.controller" />
       <recent name="br.uem.din.bibliotec.config.dao" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\web" />
+      <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\src" />
+      <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\.idea" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.uem.din.bibliotec.config.filter" />
@@ -148,10 +166,8 @@
       <recent name="C:\Users\luiz.pereira\Documents\BiblioTec\web\WEB-INF" />
       <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\web\JS" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\web" />
-      <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\src" />
-      <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\.idea" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.uem.din.bibliotec.config.controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -166,7 +182,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ReservaControllerTest.consultarReserva">
     <configuration name="JBoss 16.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 16.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8085/BiblioTec/gestaoBibliotecas.xhtml" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -239,6 +255,94 @@
         </option>
       </method>
     </configuration>
+    <configuration name="ReservaControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BiblioTec" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.uem.din.bibliotec.config.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservaControllerTest.cadastrarReserva_CasoDeSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BiblioTec" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.uem.din.bibliotec.config.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
+      <option name="METHOD_NAME" value="cadastrarReserva_CasoDeSucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservaControllerTest.cadastrarReserva_UsuarioComEmprestimoAtrasado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BiblioTec" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.uem.din.bibliotec.config.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
+      <option name="METHOD_NAME" value="cadastrarReserva_UsuarioComEmprestimoAtrasado" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservaControllerTest.cadastrarReserva_UsuarioComMulta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BiblioTec" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.uem.din.bibliotec.config.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
+      <option name="METHOD_NAME" value="cadastrarReserva_UsuarioComMulta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservaControllerTest.consultarReserva" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BiblioTec" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.uem.din.bibliotec.config.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
+      <option name="METHOD_NAME" value="consultarReserva" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ReservaControllerTest.consultarReserva" />
+        <item itemvalue="JUnit.ReservaControllerTest.cadastrarReserva_CasoDeSucesso" />
+        <item itemvalue="JUnit.ReservaControllerTest" />
+        <item itemvalue="JUnit.ReservaControllerTest.cadastrarReserva_UsuarioComEmprestimoAtrasado" />
+        <item itemvalue="JUnit.ReservaControllerTest.cadastrarReserva_UsuarioComMulta" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -487,7 +591,10 @@
       <workItem from="1574603409258" duration="3829000" />
       <workItem from="1574613557672" duration="79000" />
       <workItem from="1574719455438" duration="1126000" />
-      <workItem from="1574720974126" duration="2639000" />
+      <workItem from="1574720974126" duration="2890000" />
+      <workItem from="1574724028859" duration="134000" />
+      <workItem from="1574890039408" duration="11792000" />
+      <workItem from="1574978479686" duration="3067000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -755,7 +862,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574723514508</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Iniciando os trabalhos de testes com JUnit.">
+      <created>1574723828607</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1574723828607</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -829,5 +943,10 @@
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BiblioTec_FIM$ReservaDaoTest_cadastrarReserva.ic" NAME="ReservaDaoTest.cadastrarReserva Coverage Results" MODIFIED="1574892143775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>br.uem.din.bibliotec.config.dao.*</FILTER>
+    </SUITE>
   </component>
 </project>
