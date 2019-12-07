@@ -8,10 +8,16 @@ function validaEmail(email) {
 }
 
 function validaCpf(cpf) {
+
     cpf = cpf.replace('.',"");
     cpf = cpf.replace('.',"");
     cpf = cpf.replace('-',"");
 
+
+    if(cpf.trim() == ""){
+        alert("Por Favor informe um Cpf Válido");
+        return;
+    }
     var numeros, digitos, soma, i, resultado, digitos_iguais;
     digitos_iguais = 1;
     if (cpf.length < 11){
@@ -74,4 +80,5 @@ function validaCodUsuario(cod){
         document.getElementById("IdUsuario-codUsuario").focus();
     }
 }
+
 

@@ -17,10 +17,12 @@
     <script type="text/javascript" src="JS/ajudaPopUp.js"/>
     <script type="text/javascript" src="JS/confirmacaoPopUp.js"/>
     <script type="text/javascript" src="JS/validacoesUsuario.js"/>
+    <script type="text/javascript" src="JS/validacoesMultas.js"/>
 
 
 </h:head>
 <h:body styleClass="fundoCinza">
+
     <h1 align="center"> BiblioTec </h1>
 
     <div>
@@ -181,6 +183,7 @@
                                      maxlength="14"
                                      style="width: 400px"
                                      id="idMulta"
+                                     onchange="validaIdMulta(this.value)"
                         />
                         <br/>
                         <div id="conf" class="conf">
@@ -250,5 +253,6 @@
             </p>
         </p>
     </div>
+    #{multaController.multa.cpfUsuario = ''}
 </h:body>
 </html>
