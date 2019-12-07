@@ -6,8 +6,6 @@ import br.uem.din.bibliotec.config.model.Reserva;
 import br.uem.din.bibliotec.config.model.Usuario;
 import br.uem.din.bibliotec.config.services.FormataData;
 
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -48,9 +46,7 @@ public class ReservaDao {
         }
     }
 
-    public List<Reserva> consultarReserva(Reserva reserva) {
-        HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-        String usuarioLogado = (String) session.getAttribute("usuario");
+    public int consultarReserva(Reserva reserva) {
         List<Reserva> minhasReservas = new ArrayList<>();
 
         try{
@@ -59,24 +55,23 @@ public class ReservaDao {
             con.conexao.setAutoCommit(true);
             ResultSet rs;
 
-            st.execute( "select\n" +
-                            "\tr.codreserva,\n" +
+            st.execute( "SELECT \n" +
+                            "    r.codreserva,\n" +
                             "    r.datacad,\n" +
                             "    r.datares,\n" +
                             "    l.titulo,\n" +
                             "    l.autor,\n" +
                             "    l.editora\n" +
-                            "from\n" +
-                            "\treserva  r\n" +
-                            "inner join\n" +
-                            "\tusuarios u on u.codusuario = r.codusuario\n" +
-                            "inner join\n" +
-                            "\tlivro    l on l.codlivro = r.codlivro\t\n" +
-                            "where\n" +
-                            "\tr.ativo = '1' and\n" +
-                            "    u.usuario = '%%'\n" +
-                            "order by\n" +
-                            "\tl.titulo;");
+                            "FROM\n" +
+                            "    reserva r\n" +
+                            "        INNER JOIN\n" +
+                            "    usuarios u ON u.codusuario = r.codusuario\n" +
+                            "        INNER JOIN\n" +
+                            "    livro l ON l.codlivro = r.codlivro\n" +
+                            "WHERE\n" +
+                            "    r.ativo = '1' and\n" +
+                            "    r.codreserva = '"+reserva.getCodReserva()+"'\n" +
+                            "ORDER BY l.titulo;");
 
             rs = st.getResultSet();
 
@@ -99,7 +94,7 @@ public class ReservaDao {
             reserva.setColorMsgRetorno(FALHA);
             reserva.setMsgRetorno("FALHA: Ocorreu uma falha ao consultar as reservas, contacte o administrador.");
         }
-        return minhasReservas;
+        return minhasReservas.size();
     }
 
     public void cancelarReserva(Reserva reserva) {
@@ -109,8 +104,11 @@ public class ReservaDao {
             Statement st = con.conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             con.conexao.setAutoCommit(true);
 
-            //inativando reserva
-            st.executeUpdate("UPDATE `bibliotec`.`reserva` SET `dataalt` = current_date(), `ativo` = '0' WHERE (`codreserva` = '"+reserva.getCodReserva()+"');");
+            //if(reserva.getCodReserva() == -1){
+                //st.executeUpdate("UPDATE `bibliotec`.`reserva` SET `dataalts` = current_date(), `ativo` = '0' WHERE (`codreserva` = '"+reserva.getCodReserva()+"');");
+            //}else{
+                st.executeUpdate("UPDATE `bibliotec`.`reserva` SET `dataalt` = current_date(), `ativo` = '0' WHERE (`codreserva` = '"+reserva.getCodReserva()+"');");
+            //}
 
             //tratando caso o livro tenha outra reserva, usuário deve ser informado
             st.execute( "select\n" +
@@ -138,8 +136,6 @@ public class ReservaDao {
             con.conexao.close();
         }catch (SQLException e){
             System.out.println(e.getMessage());
-            reserva.setColorMsgRetorno(FALHA);
-            reserva.setMsgRetorno("FALHA: Ocorreu uma falha ao deletar a reserva, contacte o administrador.");
         }
     }
 

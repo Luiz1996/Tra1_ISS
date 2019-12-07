@@ -1,12 +1,9 @@
 package br.uem.din.bibliotec.config.controller;
 
-import br.uem.din.bibliotec.config.model.Reserva;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 class ReservaControllerTest {
 
@@ -41,19 +38,41 @@ class ReservaControllerTest {
     }
 
     @Test
-    void consultarReserva() throws SQLException {
+    void consultarReserva_CasoDeSucesso() throws SQLException {
         ReservaController test = new ReservaController();
-        List<Reserva> todasReservasConsultadas = new ArrayList<>();
 
-        todasReservasConsultadas = test.consultarReserva();
+        test.getReserva().setCodReserva(1);
 
-        //Assert.assertEquals(todasReservasConsultadas.size(), 1);
+        Assert.assertEquals(1, test.consultarReserva());
     }
 
     @Test
-    void deletarReserva() {
+    void consultarReserva_ReservaQueNaoExiste() throws SQLException {
+        ReservaController test = new ReservaController();
 
+        test.getReserva().setCodReserva(-1);
+        Assert.assertEquals(0, test.consultarReserva());
+    }
 
+    @Test
+    void deletarReserva_Sucesso() {
+        ReservaController test = new ReservaController();
 
+        test.getReserva().setCodReserva(2);
+
+        test.deletarReserva();
+
+        Assert.assertEquals("SUCESSO: A reserva escolhida foi cancelada com sucesso.", test.getReserva().getMsgRetorno());
+    }
+
+    @Test
+    void deletarReserva_Falha() {
+        ReservaController test = new ReservaController();
+
+        test.getReserva().setCodReserva(-1);
+
+        test.deletarReserva();
+
+        Assert.assertEquals("FALHA: Ocorreu uma falha ao deletar a reserva, contacte o administrador.", test.getReserva().getMsgRetorno());
     }
 }

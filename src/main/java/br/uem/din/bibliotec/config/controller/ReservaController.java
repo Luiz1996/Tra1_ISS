@@ -10,7 +10,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.sql.SQLException;
-import java.util.List;
 
 @Named
 @SessionScoped
@@ -89,14 +88,19 @@ public class ReservaController implements Serializable {
         return usuarioDao.homePage();
     }
 
-    public List<Reserva> consultarReserva(){
+    public int consultarReserva(){
         return reservaDao.consultarReserva(reserva);
     }
 
     public String deletarReserva(){
         reservaDao.cancelarReserva(reserva);
-        reserva.setMsgRetorno("SUCESSO: A reserva escolhida foi cancelada com sucesso.");
-        reserva.setColorMsgRetorno(SUCESSO);
+        if(reserva.getCodLivro() != 0){
+            reserva.setMsgRetorno("SUCESSO: A reserva escolhida foi cancelada com sucesso.");
+            reserva.setColorMsgRetorno(SUCESSO);
+        }else{
+            reserva.setColorMsgRetorno(FALHA);
+            reserva.setMsgRetorno("FALHA: Ocorreu uma falha ao deletar a reserva, contacte o administrador.");
+        }
         return usuarioDao.homePage();
     }
 }

@@ -6,18 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="">
+    <list default="true" id="d5d98b0c-abd1-4b3b-b3e9-b19c9358c343" name="Default Changelist" comment="Feito os testes para cadastrar Reserva.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUnit/br/uem/din/bibliotec/config/dao/ReservaDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUnit/br/uem/din/bibliotec/config/controller/ReservaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JUnit/br/uem/din/bibliotec/config/controller/ReservaControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/WEB-INF/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/BiblioTec.war/consultarLivro.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/ReservaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/ReservaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/ReservaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/ReservaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/UsuarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/UsuarioDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/controller/ReservaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/UsuarioDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/br/uem/din/bibliotec/config/dao/ReservaDaoTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/dao/ReservaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/uem/din/bibliotec/config/controller/ReservaControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/uem/din/bibliotec/config/controller/ReservaControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/baixarMultas.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/baixarMultas.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/consultarLivro.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/consultarLivro.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ReservaControllerTest.consultarReserva">
+  <component name="RunManager" selected="JUnit.ReservaControllerTest">
     <configuration name="JBoss 16.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 16.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8085/BiblioTec/gestaoBibliotecas.xhtml" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -270,7 +273,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservaControllerTest.cadastrarReserva_CasoDeSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReservaControllerTest.consultarReserva_ReservaQueNaoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BiblioTec" />
       <extension name="coverage">
         <pattern>
@@ -280,13 +283,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
       <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
-      <option name="METHOD_NAME" value="cadastrarReserva_CasoDeSucesso" />
+      <option name="METHOD_NAME" value="consultarReserva_ReservaQueNaoExiste" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservaControllerTest.cadastrarReserva_UsuarioComEmprestimoAtrasado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReservaControllerTest.deletarReserva" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BiblioTec" />
       <extension name="coverage">
         <pattern>
@@ -296,13 +299,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
       <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
-      <option name="METHOD_NAME" value="cadastrarReserva_UsuarioComEmprestimoAtrasado" />
+      <option name="METHOD_NAME" value="deletarReserva" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservaControllerTest.cadastrarReserva_UsuarioComMulta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReservaControllerTest.deletarReserva_Falha" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BiblioTec" />
       <extension name="coverage">
         <pattern>
@@ -312,13 +315,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
       <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
-      <option name="METHOD_NAME" value="cadastrarReserva_UsuarioComMulta" />
+      <option name="METHOD_NAME" value="deletarReserva_Falha" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservaControllerTest.consultarReserva" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReservaControllerTest.deletarReserva_Sucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BiblioTec" />
       <extension name="coverage">
         <pattern>
@@ -328,7 +331,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.uem.din.bibliotec.config.controller" />
       <option name="MAIN_CLASS_NAME" value="br.uem.din.bibliotec.config.controller.ReservaControllerTest" />
-      <option name="METHOD_NAME" value="consultarReserva" />
+      <option name="METHOD_NAME" value="deletarReserva_Sucesso" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -336,11 +339,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReservaControllerTest.consultarReserva" />
-        <item itemvalue="JUnit.ReservaControllerTest.cadastrarReserva_CasoDeSucesso" />
         <item itemvalue="JUnit.ReservaControllerTest" />
-        <item itemvalue="JUnit.ReservaControllerTest.cadastrarReserva_UsuarioComEmprestimoAtrasado" />
-        <item itemvalue="JUnit.ReservaControllerTest.cadastrarReserva_UsuarioComMulta" />
+        <item itemvalue="JUnit.ReservaControllerTest.deletarReserva_Falha" />
+        <item itemvalue="JUnit.ReservaControllerTest.deletarReserva_Sucesso" />
+        <item itemvalue="JUnit.ReservaControllerTest.deletarReserva" />
+        <item itemvalue="JUnit.ReservaControllerTest.consultarReserva_ReservaQueNaoExiste" />
       </list>
     </recent_temporary>
   </component>
@@ -594,7 +597,11 @@
       <workItem from="1574720974126" duration="2890000" />
       <workItem from="1574724028859" duration="134000" />
       <workItem from="1574890039408" duration="11792000" />
-      <workItem from="1574978479686" duration="3067000" />
+      <workItem from="1574978479686" duration="6937000" />
+      <workItem from="1575243182063" duration="351000" />
+      <workItem from="1575262074387" duration="720000" />
+      <workItem from="1575718621583" duration="2086000" />
+      <workItem from="1575720844183" duration="859000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -869,7 +876,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574723828607</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Feito os testes para cadastrar Reserva.">
+      <created>1574981591641</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1574981591641</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -912,7 +926,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dados commit:&#10;-Fazendo o cadastro de usuário através do acesso do balconista(incompleto)" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section" />
     <MESSAGE value="Dados commit:&#10;-CRUD de usuários = OK&#10;-CRUD de livros   = OK&#10;&#10;-Funcionalidades do Bibliotecário = 100%&#10;-Funcionalidades do Balconista    = 50%&#10;&#10;-Melhoras nos botões de Ativar/Inativar livros;&#10;-Melhoras no posicionamento do section;&#10;-Adicionado as colunas datacad, dataalt, na tabela de livros;&#10;-Adicionado as colunas datacad, dataalt e datanasc na tabela de usuários;&#10;-Feito as alterações nas operações CRUD dos usuários/livros e modo a deixar salvos as datas corretamente..." />
@@ -937,7 +950,8 @@
     <MESSAGE value="Realizado alguns ajustes/correções no frontend e css." />
     <MESSAGE value="Adicionado emptyMessages em DataTable's." />
     <MESSAGE value="Iniciando os trabalhos de testes com JUnit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Iniciando os trabalhos de testes com JUnit." />
+    <MESSAGE value="Feito os testes para cadastrar Reserva." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feito os testes para cadastrar Reserva." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
