@@ -1,0 +1,8 @@
+doubleClick("1575728985887.png")
+click("1575727528232.png")
+click("1575727569635.png")
+type("2")
+click("1575727609823.png")
+type("2"+ Key.ENTER)
+click("1575731786076.png")
+wait("1575731873789.png")
