@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/style.css"/>
     <script type="text/javascript" src="JS/confirmacaoPopUp.js"/>
     <script type="text/javascript" src="JS/validacoesUsuario.js"/>
+    <script type="text/javascript" src="JS/ajudaPopUp.js"/>
 
 
 </h:head>
@@ -67,7 +68,7 @@
                 </div>
                 <div class="ui-grid-col-6">
                     <h:form>
-                        <h5 class="text-center">Dados Cadastrais</h5>
+                        <h5>Dados Cadastrais <a href="javascript: abrir();"><img src="export/images/ajuda.png" alt="error"></img></a></h5>
                         <p:outputLabel style="width: 150px;border-color: #e74c3c;" value="Código: #{usuarioController.user.codusuario}" class="form-control"/>
 
                         <h:outputLabel value="Nome"/><font color="red">*</font>
@@ -141,6 +142,14 @@
         </div>
     </div>
     #{usuarioController.user.msg_autenticacao = ''}
+
+    <div id="popup" class="popupMeusDados">
+        <p>Olá,
+            <button class="fecharMeusDados" onclick="fechar()">x</button>
+            <b></b><br/>
+            Para a pagína de meus Dados, basta preencher os campos corretamente, trocando os dados que queiram alterar, caso não queira alterar determinado dado apenas deixe-o preenchido como está.
+        </p>
+    </div>
 
     <div class="clear5"></div>
     <!--RODAPÉ-->
