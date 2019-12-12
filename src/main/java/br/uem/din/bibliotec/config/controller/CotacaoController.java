@@ -1,6 +1,6 @@
 package br.uem.din.bibliotec.config.controller;
 
-import br.uem.din.bibliotec.config.multaTeste.CotacaoDao;
+import br.uem.din.bibliotec.config.dao.CotacaoDao;
 import br.uem.din.bibliotec.config.model.Cotacao;
 
 import javax.enterprise.context.SessionScoped;

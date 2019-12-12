@@ -1,9 +1,7 @@
-package br.uem.din.bibliotec.config.multaTeste;
+package br.uem.din.bibliotec.config.dao;
 
 import br.uem.din.bibliotec.config.model.Multa;
-import com.sun.org.apache.xpath.internal.operations.Mult;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;

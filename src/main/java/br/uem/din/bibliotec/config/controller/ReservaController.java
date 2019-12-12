@@ -1,9 +1,9 @@
 package br.uem.din.bibliotec.config.controller;
 
-import br.uem.din.bibliotec.config.multaTeste.EmprestimoDao;
-import br.uem.din.bibliotec.config.multaTeste.MultaDao;
-import br.uem.din.bibliotec.config.multaTeste.ReservaDao;
-import br.uem.din.bibliotec.config.multaTeste.UsuarioDao;
+import br.uem.din.bibliotec.config.dao.EmprestimoDao;
+import br.uem.din.bibliotec.config.dao.MultaDao;
+import br.uem.din.bibliotec.config.dao.ReservaDao;
+import br.uem.din.bibliotec.config.dao.UsuarioDao;
 import br.uem.din.bibliotec.config.model.Reserva;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;

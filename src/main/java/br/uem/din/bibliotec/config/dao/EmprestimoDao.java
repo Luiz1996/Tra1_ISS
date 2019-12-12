@@ -1,4 +1,4 @@
-package br.uem.din.bibliotec.config.multaTeste;
+package br.uem.din.bibliotec.config.dao;
 
 import br.uem.din.bibliotec.config.conexao.Conexao;
 import br.uem.din.bibliotec.config.model.Emprestimo;
