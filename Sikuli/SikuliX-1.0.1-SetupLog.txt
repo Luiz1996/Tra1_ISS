@@ -1,26 +1,17 @@
-[debug (07/12/19 11:54:02)] RunSetup: SikuliX Setup Build: 1.0.1 12NOV2013120000
-[debug (07/12/19 11:54:02)] RunSetup: ... starting with no args given
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Users\Vini\Documents\Sikuli\libs
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Program Files (x86)\Python38-32\Scripts\
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Program Files (x86)\Python38-32\
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Program Files (x86)\Common Files\Oracle\Java\javapath
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Windows\system32
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Windows
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Windows\System32\Wbem
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Windows\System32\WindowsPowerShell\v1.0\
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Windows\System32\OpenSSH\
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Users\Vini\Desktop\dev\apache-maven-3.6.1-binbin
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Program Files\Java\jdk1.8.0_201\bin
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Program Files\Git\cmd
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Users\Vini\AppData\Local\Microsoft\WindowsApps
-[debug (07/12/19 11:54:02)] RunSetup: syspath: C:\Users\Vini\AppData\Local\GitHubDesktop\bin
-[debug (07/12/19 11:54:06)] RunSetup: Option UPDATE selected
-[debug (07/12/19 11:54:06)] RunSetup: checking for newer versions
-[debug (07/12/19 11:54:08)] No version info available at https://dl.dropbox.com/u/42895525/SikuliX
-[debug (07/12/19 11:54:11)] RunSetup: You already have the latest version!
-[debug (07/12/19 11:54:11)] RunSetup: Completed: checking for newer versions
-[debug (07/12/19 11:54:11)] RunSetup: user home: C:\Users\Vini
-[debug (07/12/19 11:54:11)] RunSetup: RunningSystem: Windows 10.0
-[debug (07/12/19 11:54:11)] RunSetup: parent of jar/classes: C:/Users/Vini/Documents/Sikuli/
-[debug (07/12/19 11:54:11)] RunSetup: RunningJava: Java 8 (amd64) 1.8.0_201-b09
-[debug (07/12/19 11:54:11)] RunSetup: ... could not detect whether Sikuli is used the first time on this system
+[debug (12/12/19 18:47:32)] RunSetup: SikuliX Setup Build: 1.0.1 12NOV2013120000
+[debug (12/12/19 18:47:32)] RunSetup: ... starting with no args given
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Users\Vini\Documents\GitHub\Tra1_ISS\Sikuli\libs
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Program Files (x86)\Python38-32\Scripts\
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Program Files (x86)\Python38-32\
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Windows\system32
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Windows
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Windows\System32\Wbem
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Windows\System32\WindowsPowerShell\v1.0\
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Windows\System32\OpenSSH\
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Users\Vini\Desktop\dev\apache-maven-3.6.1-binbin
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Program Files\Java\jdk1.8.0_201\bin
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Program Files\Git\cmd
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Users\Vini\Documents\GitHub\Tra1_ISS\Sikuli\libs
+[debug (12/12/19 18:47:32)] RunSetup: syspath: C:\Users\Vini\AppData\Local\GitHubDesktop\bin
+[debug (12/12/19 18:47:35)] RunSetup: Update cancelled

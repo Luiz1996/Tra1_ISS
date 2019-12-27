@@ -145,6 +145,7 @@ public class MultaDao {
 
             st.close();
             con.conexao.close();
+            multa.setColorMsgRetorno("green");
         }catch (SQLException e){
             System.out.println(e.getMessage());
             multa.setColorMsgRetorno("red");

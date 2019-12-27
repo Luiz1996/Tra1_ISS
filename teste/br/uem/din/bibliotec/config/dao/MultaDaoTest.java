@@ -9,7 +9,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MultaTeste {
-    public static int tamanho = 11;
 
     @Test
     void valorTotalMultasVerdadeiro() {
@@ -17,15 +16,16 @@ class MultaTeste {
         MultaDao multaDao = new MultaDao();
 
         double teste = multaDao.valorTotalMultas(1);
-        assertEquals(10, teste);
+        assertEquals(210, teste);
     }
+
     @Test
     void valorTotalMultasFalso() {
         Multa multa = new Multa();
         MultaDao multaDao = new MultaDao();
 
         double teste = multaDao.valorTotalMultas(1);
-        assertEquals(9, teste);
+        assertEquals(10, teste);
     }
 
     @Test
@@ -42,21 +42,19 @@ class MultaTeste {
         multa.setDiasAtraso(10);
         multa.setValor(20);
         multa.setAtivo(1);
-        multa.setCpfUsuario("11111111111");
+        multa.setCpfUsuario("10069341974");
 
         multaDao.cadastrarMulta(multa);
 
-        tamanho++;
         List<Multa> listaMulta = new ArrayList<>();
 
         listaMulta = multaDao.consultarMultasCpf(multa);
 
-        assertEquals(10,listaMulta.size());
+        assertEquals(12,listaMulta.size());
     }
 
     @Test
     void cadastrarMultaFalso(){
-
         Multa multa = new Multa();
         MultaDao multaDao = new MultaDao();
 
@@ -70,9 +68,8 @@ class MultaTeste {
         multa.setAtivo(1);
         multa.setCpfUsuario("11111111111");
 
-
         multaDao.cadastrarMulta(multa);
-        tamanho++;
+
         List<Multa> listaMulta = new ArrayList<>();
 
         listaMulta = multaDao.consultarMultasCpf(multa);
@@ -85,12 +82,12 @@ class MultaTeste {
         Multa multa = new Multa();
         MultaDao multaDao = new MultaDao();
 
-        multa.setCpfUsuario("11111111111");
+        multa.setCpfUsuario("10069341974");
         List<Multa> listaMulta = new ArrayList<>();
 
         listaMulta = multaDao.consultarMultasCpf(multa);
 
-        assertEquals(tamanho, listaMulta.size());
+        assertEquals(11, listaMulta.size());
 
     }
 
@@ -99,7 +96,7 @@ class MultaTeste {
         Multa multa = new Multa();
         MultaDao multaDao = new MultaDao();
 
-        multa.setCpfUsuario("11111111111");
+        multa.setCpfUsuario("10069341974");
         List<Multa> listaMulta = new ArrayList<>();
 
         listaMulta = multaDao.consultarMultasCpf(multa);
@@ -117,7 +114,7 @@ class MultaTeste {
 
         listaMulta = multaDao.consultarMinhasMultasCpf(multa);
 
-        assertEquals(tamanho, listaMulta.size());
+        assertEquals(11, listaMulta.size());
     }
 
     @Test
@@ -142,7 +139,7 @@ class MultaTeste {
 
         multaDao.baixarMultas(multa);
 
-        assertEquals("red", multa.getColorMsgRetorno());
+        assertEquals("green", multa.getColorMsgRetorno());
     }
 
     @Test
@@ -154,6 +151,8 @@ class MultaTeste {
         multa.setAtivo(1);
 
         multaDao.baixarMultas(multa);
+
+        assertEquals("green", multa.getColorMsgRetorno());
 
     }
 }
