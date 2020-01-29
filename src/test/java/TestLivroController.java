@@ -1,5 +1,3 @@
-
-
 import br.uem.din.bibliotec.config.conexao.Conexao;
 import br.uem.din.bibliotec.config.dao.LivroDao;
 import br.uem.din.bibliotec.config.model.Livro;

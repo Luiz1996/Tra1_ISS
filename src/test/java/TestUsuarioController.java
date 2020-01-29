@@ -1,5 +1,3 @@
-package java;
-
 import br.uem.din.bibliotec.config.conexao.Conexao;
 import br.uem.din.bibliotec.config.dao.LivroDao;
 import br.uem.din.bibliotec.config.dao.UsuarioDao;
@@ -36,17 +34,20 @@ class TestUsuarioController {
             con.conexao.setAutoCommit(true);
 
             //validando se o livro possui alguma reserva ou empréstimos em vigor
-            st.execute("delete from usuario where titulo = 'Nome de Teste'");
+            st.execute("delete from usuarios where nome = 'Nome de Teste'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     @Test
-    void testCadastroLivro() {
+    void testCadastroUsuario() {
         Usuario usuario = Usuario.factory();
+        usuario.setDatanasc("10/01/1992");
         usuario.setNome("Nome de Teste");
         usuario.setEmail("email@teste.com");
+        usuario.setCpf("081.012.039-90");
+        usuario.setRg("12.391.690-5");
         int retorno = 0;
 
         try {
@@ -59,10 +60,13 @@ class TestUsuarioController {
 
 
     @Test
-    void testConsultaLivro() {
+    void testConsultaUsuario() {
         Usuario usuario = Usuario.factory();
+        usuario.setDatanasc("10/01/1992");
         usuario.setNome("Nome de Teste");
         usuario.setEmail("email@teste.com");
+        usuario.setCpf("081.012.039-90");
+        usuario.setRg("12.391.690-5");
         List<Usuario> resultado = new ArrayList<>();
         try {
             usuarioDao.cadastrarUsuario(usuario);
@@ -73,16 +77,19 @@ class TestUsuarioController {
             e.printStackTrace();
         }
 
-        assertEquals(1, resultado.size());
-        assertEquals("Nome de Teste", resultado.get(0).getNome());
-        assertEquals("email@teste.com", resultado.get(0).getEmail());
+        assertEquals(4, resultado.size());
+        assertEquals("Nome de Teste", resultado.get(3).getNome());
+        assertEquals("email@teste.com", resultado.get(3).getEmail());
     }
 
     @Test
-    void testDeleteLivro() {
+    void testDeleteUsuario() {
         Usuario usuario = Usuario.factory();
         usuario.setNome("Nome de Teste");
         usuario.setEmail("email@teste.com");
+        usuario.setDatanasc("10/01/1992");
+        usuario.setCpf("081.012.039-90");
+        usuario.setRg("12.391.690-5");
         List<Usuario> resultado = new ArrayList<>();
         try {
             usuarioDao.cadastrarUsuario(usuario);
@@ -93,16 +100,19 @@ class TestUsuarioController {
             e.printStackTrace();
         }
 
-        assertEquals(1, resultado.size());
-        assertEquals("Nome de Teste", resultado.get(0).getNome());
-        assertEquals("email@teste.com", resultado.get(0).getEmail());
+        assertEquals(4, resultado.size());
+        assertEquals("Nome de Teste", resultado.get(3).getNome());
+        assertEquals("email@teste.com", resultado.get(3).getEmail());
     }
 
     @Test
-    void testUpdateLivro() {
+    void testUpdateUsuario() {
         Usuario usuario = Usuario.factory();
         usuario.setNome("Nome de Teste");
         usuario.setEmail("email@teste.com");
+        usuario.setDatanasc("10/01/1992");
+        usuario.setCpf("081.012.039-90");
+        usuario.setRg("12.391.690-5");
         List<Usuario> resultado = new ArrayList<>();
         try {
             usuarioDao.cadastrarUsuario(usuario);
@@ -113,9 +123,9 @@ class TestUsuarioController {
             e.printStackTrace();
         }
 
-        assertEquals(1, resultado.size());
-        assertEquals("Nome de Teste", resultado.get(0).getNome());
-        assertEquals("email@teste.com", resultado.get(0).getEmail());
+        assertEquals(4, resultado.size());
+        assertEquals("Nome de Teste", resultado.get(3).getNome());
+        assertEquals("email@teste.com", resultado.get(3).getEmail());
     }
 
     @Test
