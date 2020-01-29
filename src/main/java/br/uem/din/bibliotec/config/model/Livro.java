@@ -5,7 +5,7 @@ import java.util.Observable;
 
 public class Livro extends Observable{
     //declaracao dos atributos do livro
-    private Integer codlivro = 0;
+    private Integer codlivro ;
     private String codcatalogacao = "";
     private String numchamada = "";
     private String titulo = "";
@@ -26,6 +26,7 @@ public class Livro extends Observable{
     private String nomeUsuarioRes = "";
     private String emailUsuarioRes = "";
     private String busca = "";
+    private static Integer idContador = 0;
 
     //contrutores e gets/sets
     public Livro(String datares, int usuariores) {
@@ -33,9 +34,15 @@ public class Livro extends Observable{
         this.usuariores = usuariores;
     }
 
+    public static Livro livroFactory(){
+        idContador++;
+        return new Livro(idContador);
+    }
+
     public Livro(){
 
     }
+
 
     public Livro(Integer codlivro, String codcatalogacao, String numchamada, String titulo, String autor, String editora, String anolancamento, String cidade, Integer volume, Integer ativo) {
         this.codlivro = codlivro;

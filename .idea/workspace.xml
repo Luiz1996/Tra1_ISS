@@ -7,11 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efb56a2-fde6-493f-9431-26459682e62a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestLivroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_faces_jsf_api_2_2_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_18_0_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BiblioTec.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BiblioTec.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Bibliotec/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LivroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Bibliotec/WEB-INF/classes/br/uem/din/bibliotec/config/controller/LivroController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Bibliotec/WEB-INF/classes/br/uem/din/bibliotec/config/model/Reserva.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Bibliotec/WEB-INF/classes/br/uem/din/bibliotec/config/model/Reserva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Bibliotec/br/uem/din/bibliotec/config/controller/LivroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Bibliotec/br/uem/din/bibliotec/config/controller/LivroController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Bibliotec/br/uem/din/bibliotec/config/model/Reserva.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Bibliotec/br/uem/din/bibliotec/config/model/Reserva.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/LivroControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/BiblioTec-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/BiblioTec-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Reserva.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/uem/din/bibliotec/config/model/Reserva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,15 +52,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/CotacaoDao.java">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestLivroController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1620">
+              <caret line="108" column="68" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2829#2830#0" expanded="true" />
+                <element signature="e#2863#2864#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestUsuarioController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1455">
+              <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
+            <state>
+              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+              <folding>
+                <element signature="e#1095#1096#0" expanded="true" />
+                <element signature="e#1130#1131#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Livro.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -56,20 +99,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="135">
+              <caret line="60" column="31" lean-forward="true" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/LivroControllerTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/LivroDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="146" selection-start-line="146" selection-end-line="161" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1410">
+              <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -140,9 +189,16 @@
         <option value="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/test/test/LivroControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroController.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroControllerTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/test/LivroControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/LivroControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Reserva.java" />
+        <option value="$PROJECT_DIR$/src/test/TestLivroController.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/TestLivroController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Livro.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestLivroController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestUsuarioController.java" />
       </list>
     </option>
   </component>
@@ -185,7 +241,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,17 +270,46 @@
               <item name="Tra1_ISS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tra1_ISS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tra1_ISS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tra1_ISS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tra1_ISS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tra1_ISS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tra1_ISS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tra1_ISS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tra1_ISS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tra1_ISS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,7 +329,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -272,10 +356,15 @@
       <recent name="C:\Users\luiz.pereira\Documents\BiblioTec\web" />
       <recent name="C:\Users\luiz.pereira\Documents\BiblioTec\web\WEB-INF" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="java" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java" />
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$/src/test" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\src" />
-      <recent name="C:\Users\Luiz Flávio\IdeaProjects\BiblioTec\.idea" />
+      <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -290,7 +379,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LivroControllerTest">
+  <component name="RunManager" selected="JUnit.TestUsuarioController">
     <configuration name="JBoss 16.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 16.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/BiblioTec/gestaoBibliotecas.xhtml" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -364,17 +453,57 @@
         </option>
       </method>
     </configuration>
-    <configuration name="LivroControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestLivroController (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BiblioTec" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestLivroController" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestLivroController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BiblioTec" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="resources.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="test.LivroControllerTest" />
+      <option name="PACKAGE_NAME" value="resources" />
+      <option name="MAIN_CLASS_NAME" value="resources.TestLivroController" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUsuarioController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BiblioTec" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java" />
+      <option name="MAIN_CLASS_NAME" value="java.TestUsuarioController" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUsuarioController.testUpdateLivro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BiblioTec" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java" />
+      <option name="MAIN_CLASS_NAME" value="java.TestUsuarioController" />
+      <option name="METHOD_NAME" value="testUpdateLivro" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -394,20 +523,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="consultarLivro.xhtml" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/BiblioTec/consultarLivro.xhtml">
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.consultarLivro.xhtml" />
       <item itemvalue="JBoss Server.JBoss 16.0.0.Final" />
       <item itemvalue="JUnit.test" />
-      <item itemvalue="JUnit.LivroControllerTest" />
+      <item itemvalue="JUnit.TestLivroController" />
+      <item itemvalue="JUnit.TestLivroController (1)" />
+      <item itemvalue="JUnit.TestUsuarioController.testUpdateLivro" />
+      <item itemvalue="JUnit.TestUsuarioController" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LivroControllerTest" />
+        <item itemvalue="JUnit.TestUsuarioController" />
+        <item itemvalue="JUnit.TestUsuarioController.testUpdateLivro" />
+        <item itemvalue="JUnit.TestLivroController (1)" />
+        <item itemvalue="JUnit.TestLivroController" />
         <item itemvalue="JUnit.test" />
-        <item itemvalue="JavaScript Debug.consultarLivro.xhtml" />
       </list>
     </recent_temporary>
   </component>
@@ -631,6 +761,14 @@
       <workItem from="1573512223015" duration="416000" />
       <workItem from="1573598527799" duration="253000" />
       <workItem from="1573923389937" duration="1349000" />
+      <workItem from="1574297228404" duration="65000" />
+      <workItem from="1578952196955" duration="640000" />
+      <workItem from="1579035762907" duration="172000" />
+      <workItem from="1579220507243" duration="6146000" />
+      <workItem from="1579301337802" duration="18000" />
+      <workItem from="1580070855119" duration="664000" />
+      <workItem from="1580168011266" duration="128000" />
+      <workItem from="1580252331478" duration="7560000" />
     </task>
     <task id="LOCAL-00001" summary="Segundo commit:&#10;-CRUD 100%&#10;-Mensagens de Retorno OK&#10;-Botões de fechar o ajuda OK&#10;-Adicionado segunda verificação ao deletar e alterar os registros...">
       <created>1555875240215</created>
@@ -937,24 +1075,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test - 2019.11.16 at 16h 36m 52s.xml">
-      <configuration name="test" configurationId="JUnit" />
+    <history-entry file="TestLivroController_(1) - 2020.01.28 at 23h 07m 07s.xml">
+      <configuration name="TestLivroController (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test - 2019.11.16 at 16h 38m 27s.xml">
-      <configuration name="test" configurationId="JUnit" />
+    <history-entry file="TestLivroController_(1) - 2020.01.28 at 23h 07m 12s.xml">
+      <configuration name="TestLivroController (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test - 2019.11.16 at 17h 03m 39s.xml">
-      <configuration name="test" configurationId="JUnit" />
+    <history-entry file="TestLivroController_(1) - 2020.01.28 at 23h 07m 59s.xml">
+      <configuration name="TestLivroController (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LivroControllerTest - 2019.11.16 at 17h 07m 15s.xml">
-      <configuration name="LivroControllerTest" configurationId="JUnit" />
+    <history-entry file="TestLivroController_(1) - 2020.01.28 at 23h 08m 27s.xml">
+      <configuration name="TestLivroController (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LivroControllerTest - 2019.11.16 at 17h 07m 38s.xml">
-      <configuration name="LivroControllerTest" configurationId="JUnit" />
+    <history-entry file="TestLivroController_(1) - 2020.01.28 at 23h 51m 45s.xml">
+      <configuration name="TestLivroController (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLivroController_(1) - 2020.01.28 at 23h 52m 05s.xml">
+      <configuration name="TestLivroController (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLivroController_(1) - 2020.01.28 at 23h 54m 33s.xml">
+      <configuration name="TestLivroController (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestLivroController_(1) - 2020.01.29 at 00h 00m 56s.xml">
+      <configuration name="TestLivroController (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestUsuarioController_testUpdateLivro - 2020.01.29 at 00h 01m 00s.xml">
+      <configuration name="TestUsuarioController.testUpdateLivro" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestUsuarioController - 2020.01.29 at 00h 01m 21s.xml">
+      <configuration name="TestUsuarioController" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7845000" />
+    <option name="totallyTimeSpent" value="23949000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -967,9 +1120,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="27" width="1324" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2535211" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28951487" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -978,13 +1130,13 @@
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289256" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.353719" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3289256" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289256" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.17190082" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3289256" />
@@ -1088,26 +1240,12 @@
         <state relative-caret-position="-1051" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/LivroDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4779">
-          <caret line="536" column="1" selection-start-line="536" selection-start-column="1" selection-end-line="536" selection-end-column="1" />
-          <folding>
-            <element signature="e#23031#23032#0" expanded="true" />
-            <element signature="e#23074#23075#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/EmprestimoDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/CotacaoDao.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/ReservaController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1123,53 +1261,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/test/test/LivroControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/test/test/LivroControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Reserva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-871">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/CotacaoDao.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#106#107#0" expanded="true" />
-            <element signature="e#127#128#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1410">
+          <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/controller/LivroController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="135">
+          <caret line="60" column="31" lean-forward="true" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/LivroControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Livro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state relative-caret-position="96">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/dao/LivroDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="146" selection-start-line="146" selection-end-line="161" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/uem/din/bibliotec/config/model/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding>
+            <element signature="e#1095#1096#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestLivroController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="108" column="68" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2829#2830#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestUsuarioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
         </state>
       </provider>
     </entry>

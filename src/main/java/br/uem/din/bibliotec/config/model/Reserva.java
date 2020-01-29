@@ -1,6 +1,6 @@
 package br.uem.din.bibliotec.config.model;
 
-import org.jetbrains.annotations.Contract;
+
 
 import java.util.Objects;
 
@@ -23,7 +23,7 @@ public class Reserva {
 
     public Reserva(){}
 
-    @Contract(pure = true)
+
     public Reserva(int codReserva, int codLivro, int codUsuario, String dataCad, String dataAlt, int ativo) {
         this.codReserva = codReserva;
         this.codLivro = codLivro;

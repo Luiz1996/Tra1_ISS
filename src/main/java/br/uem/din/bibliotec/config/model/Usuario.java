@@ -33,6 +33,10 @@ public class Usuario implements Observer {
     private int    jaativado = 0;
     private String busca = "";
 
+    public static Usuario factory(){
+        return new Usuario();
+    }
+
     //contrutores e gets/sets
     public Usuario(String email, String usuario, String senha, String nome, String rg, String cpf, String endereco, String cep, String cidade, String estado, int permissao, int ativo, String msg_autenticacao, String color_msg) {
         this.email = email;
